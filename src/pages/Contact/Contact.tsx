@@ -19,7 +19,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.\n(Note: This is a demo form and does not actually send messages.)');
+    alert('お問い合わせありがとうございます。後ほどご連絡させていただきます。\n（注：これはデモフォームのため、実際には送信されません。）');
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -39,44 +39,43 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1>Contact Us</h1>
+          <h1>お問い合わせ</h1>
           <p className="section-subtitle">We'd Love to Hear from You</p>
         </motion.div>
 
         <div className={styles['contact-container']}>
           <motion.div className={styles['contact-info']} {...fadeInUp}>
             <div className={styles['contact-info-item']}>
-              <h3>📍 Location</h3>
-              <p>123 Coffee Street</p>
-              <p>Shibuya-ku, Tokyo</p>
-              <p>Japan 150-0001</p>
+              <h3>📍 所在地</h3>
+              <p>〒150-0001</p>
+              <p>東京都渋谷区神宮前1-2-3</p>
             </div>
 
             <div className={styles['contact-info-item']}>
-              <h3>📞 Phone</h3>
+              <h3>📞 電話</h3>
               <p>Tel: 03-1234-5678</p>
-              <p>Available during business hours</p>
+              <p>営業時間内でご対応いたします</p>
             </div>
 
             <div className={styles['contact-info-item']}>
-              <h3>✉️ Email</h3>
+              <h3>✉️ メール</h3>
               <p>info@maisoncafe.com</p>
-              <p>We respond within 24 hours</p>
+              <p>24時間以内に返信いたします</p>
             </div>
 
             <div className={styles['contact-info-item']}>
-              <h3>🕐 Hours</h3>
-              <p>Mon-Fri: 8:00 - 20:00</p>
-              <p>Sat-Sun: 9:00 - 21:00</p>
-              <p>Holidays: 10:00 - 18:00</p>
+              <h3>🕐 営業時間</h3>
+              <p>平日: 8:00 - 20:00</p>
+              <p>土日祝: 9:00 - 21:00</p>
+              <p>定休日: 年末年始</p>
             </div>
           </motion.div>
 
           <motion.div className={styles['contact-form-section']} {...fadeInUp}>
-            <h2>Send a Message</h2>
+            <h2>メッセージを送る</h2>
             <form onSubmit={handleSubmit}>
               <div className={styles['form-group']}>
-                <label htmlFor="name">Name *</label>
+                <label htmlFor="name">お名前 *</label>
                 <input
                   type="text"
                   id="name"
@@ -88,7 +87,7 @@ const Contact = () => {
               </div>
 
               <div className={styles['form-group']}>
-                <label htmlFor="email">Email *</label>
+                <label htmlFor="email">メールアドレス *</label>
                 <input
                   type="email"
                   id="email"
@@ -100,7 +99,7 @@ const Contact = () => {
               </div>
 
               <div className={styles['form-group']}>
-                <label htmlFor="subject">Subject *</label>
+                <label htmlFor="subject">件名 *</label>
                 <input
                   type="text"
                   id="subject"
@@ -112,7 +111,7 @@ const Contact = () => {
               </div>
 
               <div className={styles['form-group']}>
-                <label htmlFor="message">Message *</label>
+                <label htmlFor="message">メッセージ *</label>
                 <textarea
                   id="message"
                   name="message"
@@ -128,7 +127,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Send Message
+                送信する
               </motion.button>
             </form>
           </motion.div>

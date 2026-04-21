@@ -12,23 +12,23 @@ const About = () => {
   const values = [
     {
       icon: '☕',
-      title: 'Quality',
-      description: 'We source only the finest beans from ethical farms and roast them to perfection.'
+      title: '品質',
+      description: '倫理的な農園から最高品質の豆のみを仕入れ、完璧なロースト処理を施しています。'
     },
     {
       icon: '❤️',
-      title: 'Passion',
-      description: 'Every cup is crafted with care and dedication by our skilled baristas.'
+      title: '情熱',
+      description: '一杯一杯が、熟練したバリスタの丁寧な仕事と献身によって作られています。'
     },
     {
       icon: '🌍',
-      title: 'Sustainability',
-      description: 'We are committed to environmental responsibility and supporting local communities.'
+      title: '持続可能性',
+      description: '環境への責任と地域コミュニティの支援に、誠実に取り組んでいます。'
     },
     {
       icon: '🏡',
-      title: 'Community',
-      description: 'Our café is a warm gathering place for connection and conversation.'
+      title: 'コミュニティ',
+      description: '私たちのカフェは、人々がつながり、語り合うための温かな場所です。'
     },
   ];
 
@@ -41,11 +41,10 @@ const About = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="container">
-          <h1>About Maison du Café</h1>
+          <h1>Maison du Caféについて</h1>
           <p className={styles['about-hero-text']}>
-            More than just a café, we are a destination for those who appreciate
-            the art and ritual of exceptional coffee. Our story is one of passion,
-            quality, and community.
+            単なるカフェではありません。私たちは、コーヒーの芸術と儀式を愛する人々のための特別な場所です。
+            私たちの物語は、情熱と品質、そしてコミュニティへの想いから始まりました。
           </p>
         </div>
       </motion.section>
@@ -57,18 +56,16 @@ const About = () => {
               📖
             </div>
             <div className={styles['about-text']}>
-              <h2>Our Story</h2>
+              <h2>私たちのストーリー</h2>
               <p>
-                Maison du Café was born from a simple dream: to create a space where
-                coffee is celebrated as an art form and every guest feels at home.
-                Founded in 2020, we have grown from a small neighborhood café into
-                a beloved destination for coffee enthusiasts.
+                Maison du Caféは、シンプルな夢から生まれました。コーヒーが芸術として讃えられ、
+                すべてのお客様が心から寛げる空間を作りたい。そんな想いから、2020年に創業しました。
+                小さな街のカフェから始まり、今ではコーヒー愛好家たちに愛される場所へと成長しています。
               </p>
               <p>
-                Our founders traveled extensively, learning from master roasters and
-                baristas across the globe. They brought back not just techniques,
-                but a philosophy—that great coffee starts with respect: respect for
-                the bean, the farmer, the craft, and the customer.
+                創業者たちは世界中を旅し、マスターロースターやバリスタから学びを得ました。
+                持ち帰ったのは技術だけではありません。それは一つの哲学です。
+                素晴らしいコーヒーは、敬意から始まる。豆への敬意、農家への敬意、職人技への敬意、そしてお客様への敬意。
               </p>
             </div>
           </motion.div>
@@ -82,18 +79,14 @@ const About = () => {
               🏠
             </div>
             <div className={styles['about-text']}>
-              <h2>Our Space</h2>
+              <h2>私たちの空間</h2>
               <p>
-                Step into Maison du Café and you'll find an atmosphere that blends
-                modern elegance with warm hospitality. Natural light floods through
-                large windows, illuminating carefully curated interiors that invite
-                you to linger.
+                Maison du Caféに足を踏み入れると、モダンな優雅さと温かなおもてなしが融合した雰囲気に包まれます。
+                大きな窓から差し込む自然光が、丁寧に選ばれたインテリアを照らし、ゆっくりと過ごしたくなる空間を作り出しています。
               </p>
               <p>
-                Every detail, from the handcrafted furniture to the carefully selected
-                music, is designed to create a sanctuary from the bustling city outside.
-                Whether you're here for a quick espresso or a leisurely afternoon,
-                you'll find your perfect spot.
+                手作りの家具から厳選された音楽まで、すべての細部が、賑やかな街の喧騒から離れた安らぎの場を生み出すようデザインされています。
+                クイックなエスプレッソでも、のんびりとした午後のひとときでも、あなたの理想の場所が見つかるでしょう。
               </p>
             </div>
           </motion.div>
@@ -103,7 +96,7 @@ const About = () => {
       <section className={`${styles['about-section']}`}>
         <div className="container">
           <motion.div style={{ textAlign: 'center', marginBottom: '3rem' }} {...fadeInUp}>
-            <h2 className="section-title">Our Values</h2>
+            <h2 className="section-title">私たちの価値観</h2>
             <p className="section-subtitle">What Drives Us Every Day</p>
           </motion.div>
 

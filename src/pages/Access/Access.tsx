@@ -18,52 +18,51 @@ const Access = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1>Access</h1>
+          <h1>アクセス</h1>
           <p className="section-subtitle">Find Your Way to Us</p>
         </motion.div>
 
         <div className={styles['access-content']}>
           <motion.div className={styles['access-info-section']} {...fadeInUp}>
-            <h2>Visit Information</h2>
+            <h2>店舗情報</h2>
 
             <div className={styles['info-item']}>
-              <h3>📍 Location</h3>
-              <p>123 Coffee Street</p>
-              <p>Shibuya-ku, Tokyo</p>
-              <p>Japan 150-0001</p>
+              <h3>📍 所在地</h3>
+              <p>〒150-0001</p>
+              <p>東京都渋谷区神宮前1-2-3</p>
             </div>
 
             <div className={styles['info-item']}>
-              <h3>🕐 Business Hours</h3>
-              <p>Monday - Friday: 8:00 - 20:00</p>
-              <p>Saturday - Sunday: 9:00 - 21:00</p>
-              <p>Holidays: 10:00 - 18:00</p>
+              <h3>🕐 営業時間</h3>
+              <p>平日: 8:00 - 20:00</p>
+              <p>土日祝: 9:00 - 21:00</p>
+              <p>定休日: 年末年始</p>
               <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', fontStyle: 'italic' }}>
-                Last order 30 minutes before closing
+                ラストオーダーは閉店30分前
               </p>
             </div>
 
             <div className={styles['info-item']}>
-              <h3>📞 Contact</h3>
+              <h3>📞 お問い合わせ</h3>
               <p>Tel: 03-1234-5678</p>
               <p>Email: info@maisoncafe.com</p>
             </div>
 
             <div className={styles['info-item']}>
-              <h3>🚇 Access by Train</h3>
-              <p>5 min walk from Shibuya Station (JR/Metro)</p>
-              <p>3 min walk from Omotesando Station (Metro)</p>
+              <h3>🚇 電車でのアクセス</h3>
+              <p>渋谷駅(JR/地下鉄)より徒歩5分</p>
+              <p>表参道駅(地下鉄)より徒歩3分</p>
             </div>
 
             <div className={styles['info-item']}>
-              <h3>🚗 Parking</h3>
-              <p>No dedicated parking available</p>
-              <p>Coin parking nearby (5 min walk)</p>
+              <h3>🚗 駐車場</h3>
+              <p>専用駐車場はございません</p>
+              <p>近隣にコインパーキングあり(徒歩5分)</p>
             </div>
           </motion.div>
 
           <motion.div className={styles['map-section']} {...fadeInUp}>
-            <h2>Map</h2>
+            <h2>地図</h2>
             <div className={styles['map-placeholder']}>
               🗺️
             </div>
@@ -71,7 +70,7 @@ const Access = () => {
         </div>
 
         <motion.div className={styles['photos-section']} {...fadeInUp}>
-          <h2>Our Café</h2>
+          <h2>店内の様子</h2>
           <div className={styles['photos-grid']}>
             <motion.div
               className={styles['photo-placeholder']}

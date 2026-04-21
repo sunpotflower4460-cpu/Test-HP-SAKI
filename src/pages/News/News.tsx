@@ -14,43 +14,43 @@ const News = () => {
     {
       id: 1,
       date: '2024.04.15',
-      title: 'Spring Seasonal Menu Now Available',
-      excerpt: 'Discover our new cherry blossom inspired drinks and desserts. Experience the delicate flavors of spring with our limited-time offerings, crafted to celebrate the season.',
+      title: '春季限定メニューのご案内',
+      excerpt: '桜をイメージした新作ドリンクとデザートが登場しました。春の訪れを感じる繊細な味わいを、期間限定でお楽しみください。',
       icon: '🌸'
     },
     {
       id: 2,
       date: '2024.04.08',
-      title: 'Extended Hours on Weekends',
-      excerpt: 'We are now open until 21:00 on Saturdays and Sundays to serve you better. Enjoy your favorite coffee and treats late into the evening.',
+      title: '週末の営業時間延長について',
+      excerpt: '土日祝日は21:00まで営業時間を延長いたします。夜遅くまで、お気に入りのコーヒーとともにゆったりとした時間をお過ごしください。',
       icon: '⏰'
     },
     {
       id: 3,
       date: '2024.04.01',
-      title: 'New Coffee Bean Collection',
-      excerpt: 'Introducing single-origin beans from Ethiopia and Colombia. Each coffee tells a unique story of its terroir and the farmers who cultivate it with care.',
+      title: '新入荷コーヒー豆のお知らせ',
+      excerpt: 'エチオピアとコロンビア産の単一農園豆を新たに取り扱い開始。それぞれのコーヒーが、産地と生産者の物語を伝えます。',
       icon: '☕'
     },
     {
       id: 4,
       date: '2024.03.25',
-      title: 'Barista Workshop This Weekend',
-      excerpt: 'Learn the art of coffee making from our expert baristas. Join us for a hands-on workshop covering espresso extraction, milk steaming, and latte art.',
+      title: 'バリスタワークショップ開催',
+      excerpt: '熟練バリスタから学ぶコーヒーの淹れ方。エスプレッソ抽出、ミルクスチーム、ラテアートまで、実践的なワークショップを開催します。',
       icon: '👨‍🍳'
     },
     {
       id: 5,
       date: '2024.03.18',
-      title: 'Sustainability Initiative Launch',
-      excerpt: 'We are proud to announce our new eco-friendly packaging and commitment to reducing waste. Together, we can make a difference for our planet.',
+      title: 'サステナビリティへの取り組み',
+      excerpt: '環境に配慮した新しいパッケージの導入と、廃棄物削減への取り組みを開始しました。共に地球のためにできることを。',
       icon: '🌱'
     },
     {
       id: 6,
       date: '2024.03.10',
-      title: 'Music Evening Series Begins',
-      excerpt: 'Join us every Friday evening for live acoustic performances. Enjoy great music with your favorite coffee in our cozy atmosphere.',
+      title: 'ミュージックイブニング開始',
+      excerpt: '毎週金曜日の夜、アコースティックライブを開催。心地よい音楽とお気に入りのコーヒーで、特別な夜をお過ごしください。',
       icon: '🎵'
     },
   ];
@@ -71,7 +71,7 @@ const News = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1>News & Updates</h1>
+          <h1>お知らせ</h1>
           <p className="section-subtitle">Stay Connected with Our Latest Stories</p>
         </motion.div>
 
