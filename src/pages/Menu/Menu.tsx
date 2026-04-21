@@ -12,23 +12,23 @@ interface MenuItem {
 }
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('すべて');
 
   const menuItems: MenuItem[] = [
-    { id: 1, name: 'Espresso', category: 'Coffee', description: 'Rich and bold Italian espresso with perfect crema', price: '¥480', icon: '☕' },
-    { id: 2, name: 'Americano', category: 'Coffee', description: 'Smooth espresso diluted with hot water', price: '¥520', icon: '☕' },
-    { id: 3, name: 'Cappuccino', category: 'Coffee', description: 'Velvety steamed milk with espresso and foam art', price: '¥580', icon: '🥛' },
-    { id: 4, name: 'Latte', category: 'Coffee', description: 'Creamy milk coffee with smooth espresso base', price: '¥580', icon: '🥛' },
-    { id: 5, name: 'Mocha', category: 'Coffee', description: 'Rich chocolate blended with espresso and milk', price: '¥620', icon: '🍫' },
-    { id: 6, name: 'Croissant', category: 'Dessert', description: 'Buttery, flaky French croissant baked fresh daily', price: '¥420', icon: '🥐' },
-    { id: 7, name: 'Chocolate Cake', category: 'Dessert', description: 'Decadent dark chocolate layered cake', price: '¥680', icon: '🍰' },
-    { id: 8, name: 'Tiramisu', category: 'Dessert', description: 'Classic Italian coffee-flavored dessert', price: '¥720', icon: '🍰' },
-    { id: 9, name: 'Cherry Blossom Latte', category: 'Seasonal', description: 'Spring special with sakura flavor and pink foam', price: '¥680', icon: '🌸' },
+    { id: 1, name: 'エスプレッソ', category: 'コーヒー', description: '深いコクと芳醇な香りが特徴の本格イタリアンエスプレッソ', price: '¥480', icon: '☕' },
+    { id: 2, name: 'アメリカーノ', category: 'コーヒー', description: 'エスプレッソにお湯を加えた、すっきりとした味わい', price: '¥520', icon: '☕' },
+    { id: 3, name: 'カプチーノ', category: 'コーヒー', description: 'なめらかなスチームミルクとエスプレッソのハーモニー', price: '¥580', icon: '🥛' },
+    { id: 4, name: 'カフェラテ', category: 'コーヒー', description: 'クリーミーなミルクとエスプレッソの優しい味わい', price: '¥580', icon: '🥛' },
+    { id: 5, name: 'カフェモカ', category: 'コーヒー', description: '濃厚なチョコレートとエスプレッソの贅沢な組み合わせ', price: '¥620', icon: '🍫' },
+    { id: 6, name: 'クロワッサン', category: 'デザート', description: 'バターの風味豊かな、毎朝焼き上げる自家製クロワッサン', price: '¥420', icon: '🥐' },
+    { id: 7, name: 'チョコレートケーキ', category: 'デザート', description: '濃厚なダークチョコレートの層が織りなす贅沢なケーキ', price: '¥680', icon: '🍰' },
+    { id: 8, name: 'ティラミス', category: 'デザート', description: 'イタリアの伝統的なコーヒー風味のデザート', price: '¥720', icon: '🍰' },
+    { id: 9, name: '桜ラテ', category: '季節限定', description: '春の訪れを感じる、桜フレーバーとピンクのフォームが美しい特別な一杯', price: '¥680', icon: '🌸' },
   ];
 
-  const categories = ['All', 'Coffee', 'Dessert', 'Seasonal'];
+  const categories = ['すべて', 'コーヒー', 'デザート', '季節限定'];
 
-  const filteredItems = activeCategory === 'All'
+  const filteredItems = activeCategory === 'すべて'
     ? menuItems
     : menuItems.filter(item => item.category === activeCategory);
 
@@ -48,7 +48,7 @@ const Menu = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1>Our Menu</h1>
+          <h1>メニュー</h1>
           <p className="section-subtitle">Crafted with Passion, Served with Love</p>
         </motion.div>
 

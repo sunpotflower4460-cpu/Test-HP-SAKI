@@ -20,12 +20,12 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/menu', label: 'Menu' },
-    { path: '/news', label: 'News' },
-    { path: '/about', label: 'About' },
-    { path: '/access', label: 'Access' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', label: 'ホーム' },
+    { path: '/menu', label: 'メニュー' },
+    { path: '/news', label: 'お知らせ' },
+    { path: '/about', label: '私たちについて' },
+    { path: '/access', label: 'アクセス' },
+    { path: '/contact', label: 'お問い合わせ' },
   ];
 
   return (
