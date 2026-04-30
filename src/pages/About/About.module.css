@@ -2,12 +2,6 @@
   padding-top: 2.4rem;
 }
 
-.backLink {
-  display: inline-flex;
-  margin-bottom: 1.8rem;
-  color: var(--color-text-soft);
-}
-
 .hero {
   display: grid;
   gap: 0.9rem;
@@ -27,6 +21,11 @@
   font-size: clamp(2.3rem, 5vw, 4rem);
 }
 
+.description {
+  max-width: 720px;
+  color: var(--color-text-muted);
+}
+
 .block {
   max-width: 940px;
   display: grid;
@@ -40,6 +39,11 @@
 
 .block p:last-child {
   color: var(--color-text-muted);
+  white-space: pre-line;
+}
+
+.block h2 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
 }
 
 .membersSection {

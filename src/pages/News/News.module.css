@@ -2,12 +2,6 @@
   padding-top: 2.4rem;
 }
 
-.backLink {
-  display: inline-flex;
-  margin-bottom: 1.8rem;
-  color: var(--color-text-soft);
-}
-
 .header {
   display: grid;
   gap: 0.85rem;

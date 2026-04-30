@@ -6,19 +6,23 @@ export interface NavItem {
 export interface WorkItem {
   id: string;
   title: string;
-  specs: string;
-  description: string;
+  players: string;
+  duration: string;
   status: string;
-  cta: string;
   image: string;
+  description: string;
+  link: string;
+  buttonLabel: string;
+  disabled?: boolean;
   accent: string;
 }
 
 export interface NewsItem {
   id: string;
   date: string;
+  label?: string;
   title: string;
-  isNew?: boolean;
+  body?: string;
 }
 
 export interface MemberItem {
@@ -26,6 +30,8 @@ export interface MemberItem {
   name: string;
   role: string;
   favorite: string;
+  image: string;
+  accent: string;
 }
 
 export interface SocialLink {
@@ -34,11 +40,19 @@ export interface SocialLink {
   href: string;
 }
 
-export const siteMeta = {
+export const siteInfo = {
   name: 'Liminarium Lab.',
-  nameJa: 'リミナリウムラボ',
+  kana: 'リミナリウムラボ',
+  description: '物語体験を制作する小さなラボ。',
   tagline: '物語の果てに、何が残るか。',
   copyright: '© 2026 Liminarium Lab. All rights reserved.',
+};
+
+export const siteMeta = {
+  name: siteInfo.name,
+  nameJa: siteInfo.kana,
+  tagline: siteInfo.tagline,
+  copyright: siteInfo.copyright,
 };
 
 export const desktopNavItems: NavItem[] = [
@@ -78,7 +92,7 @@ export const heroSlides: HeroSlide[] = [
     src: '/media/hero-01.jpg',
     title: '物語の果てに、',
     subtitle: '何が残るか。',
-    description: 'Liminarium Lab.',
+    description: siteMeta.name,
     alt: 'Liminarium Lab. main visual',
   },
   {
@@ -122,55 +136,119 @@ export const heroSlides: HeroSlide[] = [
 export const aboutPreview = {
   title: 'About us',
   body: `世界の境界は曖昧で、物語はいつもその隙間から始まります。
-${siteMeta.name} は、マーダーミステリーや物語体験を通じて、
-現実と虚構が交差する時間をつくる制作チームです。`,
+${siteInfo.name} は、マーダーミステリーや体験型作品を通じて、
+現実と虚構、推理と感情が交差する時間をつくる制作チームです。`,
   cta: 'もっと見る',
 };
 
 export const aboutPageSections = {
-  philosophy:
-    '輪郭の定まらない感情や沈黙の余韻にこそ、物語の真実が宿ると考えています。プレイヤーの選択と会話の積み重ねから、ひとりでは辿り着けない記憶の奥行きを立ち上げる。それがLiminarium Lab.の目指す体験です。',
-  activities:
-    '2025年、代表が新たにサークルを立ち上げ、UZUでの公開を目指してマーダーミステリー作品を制作中。さらに、推し活と推理を掛け合わせたアイドル×マダミスプロジェクトも進行中。',
+  philosophyTitle: `${siteInfo.name} 理念`,
+  philosophy: `世界の境界は曖昧で、物語はいつもその隙間から始まります。
+${siteInfo.name} は、マーダーミステリーや体験型作品を通じて、
+現実と虚構、推理と感情が交差する時間をつくる制作チームです。
+プレイヤーが物語の中で「誰か」になり、
+曖昧な世界の中で真実を探す。
+その体験が、参加した人自身の直感や記憶に小さな火を灯すような、
+そんな作品づくりを目指しています。`,
+  activitiesTitle: '活動内容',
+  activities: `2025年、代表が新たにサークルを立ち上げ、
+UZUでの公開を目指してマーダーミステリー作品を制作中。
+さらに、推し活と推理を掛け合わせたアイドル×マダミスプロジェクトも始動。
+マーダーミステリー作品の制作や楽曲制作など、
+物語と音楽が交差する企画を展開しています。`,
 };
+
+export const worksPageIntro =
+  '静かな緊張と余白のあるビジュアルを添えながら、公開準備中の作品や進行中の企画を一覧で見渡せる構成にしています。';
 
 export const works: WorkItem[] = [
   {
     id: 'work-01',
     title: '千草色に吹く 未完の詩',
-    specs: '6人 / 180分',
-    description: '推理×青春×アイドルをテーマにしたマーダーミステリー。きらめきと焦燥が交差する舞台裏で、未完成の想いが暴かれていきます。',
+    players: '6人',
+    duration: '180分',
     status: '制作中',
-    cta: '制作中',
     image: '/media/placeholder-work-01.svg',
-    accent: '#a98b5e',
+    description:
+      '推理×青春×アイドルをテーマにしたマーダーミステリー。デビューを控えた少女たちを襲う悲劇。彼女たちの運命の歯車が廻りだす…。',
+    link: '#',
+    buttonLabel: '特設サイトへ',
+    accent: '#b79a69',
   },
   {
     id: 'work-02',
     title: 'あったかくて、甘くて、潰れた',
-    specs: '6人 / 180分',
-    description: '屋敷に残された遺体と、謎の来訪者を巡る物語。やさしさの輪郭が壊れるとき、それでも守りたい秘密が残るのかを描きます。',
+    players: '6人',
+    duration: '180分',
     status: '制作中',
-    cta: '特設サイトへ',
     image: '/media/placeholder-work-02.svg',
+    description:
+      'とある屋敷にて。主人の遺体と謎の来訪者。それぞれの思惑が絡み合う。あなたはすべて解きほぐすことができるか。',
+    link: '#',
+    buttonLabel: '制作中',
+    disabled: true,
     accent: '#8f7651',
   },
 ];
 
-export const newsItems: NewsItem[] = [
-  { id: 'news-20260501', date: '2026/05/01', title: 'Liminarium Lab. サイト公開', isNew: true },
-  { id: 'news-20260412', date: '2026/04/12', title: 'Liminarium Lab. サイト制作決定' },
-  { id: 'news-20260328', date: '2026/03/28', title: 'アイドル×マダミス企画の世界観設計を開始' },
+export const members: MemberItem[] = [
+  {
+    id: 'member-01',
+    name: '葉宮よしの',
+    role: '制作・GMほか',
+    favorite: '好きな系統：ガチ推理系・SF',
+    image: '/media/member-01.jpg',
+    accent: '#b79a69',
+  },
+  {
+    id: 'member-02',
+    name: '三河柚',
+    role: '制作・イラスト',
+    favorite: '好きな系統：エモ系',
+    image: '/media/member-02.jpg',
+    accent: '#b08b73',
+  },
+  {
+    id: 'member-03',
+    name: 'もぶ',
+    role: '音楽',
+    favorite: '好きな系統：推理系',
+    image: '/media/member-03.jpg',
+    accent: '#8f7651',
+  },
+  {
+    id: 'member-04',
+    name: 'ヤッホー・ナーン',
+    role: '制作補助',
+    favorite: '好きな系統：島・屋敷系',
+    image: '/media/member-04.jpg',
+    accent: '#9d8b68',
+  },
 ];
 
-export const members: MemberItem[] = [
-  { id: 'member-01', name: '葉宮よしの', role: '制作・GM他', favorite: '好きな系統：ガチ推理系・SF' },
-  { id: 'member-02', name: '三河柚', role: '制作・イラスト', favorite: '好きな系統：エモ系' },
-  { id: 'member-03', name: 'もぶ', role: '音楽', favorite: '好きな系統：推理系' },
-  { id: 'member-04', name: 'ヤッホー・ナーン', role: '制作補助', favorite: '好きな系統：島・屋敷系' },
+export const newsItems: NewsItem[] = [
+  {
+    id: 'news-01',
+    date: '2026/05/dd',
+    label: 'NEW',
+    title: 'Liminarium Lab. サイト公開',
+    body: 'サイトを公開しました。',
+  },
+  {
+    id: 'news-02',
+    date: '2026/04/12',
+    title: 'Liminarium Lab. サイト制作決定',
+    body: 'ブランド全体の世界観と導線設計の整理を開始しました。',
+  },
+  {
+    id: 'news-03',
+    date: '2026/01/10',
+    title: 'アイドル×マダミスプロジェクト始動',
+    body: '推し活と推理が交差する新作プロジェクトの企画制作を進行しています。',
+  },
 ];
 
 export const socialLinks: SocialLink[] = [
   { label: 'X', description: 'お問い合わせはDMまで', href: '#' },
-  { label: 'YouTube', description: 'Youtubeはこちら', href: '#' },
+  { label: 'YouTube', description: '動画や告知を準備中', href: '#' },
 ];

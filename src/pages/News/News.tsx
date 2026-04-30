@@ -7,7 +7,7 @@ import { newsItems } from '../../data/siteData';
 const News = () => {
   return (
     <div className={`container ${styles.page}`}>
-      <Link to="/" className={styles.backLink}>← Homeへ戻る</Link>
+      <Link to="/" className="backLink">◀ 戻る</Link>
 
       <motion.section
         className={styles.header}
@@ -16,7 +16,7 @@ const News = () => {
         transition={{ duration: 0.45 }}
       >
         <p className={styles.label}>News</p>
-        <h1>最新情報</h1>
+        <h1>ニュース一覧</h1>
         <p className={styles.description}>制作の進行やサイト更新情報を、静かなトーンでまとめてお届けします。</p>
       </motion.section>
 
