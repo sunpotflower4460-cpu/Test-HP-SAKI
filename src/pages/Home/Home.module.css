@@ -97,8 +97,8 @@
 
   .sectionHeader h2 {
     max-width: 100%;
-    font-size: clamp(2.2rem, 10.5vw, 3rem);
-    line-height: 1.16;
+    font-size: clamp(2.05rem, 9.4vw, 2.72rem);
+    line-height: 1.18;
     overflow-wrap: anywhere;
   }
 
@@ -112,10 +112,24 @@
   }
 
   .previewGrid {
+    width: min(100%, 332px);
+    max-width: calc(100vw - 56px);
+    margin-inline: auto;
     gap: 1.25rem;
   }
 
   .previewAction .btn {
-    width: 100%;
+    width: min(100%, 332px);
+  }
+}
+
+@media (max-width: 390px) {
+  .previewGrid {
+    width: min(100%, 320px);
+    max-width: calc(100vw - 56px);
+  }
+
+  .previewAction .btn {
+    width: min(100%, 320px);
   }
 }
