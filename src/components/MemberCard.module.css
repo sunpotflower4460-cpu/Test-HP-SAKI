@@ -1,0 +1,40 @@
+.card {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding: 1.6rem 1.25rem;
+  border-radius: 26px;
+  border: 1px solid rgba(169, 139, 94, 0.18);
+  background: linear-gradient(180deg, rgba(16, 24, 42, 0.86), rgba(10, 17, 31, 0.96));
+  text-align: center;
+}
+
+.avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 30%, rgba(169, 139, 94, 0.45), rgba(169, 139, 94, 0.12));
+  border: 1px solid rgba(169, 139, 94, 0.28);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+}
+
+.body {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.body h3 {
+  font-size: 1.15rem;
+}
+
+.role {
+  color: var(--color-accent);
+}
+
+.favorite {
+  color: var(--color-text-muted);
+}
