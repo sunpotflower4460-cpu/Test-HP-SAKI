@@ -1,305 +1,234 @@
-# Maison du Café - Premium Coffee Brand Website
+# Liminarium Lab. — 公式サイト
 
-架空のカフェブランド「Maison du Café」の高品質なブランドサイトです。PC/タブレット/スマホ全対応、上品なアニメーション付きの作品紹介型サイトとして実装しています。
+マーダーミステリー制作ブランド「Liminarium Lab.」の公式ウェブサイトです。  
+Vite + React + TypeScript + CSS Modules で構築されています。
 
-## 🎯 プロジェクト概要
+---
 
-参考サイト（https://toudai-murder.studio.site/）の「構成の型」「見せ方の気持ちよさ」を参考に、独自のカフェブランドサイトとして完成させました。内容はすべてダミーデータですが、デザイン・体験・アニメーションの完成度を重視しています。
+## 🚀 セットアップ
 
-## 📱 実装済みページ
-
-### 必須ページ（全て完成）
-
-1. **Home** - トップページ（最重要）
-   - Hero セクション（大きなビジュアル、ブランド名、CTAボタン）
-   - Concept セクション（カフェの思想・紹介文）
-   - Featured Menu セクション（3つのおすすめメニューカード）
-   - News Preview セクション（最新のお知らせ3件）
-   - About Preview セクション（店の雰囲気紹介）
-   - Access Preview セクション（店舗情報の簡易表示）
-   - CTA セクション（コンタクトへの誘導）
-
-2. **Menu** - メニュー一覧
-   - カテゴリ切替UI（All / Coffee / Dessert / Seasonal）
-   - 各カードにhover演出
-   - レスポンシブグリッドレイアウト
-   - アニメーション付きフィルタリング
-
-3. **News** - お知らせ一覧
-   - 6件のニュース記事
-   - 日付付き縦並びリスト
-   - カード型レイアウト
-   - hover演出付き
-
-4. **About** - ブランド紹介
-   - ブランドストーリー
-   - 店の雰囲気・こだわり
-   - 4つのバリュー（Quality, Passion, Sustainability, Community）
-   - 画像とテキストの交互レイアウト
-
-5. **Access** - アクセス情報
-   - 住所・営業時間
-   - 連絡先情報
-   - 地図プレースホルダー
-   - 店舗写真プレースホルダー（3枚）
-
-6. **Contact** - お問い合わせ
-   - フォームUI（名前/メール/件名/内容）
-   - バリデーション付き
-   - 店舗情報の再掲
-   - レスポンシブ2カラムレイアウト
-
-## 🛠 使用技術・ライブラリ
-
-### コア技術
-- **Vite** - 高速ビルドツール
-- **React** 18.2.0 - UIライブラリ
-- **TypeScript** 5.2.2 - 型安全性
-
-### ルーティング・アニメーション
-- **React Router** 6.22.0 - ページ遷移
-- **Framer Motion** 11.0.0 - アニメーションライブラリ
-
-### スタイリング
-- **CSS Modules** - コンポーネント単位のスタイル管理
-- **Google Fonts** - Playfair Display（見出し）、Inter（本文）
-
-## ✨ 実装済みアニメーション
-
-### 必須アニメーション
-- ✅ カードのhover演出（浮く/拡大）
-- ✅ スクロール時のフェードイン（全セクション）
-- ✅ セクションごとのスライドイン
-- ✅ ボタンのhover演出
-- ✅ ヘッダーの固定表示とアニメーション
-- ✅ モバイルメニューの開閉アニメーション
-
-### 追加実装したアニメーション
-- ✅ Hero内テキストのstagger表示
-- ✅ ナビゲーションリンクのアンダーラインアニメーション
-- ✅ メニューのカテゴリ切替アニメーション
-- ✅ フォーム要素のフォーカスアニメーション
-
-## 📱 レスポンシブ対応
-
-### スマホ（〜768px）
-- ✅ ハンバーガーメニュー実装
-- ✅ Heroの文字サイズ最適化
-- ✅ カード1列表示
-- ✅ タッチしやすいCTAボタンサイズ
-- ✅ 適切な余白調整
-
-### タブレット（768px〜968px）
-- ✅ 2列グリッド自動調整
-- ✅ セクション間余白維持
-
-### PC（968px〜）
-- ✅ Hero表示の最適化
-- ✅ 横並びカードレイアウト
-- ✅ max-width管理（1400px）
-
-## 🚀 セットアップ・実行方法
-
-### 依存関係のインストール
 ```bash
 npm install
+npm run dev      # 開発サーバー起動（http://localhost:5173）
+npm run build    # プロダクションビルド（dist/ へ出力）
+npm run preview  # ビルド結果のプレビュー
 ```
 
-### 開発サーバー起動
-```bash
-npm run dev
-```
-ブラウザで http://localhost:5173 を開く
-
-### プロダクションビルド
-```bash
-npm run build
-```
-`dist/` フォルダに出力される
-
-### プレビュー
-```bash
-npm run preview
-```
+---
 
 ## 📂 プロジェクト構造
 
 ```
 Test-HP-SAKI/
 ├── public/
-│   └── vite.svg
+│   └── media/
+│       ├── hero/            # ヒーローカルーセル用画像・動画
+│       │   ├── hero-01.jpg
+│       │   ├── hero-02.jpg
+│       │   ├── hero-03.mp4
+│       │   ├── hero-03-poster.jpg
+│       │   ├── hero-04.jpg
+│       │   └── hero-05.jpg
+│       ├── works/           # 作品カード用画像
+│       │   ├── work-01.jpg
+│       │   └── work-02.jpg
+│       ├── members/         # メンバーアバター画像
+│       │   ├── member-01.jpg
+│       │   ├── member-02.jpg
+│       │   ├── member-03.jpg
+│       │   └── member-04.jpg
+│       ├── logo/            # ロゴ画像
+│       │   ├── logo.png
+│       │   └── logo-mark.png
+│       └── placeholders/    # フォールバック用プレースホルダー（SVG）
+│           ├── placeholder-hero.svg
+│           ├── placeholder-work.svg
+│           └── placeholder-member.svg
 ├── src/
 │   ├── components/
+│   │   ├── SafeImage.tsx        # 画像フォールバック共通コンポーネント
+│   │   ├── HeroCarousel.tsx     # ヒーローカルーセル（画像・動画混在）
+│   │   ├── WorkCard.tsx         # 作品カード
+│   │   ├── MemberCard.tsx       # メンバーカード
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
 │   │   └── Layout/
-│   │       ├── Header.tsx
-│   │       ├── Header.module.css
-│   │       ├── Footer.tsx
-│   │       ├── Footer.module.css
-│   │       └── Layout.tsx
-│   ├── pages/
-│   │   ├── Home/
-│   │   │   ├── Home.tsx
-│   │   │   └── Home.module.css
-│   │   ├── Menu/
-│   │   │   ├── Menu.tsx
-│   │   │   └── Menu.module.css
-│   │   ├── News/
-│   │   │   ├── News.tsx
-│   │   │   └── News.module.css
-│   │   ├── About/
-│   │   │   ├── About.tsx
-│   │   │   └── About.module.css
-│   │   ├── Access/
-│   │   │   ├── Access.tsx
-│   │   │   └── Access.module.css
-│   │   └── Contact/
-│   │       ├── Contact.tsx
-│   │       └── Contact.module.css
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   └── vite-env.d.ts
-├── index.html
-├── package.json
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.ts
+│   ├── data/
+│   │   └── siteData.ts          # 全素材パスとコンテンツの一元管理
+│   └── pages/
+│       ├── Home/
+│       ├── About/
+│       ├── Works/
+│       ├── News/
+│       ├── Menu/
+│       ├── Access/
+│       └── Contact/
+└── ...
 ```
 
-## 🎨 デザイン方針
+---
 
-### 配色
-- **背景**: `#faf8f5` (オフホワイト) / `#f5f1ed` (ウォームベージュ)
-- **テキスト**: `#2d2d2d` (チャコール) / `#6b6b6b` (ライトグレー)
-- **アクセント**: `#8b7355` (ミューテッドゴールド) / `#6b5840` (ダークブラウン)
-- **ボーダー**: `#e0ddd9`
+## 🖼 素材差し替えガイド
 
-### タイポグラフィ
-- **見出し**: Playfair Display（セリフ体、エレガント）
-- **本文**: Inter（サンセリフ、モダン）
+### 素材パスの管理場所
 
-### コンセプト
-- 上品で洗練された印象
-- 余白を広く取った読みやすいレイアウト
-- 画像（プレースホルダー）を大きく見せる
-- 情報密度を適切に保つ
+**すべての素材パスは `src/data/siteData.ts` で一元管理しています。**  
+差し替え時はこのファイルのパスを変更するだけで反映されます。
 
-## 🔄 本番データへの差し替え方法
+---
 
-### 1. テキストコンテンツ
-以下のファイル内のダミーテキストを実際の内容に置き換えてください：
-- `src/pages/Home/Home.tsx` - トップページの各セクション
-- `src/pages/Menu/Menu.tsx` - `menuItems` 配列
-- `src/pages/News/News.tsx` - `newsItems` 配列
-- `src/pages/About/About.tsx` - ストーリーとバリュー
-- `src/pages/Access/Access.tsx` - 店舗情報
-- `src/components/Layout/Footer.tsx` - フッター情報
+### ヒーローカルーセル画像・動画を差し替える
 
-### 2. 画像の差し替え
-現在は絵文字をプレースホルダーとして使用しています。実際の画像に差し替える場合：
+1. `public/media/hero/` に新しいファイルを配置する  
+   - 画像: `hero-01.jpg`〜`hero-05.jpg`（推奨サイズ: 1920×1080px）  
+   - 動画: `hero-03.mp4`（推奨: H.264, 720p〜1080p）  
+   - 動画ポスター: `hero-03-poster.jpg`（動画の最初のフレームを推奨）
+
+2. `src/data/siteData.ts` の `heroSlides` 配列を確認・更新する:
+
+```ts
+export const heroSlides: HeroSlide[] = [
+  {
+    id: 'hero-01',
+    type: 'image',                              // 'image' または 'video'
+    src: '/media/hero/hero-01.jpg',             // 実ファイルのパス
+    fallback: '/media/placeholders/placeholder-hero.svg',  // 読み込み失敗時のフォールバック
+    title: '物語の果てに、',
+    subtitle: '何が残るか。',
+    description: 'Liminarium Lab.',
+    alt: 'メインビジュアル',
+  },
+  // 動画スライドの例:
+  {
+    id: 'hero-03',
+    type: 'video',
+    src: '/media/hero/hero-03.mp4',
+    poster: '/media/hero/hero-03-poster.jpg',  // 動画読み込み前に表示する静止画
+    fallback: '/media/placeholders/placeholder-hero.svg',
+    title: '動き出す物語',
+    subtitle: '体感せよ。',
+    description: 'Movie',
+  },
+];
+```
+
+---
+
+### 作品（Works）画像を差し替える
+
+1. `public/media/works/` に `work-01.jpg`、`work-02.jpg` を配置する  
+   （推奨サイズ: 1200×720px、16:10 程度）
+
+2. `src/data/siteData.ts` の `works` 配列の `image` フィールドを確認する:
+
+```ts
+export const works: WorkItem[] = [
+  {
+    id: 'work-01',
+    image: '/media/works/work-01.jpg',          // ← 差し替え先パス
+    fallback: '/media/placeholders/placeholder-work.svg',
+    // ...
+  },
+];
+```
+
+---
+
+### メンバーアバター画像を差し替える
+
+1. `public/media/members/` に `member-01.jpg`〜`member-04.jpg` を配置する  
+   （推奨サイズ: 400×400px 正方形）
+
+2. `src/data/siteData.ts` の `members` 配列の `image` フィールドを確認する:
+
+```ts
+export const members: MemberItem[] = [
+  {
+    id: 'member-01',
+    image: '/media/members/member-01.jpg',      // ← 差し替え先パス
+    fallback: '/media/placeholders/placeholder-member.svg',
+    // ...
+  },
+];
+```
+
+---
+
+### ロゴ画像を追加する
+
+1. `public/media/logo/` に以下を配置する:
+   - `logo.png` — フルロゴ（横長）
+   - `logo-mark.png` — シンボルマーク（正方形）
+
+2. `src/data/siteData.ts` の `siteAssets` でパスが定義されています:
+
+```ts
+export const siteAssets = {
+  logo: '/media/logo/logo.png',
+  logoMark: '/media/logo/logo-mark.png',
+  logoFallback: '',
+};
+```
+
+Header などでロゴ画像を使いたい場合は `siteAssets.logo` を参照してください。
+
+---
+
+## 🛡 画像フォールバックの仕組み
+
+画像が未配置・読み込み失敗の場合でもレイアウトが崩れないよう、以下の仕組みを入れています。
+
+| コンポーネント | 仕組み |
+|---|---|
+| `HeroCarousel`（画像スライド） | `SafeImage` コンポーネントが `fallback` パスへ自動切り替え。両方失敗した場合はCSSグラデーション表示 |
+| `HeroCarousel`（動画スライド） | `poster` 属性で静止画を表示。動画ファイルがなくてもポスターが表示される |
+| `WorkCard` | 隠し `<img>` で読み込みエラーを検知し `fallback` パスに切り替え。CSS グラデーションが常に背景に適用 |
+| `MemberCard` | `WorkCard` と同様のフォールバック処理。画像失敗時は初期文字＋グラデーションを表示 |
+
+### SafeImage コンポーネント
+
 ```tsx
-// 現在
-<div className={styles['menu-card-image']}>☕</div>
+import SafeImage from '../components/SafeImage';
 
-// 差し替え後
-<img src="/images/coffee.jpg" alt="Coffee" className={styles['menu-card-image']} />
+<SafeImage
+  src="/media/hero/hero-01.jpg"
+  fallback="/media/placeholders/placeholder-hero.svg"
+  alt="メインビジュアル"
+  className={styles.media}
+  loading="lazy"
+/>
 ```
 
-画像は `public/images/` フォルダに配置することを推奨します。
+---
 
-### 3. ブランド名の変更
-以下の箇所でブランド名 "Maison du Café" を検索し、置き換えてください：
-- `index.html` - `<title>`タグ
-- `src/components/Layout/Header.tsx` - ロゴ
-- `src/components/Layout/Footer.tsx` - フッター
-- `src/pages/Home/Home.tsx` - Hero セクション
+## 🎬 動画について（スマホ対応）
 
-### 4. カラースキームのカスタマイズ
-`src/index.css` のCSS変数を変更することで、サイト全体の配色を変更できます：
-```css
-:root {
-  --color-bg: #faf8f5;
-  --color-accent: #8b7355;
-  /* 他の色変数 */
-}
-```
+動画スライドはスマホでも安全に動作するよう、以下の設定になっています:
 
-### 5. フォントの変更
-`index.html` のGoogle Fontsリンクと、`src/index.css` のフォント変数を変更してください。
+- `muted` — 自動再生に必須
+- `playsInline` — iOS Safari でインライン再生（全画面にならない）
+- `loop` — ループ再生
+- `preload="metadata"` — メタデータのみ先読み（全体をダウンロードしない）
+- `poster` — 動画読み込み前に表示する静止画
 
-## 🌐 デプロイ方法
+動画が重い場合は、スマホ向けに低解像度版（480p）を別途用意することを推奨します。
 
-### Vercel
-```bash
-# Vercel CLIをインストール
-npm i -g vercel
+---
 
-# デプロイ
-vercel
-```
+## 🛠 使用技術
 
-### Netlify
-```bash
-# ビルド
-npm run build
+| ツール | バージョン |
+|---|---|
+| Vite | ^5.1.0 |
+| React | ^18.2.0 |
+| TypeScript | ^5.2.2 |
+| React Router | ^6.22.0 |
+| Framer Motion | ^11.0.0 |
+| CSS Modules | — |
 
-# dist/ フォルダをNetlifyにドラッグ&ドロップ
-```
-
-### GitHub Pages
-```bash
-# ビルド
-npm run build
-
-# gh-pagesブランチにデプロイ
-npm install -g gh-pages
-gh-pages -d dist
-```
-
-## 📝 レスポンシブで気をつけた点
-
-1. **ブレイクポイント管理**
-   - スマホ: 〜768px
-   - タブレット: 768px〜968px
-   - PC: 968px〜
-
-2. **フレキシブルグリッド**
-   - `grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))`
-   - 画面幅に応じて自動調整
-
-3. **タッチターゲット**
-   - ボタンとリンクは最低44x44pxを確保
-   - スマホでタップしやすいサイズ
-
-4. **モバイルメニュー**
-   - 固定ポジション
-   - スムーズな開閉アニメーション
-   - 背景のオーバーレイ
-
-5. **画像とテキストのリフロー**
-   - 2カラムレイアウトをスマホで1カラムに自動変換
-   - `direction: rtl` を使った順序制御
-
-## 🎯 完成度チェックリスト
-
-- ✅ npm install が通る
-- ✅ npm run dev が通る
-- ✅ npm run build が通る
-- ✅ Homeページが完成している
-- ✅ 全6ページが実装済み
-- ✅ ページ間遷移が動作する
-- ✅ スマホ表示で崩れない
-- ✅ hover アニメーションがある
-- ✅ スクロールアニメーションがある
-- ✅ ハンバーガーメニューが動作する
-- ✅ レスポンシブ対応完了
+---
 
 ## 📄 ライセンス
 
-このプロジェクトはデモ・学習目的で作成されたものです。
+このプロジェクトはデモ・開発目的で作成されたものです。
 
-## 🙏 クレジット
-
-- フォント: [Google Fonts](https://fonts.google.com/)
-- アニメーション: [Framer Motion](https://www.framer.com/motion/)
-- ビルドツール: [Vite](https://vitejs.dev/)

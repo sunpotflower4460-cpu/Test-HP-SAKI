@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './WorkCard.module.css';
 import { WorkItem } from '../data/siteData';
@@ -9,6 +10,18 @@ interface WorkCardProps {
 }
 
 const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
+  const [imgSrc, setImgSrc] = useState(work.image);
+
+  useEffect(() => {
+    setImgSrc(work.image);
+  }, [work.image]);
+
+  const handleImgError = () => {
+    if (imgSrc !== work.fallback) {
+      setImgSrc(work.fallback);
+    }
+  };
+
   return (
     <motion.article
       className={`${styles.card} ${layout === 'preview' ? styles.preview : styles.full}`}
@@ -19,9 +32,16 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
       <div
         className={styles.image}
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(6, 11, 21, 0.12), rgba(6, 11, 21, 0.7)), url(${work.image})`,
+          backgroundImage: `linear-gradient(180deg, rgba(6, 11, 21, 0.12), rgba(6, 11, 21, 0.7)), url(${imgSrc})`,
         }}
       >
+        <img
+          src={imgSrc}
+          alt=""
+          aria-hidden={true}
+          style={{ display: 'none' }}
+          onError={handleImgError}
+        />
         <span>{work.status}</span>
       </div>
       <div className={styles.content}>

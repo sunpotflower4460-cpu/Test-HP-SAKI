@@ -10,6 +10,7 @@ export interface WorkItem {
   duration: string;
   status: string;
   image: string;
+  fallback: string;
   description: string;
   link: string;
   buttonLabel: string;
@@ -31,6 +32,7 @@ export interface MemberItem {
   role: string;
   favorite: string;
   image: string;
+  fallback: string;
   accent: string;
 }
 
@@ -79,6 +81,7 @@ export type HeroSlide = {
   type: 'image' | 'video';
   src: string;
   poster?: string;
+  fallback: string;
   title: string;
   subtitle?: string;
   description?: string;
@@ -89,7 +92,8 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 'hero-01',
     type: 'image',
-    src: '/media/hero-01.jpg',
+    src: '/media/hero/hero-01.jpg',
+    fallback: '/media/placeholders/placeholder-hero.svg',
     title: '物語の果てに、',
     subtitle: '何が残るか。',
     description: siteMeta.name,
@@ -98,7 +102,8 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 'hero-02',
     type: 'image',
-    src: '/media/hero-02.jpg',
+    src: '/media/hero/hero-02.jpg',
+    fallback: '/media/placeholders/placeholder-hero.svg',
     title: '境界の向こうで',
     subtitle: '真実が揺れる。',
     description: 'Works',
@@ -107,16 +112,19 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 'hero-03',
     type: 'video',
-    src: '/media/hero-03.mp4',
-    poster: '/media/hero-03-poster.jpg',
+    src: '/media/hero/hero-03.mp4',
+    poster: '/media/hero/hero-03-poster.jpg',
+    fallback: '/media/placeholders/placeholder-hero.svg',
     title: '動き出す物語',
     subtitle: '体感せよ。',
     description: 'Movie',
+    alt: '動画スライド',
   },
   {
     id: 'hero-04',
     type: 'image',
-    src: '/media/hero-04.jpg',
+    src: '/media/hero/hero-04.jpg',
+    fallback: '/media/placeholders/placeholder-hero.svg',
     title: '静かな緊張と',
     subtitle: '余白の中に。',
     description: '千草色に吹く 未完の詩',
@@ -125,7 +133,8 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 'hero-05',
     type: 'image',
-    src: '/media/hero-05.jpg',
+    src: '/media/hero/hero-05.jpg',
+    fallback: '/media/placeholders/placeholder-hero.svg',
     title: 'やさしさの輪郭が',
     subtitle: '壊れるとき。',
     description: 'あったかくて、甘くて、潰れた',
@@ -168,7 +177,8 @@ export const works: WorkItem[] = [
     players: '6人',
     duration: '180分',
     status: '制作中',
-    image: '/media/placeholder-work-01.svg',
+    image: '/media/works/work-01.jpg',
+    fallback: '/media/placeholders/placeholder-work.svg',
     description:
       '推理×青春×アイドルをテーマにしたマーダーミステリー。デビューを控えた少女たちを襲う悲劇。彼女たちの運命の歯車が廻りだす…。',
     link: '#',
@@ -181,7 +191,8 @@ export const works: WorkItem[] = [
     players: '6人',
     duration: '180分',
     status: '制作中',
-    image: '/media/placeholder-work-02.svg',
+    image: '/media/works/work-02.jpg',
+    fallback: '/media/placeholders/placeholder-work.svg',
     description:
       'とある屋敷にて。主人の遺体と謎の来訪者。それぞれの思惑が絡み合う。あなたはすべて解きほぐすことができるか。',
     link: '#',
@@ -197,7 +208,8 @@ export const members: MemberItem[] = [
     name: '葉宮よしの',
     role: '制作・GMほか',
     favorite: '好きな系統：ガチ推理系・SF',
-    image: '/media/member-01.jpg',
+    image: '/media/members/member-01.jpg',
+    fallback: '/media/placeholders/placeholder-member.svg',
     accent: '#b79a69',
   },
   {
@@ -205,7 +217,8 @@ export const members: MemberItem[] = [
     name: '三河柚',
     role: '制作・イラスト',
     favorite: '好きな系統：エモ系',
-    image: '/media/member-02.jpg',
+    image: '/media/members/member-02.jpg',
+    fallback: '/media/placeholders/placeholder-member.svg',
     accent: '#b08b73',
   },
   {
@@ -213,7 +226,8 @@ export const members: MemberItem[] = [
     name: 'もぶ',
     role: '音楽',
     favorite: '好きな系統：推理系',
-    image: '/media/member-03.jpg',
+    image: '/media/members/member-03.jpg',
+    fallback: '/media/placeholders/placeholder-member.svg',
     accent: '#8f7651',
   },
   {
@@ -221,7 +235,8 @@ export const members: MemberItem[] = [
     name: 'ヤッホー・ナーン',
     role: '制作補助',
     favorite: '好きな系統：島・屋敷系',
-    image: '/media/member-04.jpg',
+    image: '/media/members/member-04.jpg',
+    fallback: '/media/placeholders/placeholder-member.svg',
     accent: '#9d8b68',
   },
 ];
@@ -252,3 +267,9 @@ export const socialLinks: SocialLink[] = [
   { label: 'X', description: 'お問い合わせはDMまで', href: '#' },
   { label: 'YouTube', description: '動画や告知を準備中', href: '#' },
 ];
+
+export const siteAssets = {
+  logo: '/media/logo/logo.png',
+  logoMark: '/media/logo/logo-mark.png',
+  logoFallback: '/media/placeholders/placeholder-hero.svg',
+};

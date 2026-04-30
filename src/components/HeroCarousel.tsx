@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { heroSlides } from '../data/siteData';
+import SafeImage from './SafeImage';
 import styles from './HeroCarousel.module.css';
 
 const AUTOPLAY_INTERVAL = 5000;
@@ -65,8 +66,9 @@ const HeroCarousel = () => {
                 aria-hidden={i !== current}
               >
                 {slide.type === 'image' ? (
-                  <img
+                  <SafeImage
                     src={slide.src}
+                    fallback={slide.fallback}
                     alt={slide.alt ?? slide.title}
                     className={styles.media}
                     loading={i === 0 ? 'eager' : 'lazy'}
@@ -80,7 +82,8 @@ const HeroCarousel = () => {
                     muted
                     playsInline
                     loop
-                    poster={slide.poster}
+                    preload="metadata"
+                    poster={slide.poster ?? slide.fallback}
                     aria-label={slide.alt ?? slide.title}
                   >
                     <source src={slide.src} type="video/mp4" />
