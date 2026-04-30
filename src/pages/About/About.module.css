@@ -17,7 +17,6 @@
 }
 
 .hero h1 {
-  max-width: 880px;
   font-size: clamp(2.6rem, 5vw, 4.2rem);
 }
 
@@ -27,7 +26,6 @@
 }
 
 .block {
-  max-width: 980px;
   display: grid;
   gap: 1rem;
   margin-top: 1.8rem;

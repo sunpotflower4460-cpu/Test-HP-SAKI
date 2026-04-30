@@ -21,8 +21,8 @@
 .card::before {
   content: '';
   position: absolute;
-  inset: 12px 12px -12px -12px;
-  border-radius: 26px;
+  inset: -8px;
+  border-radius: 32px;
   border: 1px solid color-mix(in srgb, var(--member-accent) 22%, transparent);
   pointer-events: none;
 }
@@ -79,6 +79,6 @@
   }
 
   .card::before {
-    inset: 10px 10px -10px -10px;
+    inset: -6px;
   }
 }
