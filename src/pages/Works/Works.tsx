@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import WorkCard from '../../components/WorkCard';
 import styles from './Works.module.css';
-import { works } from '../../data/siteData';
+import { works, worksPageIntro } from '../../data/siteData';
 
 const Works = () => {
   return (
     <div className={`container ${styles.page}`}>
-      <Link to="/" className={styles.backLink}>← Homeへ戻る</Link>
+      <Link to="/" className="backLink">◀ 戻る</Link>
 
       <motion.section
         className={styles.header}
@@ -17,7 +17,7 @@ const Works = () => {
       >
         <p className={styles.label}>Works</p>
         <h1>作品一覧</h1>
-        <p className={styles.description}>大型カルーセルや個別特設サイトへつなげやすいよう、カード主体の一覧基盤を整えています。</p>
+        <p className={styles.description}>{worksPageIntro}</p>
       </motion.section>
 
       <div className={styles.grid}>

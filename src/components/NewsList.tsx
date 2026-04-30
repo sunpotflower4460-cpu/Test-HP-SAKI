@@ -4,14 +4,16 @@ import { NewsItem } from '../data/siteData';
 
 interface NewsListProps {
   items: NewsItem[];
+  limit?: number;
 }
 
-const NewsList = ({ items }: NewsListProps) => {
+const NewsList = ({ items, limit }: NewsListProps) => {
   const sortedItems = [...items].sort((a, b) => b.date.localeCompare(a.date));
+  const visibleItems = typeof limit === 'number' ? sortedItems.slice(0, limit) : sortedItems;
 
   return (
     <div className={styles.list}>
-      {sortedItems.map((item, index) => (
+      {visibleItems.map((item, index) => (
         <motion.article
           key={item.id}
           className={styles.item}
@@ -22,9 +24,12 @@ const NewsList = ({ items }: NewsListProps) => {
         >
           <div className={styles.meta}>
             <time>{item.date}</time>
-            {item.isNew ? <span className={styles.badge}>NEW</span> : null}
+            {item.label ? <span className={styles.badge}>{item.label}</span> : null}
           </div>
-          <p className={styles.title}>{item.title}</p>
+          <div className={styles.content}>
+            <p className={styles.title}>{item.title}</p>
+            {item.body ? <p className={styles.body}>{item.body}</p> : null}
+          </div>
         </motion.article>
       ))}
     </div>
