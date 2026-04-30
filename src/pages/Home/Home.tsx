@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import HeroPlaceholder from '../../components/HeroPlaceholder';
+import HeroCarousel from '../../components/HeroCarousel';
 import NewsList from '../../components/NewsList';
 import WorkCard from '../../components/WorkCard';
 import styles from './Home.module.css';
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className={styles.page}>
       <div className="container">
-        <HeroPlaceholder />
+        <HeroCarousel />
 
         <motion.section className={styles.section} {...sectionMotion}>
           <div className={styles.sectionHeader}>

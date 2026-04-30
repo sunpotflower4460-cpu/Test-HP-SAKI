@@ -60,6 +60,65 @@ export const heroPlaceholder = {
     '静かな緊張と余白の中に、物語体験のための大型ビジュアルを置く予定地。次のPhaseで動画・画像混在カルーセルへ拡張できる構成です。',
 };
 
+export type HeroSlide = {
+  id: string;
+  type: 'image' | 'video';
+  src: string;
+  poster?: string;
+  title: string;
+  subtitle?: string;
+  description?: string;
+  alt?: string;
+};
+
+export const heroSlides: HeroSlide[] = [
+  {
+    id: 'hero-01',
+    type: 'image',
+    src: '/media/hero-01.jpg',
+    title: '物語の果てに、',
+    subtitle: '何が残るか。',
+    description: 'Liminarium Lab.',
+    alt: 'Liminarium Lab. main visual',
+  },
+  {
+    id: 'hero-02',
+    type: 'image',
+    src: '/media/hero-02.jpg',
+    title: '境界の向こうで',
+    subtitle: '真実が揺れる。',
+    description: 'Works',
+    alt: 'Works visual',
+  },
+  {
+    id: 'hero-03',
+    type: 'video',
+    src: '/media/hero-03.mp4',
+    poster: '/media/hero-03-poster.jpg',
+    title: '動き出す物語',
+    subtitle: '体感せよ。',
+    description: 'Movie',
+  },
+  {
+    id: 'hero-04',
+    type: 'image',
+    src: '/media/hero-04.jpg',
+    title: '静かな緊張と',
+    subtitle: '余白の中に。',
+    description: '千草色に吹く 未完の詩',
+    alt: 'Work 01 visual',
+  },
+  {
+    id: 'hero-05',
+    type: 'image',
+    src: '/media/hero-05.jpg',
+    title: 'やさしさの輪郭が',
+    subtitle: '壊れるとき。',
+    description: 'あったかくて、甘くて、潰れた',
+    alt: 'Work 02 visual',
+  },
+];
+
 export const aboutPreview = {
   title: 'About us',
   body: `世界の境界は曖昧で、物語はいつもその隙間から始まります。
