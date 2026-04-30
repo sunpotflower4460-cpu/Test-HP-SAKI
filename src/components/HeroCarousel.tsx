@@ -41,6 +41,7 @@ const HeroCarousel = () => {
   }, []);
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === 'touch') return;
     dragStartX.current = event.clientX;
     setIsDragging(true);
     setPaused(true);
