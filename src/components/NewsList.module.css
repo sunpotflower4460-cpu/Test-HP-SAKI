@@ -55,8 +55,23 @@
 }
 
 @media (max-width: 768px) {
+  .list {
+    padding-left: clamp(0.45rem, 2.6vw, 0.9rem);
+  }
+
   .item {
     grid-template-columns: 1fr;
     gap: 0.55rem;
+    padding: 1.35rem 0 1.35rem clamp(0.15rem, 1.4vw, 0.45rem);
+  }
+
+  .title {
+    font-size: clamp(1.04rem, 4.8vw, 1.22rem);
+    line-height: 1.65;
+  }
+
+  .body {
+    font-size: 0.94rem;
+    line-height: 1.9;
   }
 }
