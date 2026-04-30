@@ -1,59 +1,50 @@
 /* ─── Carousel wrapper ───────────────────────────────────────────── */
 .carousel {
-  padding-top: 1rem;
-  padding-bottom: 3.2rem; /* room for dots */
+  padding-top: clamp(0.75rem, 1.8vw, 1.5rem);
+  padding-bottom: 3rem;
+  overflow: clip;
 }
 
-/* ─── Viewport + nav buttons container ──────────────────────────── */
 .viewportWrap {
   position: relative;
 }
 
 .viewport {
   overflow: hidden;
+  padding-inline: 0.25rem;
 }
 
-/* ─── Sliding track ──────────────────────────────────────────────── */
-/*
-  Desktop formula:
-    slide width  = 78%  of viewport
-    inter-slide gap = 20px
-    initial centering offset = (100% - 78%) / 2 = 11%
-    per-slide stride = 78% + 20px
-
-  So:  translateX(calc(11% - var(--carousel-index) * (78% + 20px)))
-*/
 .track {
   display: flex;
-  gap: 20px;
-  transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
-  transform: translateX(calc(11% - var(--carousel-index, 0) * (78% + 20px)));
+  gap: 24px;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(calc(12% - var(--carousel-index, 0) * (76% + 24px)));
   will-change: transform;
 }
 
-/* ─── Individual slide ───────────────────────────────────────────── */
 .slide {
-  flex: 0 0 78%;
+  flex: 0 0 76%;
   position: relative;
-  min-height: 560px;
-  border-radius: 28px;
+  min-height: clamp(440px, 46vw, 540px);
+  border-radius: 30px;
   overflow: hidden;
   background:
-    radial-gradient(circle at top left, rgba(169, 139, 94, 0.22), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(83, 103, 138, 0.28), transparent 36%),
-    linear-gradient(135deg, rgba(10, 17, 34, 0.98), rgba(20, 32, 56, 0.95));
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+    radial-gradient(circle at top left, rgba(201, 169, 106, 0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(70, 85, 120, 0.22), transparent 36%),
+    linear-gradient(135deg, rgba(10, 12, 22, 0.98), rgba(17, 22, 36, 0.96));
+  border: 1px solid rgba(201, 169, 106, 0.18);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
   transform: scale(0.94);
-  opacity: 0.55;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.42;
+  transition: transform 0.55s ease, opacity 0.55s ease, border-color 0.55s ease;
 }
 
 .slideActive {
   transform: scale(1);
   opacity: 1;
+  border-color: rgba(201, 169, 106, 0.34);
 }
 
-/* ─── Media (img / video) ────────────────────────────────────────── */
 .media {
   position: absolute;
   inset: 0;
@@ -62,98 +53,103 @@
   object-fit: cover;
 }
 
-/* ─── Gradient overlay (keeps text readable over any media) ─────── */
 .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(6, 11, 22, 0.88) 0%,
-    rgba(6, 11, 22, 0.35) 42%,
-    transparent 68%
+    rgba(7, 9, 17, 0.92) 0%,
+    rgba(7, 9, 17, 0.58) 38%,
+    rgba(7, 9, 17, 0.2) 62%,
+    transparent 76%
   );
   z-index: 1;
 }
 
-/* ─── Copy block ─────────────────────────────────────────────────── */
 .copy {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 2;
-  padding: 2.8rem 3rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  max-width: 72%;
 }
 
 .copyEyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.2em;
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
 }
 
 .copyTitle {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
   line-height: 1.12;
   color: var(--color-text);
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
 }
 
 .copySubtitle {
-  margin-top: 0.75rem;
+  margin-top: 0.9rem;
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
   color: var(--color-text-soft);
 }
 
-/* ─── Navigation buttons ─────────────────────────────────────────── */
 .navBtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   border-radius: 999px;
-  border: 1px solid rgba(169, 139, 94, 0.32);
-  background: rgba(7, 12, 24, 0.55);
+  border: 1px solid rgba(201, 169, 106, 0.48);
+  background: rgba(9, 10, 20, 0.56);
   color: var(--color-text);
   font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--transition), border-color var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
   backdrop-filter: blur(8px);
 }
 
 .navBtn:hover {
-  background: rgba(169, 139, 94, 0.22);
-  border-color: rgba(169, 139, 94, 0.62);
+  background: rgba(201, 169, 106, 0.18);
+  border-color: rgba(201, 169, 106, 0.72);
+  transform: translateY(-50%) scale(1.04);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
 }
 
 .navPrev {
-  left: 1.2rem;
+  left: 1rem;
 }
 
 .navNext {
-  right: 1.2rem;
+  right: 1rem;
 }
 
-/* ─── Dot indicators ─────────────────────────────────────────────── */
 .dots {
   display: flex;
-  gap: 0.55rem;
+  gap: 0.65rem;
   align-items: center;
   justify-content: center;
-  margin-top: 1.2rem;
+  margin-top: 1.35rem;
 }
 
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: rgba(234, 238, 246, 0.24);
+  background: rgba(243, 240, 234, 0.22);
   transition: width var(--transition), background var(--transition);
   padding: 0;
 }
@@ -163,15 +159,27 @@
   background: var(--color-accent);
 }
 
-/* ─── Tablet ─────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .slide {
-    min-height: 460px;
+    flex-basis: 82%;
+    min-height: 420px;
+  }
+
+  .track {
+    transform: translateX(calc(9% - var(--carousel-index, 0) * (82% + 24px)));
+  }
+
+  .copy {
+    max-width: 82%;
   }
 }
 
-/* ─── Mobile: full-width, no peek ───────────────────────────────── */
 @media (max-width: 640px) {
+  .carousel {
+    padding-top: 0.5rem;
+    padding-bottom: 2.3rem;
+  }
+
   .track {
     gap: 0;
     transform: translateX(calc(-1 * var(--carousel-index, 0) * 100%));
@@ -179,11 +187,20 @@
 
   .slide {
     flex: 0 0 100%;
-    min-height: 400px;
-    border-radius: 20px;
-    /* Remove scale/opacity effect — all slides are same size on mobile */
+    min-height: clamp(220px, 64vw, 280px);
+    border-radius: 24px;
     transform: none !important;
     opacity: 1 !important;
+  }
+
+  .viewport {
+    padding-inline: 0;
+  }
+
+  .navBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
   }
 
   .navPrev {
@@ -195,6 +212,20 @@
   }
 
   .copy {
-    padding: 1.8rem 1.4rem;
+    max-width: 100%;
+    padding: 1.2rem 1.2rem 1.35rem;
+  }
+
+  .copyEyebrow {
+    margin-bottom: 0.45rem;
+  }
+
+  .copyTitle {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+  }
+
+  .copySubtitle {
+    margin-top: 0.45rem;
+    font-size: 1rem;
   }
 }
