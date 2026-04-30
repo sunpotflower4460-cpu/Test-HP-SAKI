@@ -10,7 +10,7 @@ interface WorkCardProps {
 const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
   return (
     <motion.article
-      className={`${styles.card} ${layout === 'preview' ? styles.preview : styles.full}` }
+      className={`${styles.card} ${layout === 'preview' ? styles.preview : styles.full}`}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25 }}
     >

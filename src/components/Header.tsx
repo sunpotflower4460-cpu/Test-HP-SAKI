@@ -38,7 +38,7 @@ const Header = () => {
             <NavLink
               key={item.path}
               to={item.path}
-              className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
+              className={({ isActive }) => `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
             >
               {item.label}
             </NavLink>
@@ -47,7 +47,7 @@ const Header = () => {
 
         <button
           type="button"
-          className={`${styles.menuButton} ${isMenuOpen ? styles.menuButtonOpen : ''}`}
+          className={`${styles.menuButton} ${isMenuOpen ? styles['menu-button-open'] : ''}`}
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-label="メニューを開閉"
           aria-expanded={isMenuOpen}
@@ -87,7 +87,9 @@ const Header = () => {
                   <NavLink
                     key={item.path}
                     to={item.path}
-                    className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.active : ''}`}
+                    className={({ isActive }) =>
+                      `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`
+                    }
                   >
                     {item.label}
                   </NavLink>
