@@ -1,15 +1,18 @@
 .page {
   padding-top: clamp(0.8rem, 2vw, 1.5rem);
+  overflow-x: hidden;
 }
 
 .section {
   margin-top: var(--section-space);
+  min-width: 0;
 }
 
 .sectionHeader {
   display: grid;
   gap: 0.95rem;
   margin-bottom: clamp(2rem, 4vw, 3rem);
+  min-width: 0;
 }
 
 .sectionLabel {
@@ -20,7 +23,10 @@
 }
 
 .sectionHeader h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  max-width: 12em;
+  font-size: clamp(2.4rem, 4.4vw, 3.75rem);
+  line-height: 1.14;
+  text-wrap: balance;
 }
 
 .headerRow {
@@ -59,6 +65,15 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.8rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (min-width: 1200px) {
+  .sectionHeader h2 {
+    max-width: 13em;
+  }
 }
 
 @media (max-width: 900px) {
@@ -76,9 +91,28 @@
     margin-top: clamp(3.5rem, 14vw, 5rem);
   }
 
+  .sectionHeader {
+    margin-bottom: 1.65rem;
+  }
+
+  .sectionHeader h2 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 10.5vw, 3rem);
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
   .aboutPanel {
-    padding: 1.6rem;
+    padding: 1.4rem;
     border-radius: 26px;
+  }
+
+  .aboutPanel p {
+    max-width: 100%;
+  }
+
+  .previewGrid {
+    gap: 1.25rem;
   }
 
   .previewAction .btn {
