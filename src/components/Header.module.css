@@ -125,9 +125,10 @@
 
 .mobilePanel {
   position: fixed;
-  top: calc(100% + 0.65rem);
+  top: calc(88px + 0.7rem);
   right: 24px;
   width: min(88vw, 380px);
+  max-height: calc(100dvh - 112px);
   padding: 1.15rem;
   background:
     radial-gradient(circle at top right, rgba(201, 169, 106, 0.12), transparent 34%),
@@ -136,7 +137,8 @@
   border-radius: 28px;
   box-shadow: -14px 24px 54px rgba(0, 0, 0, 0.42);
   z-index: 120;
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobilePanelHeader {
