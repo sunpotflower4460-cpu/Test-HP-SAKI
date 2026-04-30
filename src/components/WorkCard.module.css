@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  box-sizing: border-box;
   padding: 1.5rem;
   border-radius: 30px;
   border: 1px solid color-mix(in srgb, var(--work-accent) 32%, transparent);
@@ -33,7 +34,10 @@
 }
 
 .image {
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
+  box-sizing: border-box;
   min-height: 240px;
   height: 100%;
   border-radius: 24px;
@@ -44,6 +48,7 @@
   align-items: end;
   padding: 1.2rem;
   aspect-ratio: 16 / 10;
+  overflow: hidden;
 }
 
 .image span {
@@ -157,6 +162,12 @@
   .card {
     padding: 1rem;
     border-radius: 24px;
+  }
+
+  .preview .image {
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    margin-inline: auto;
   }
 
   .image {
