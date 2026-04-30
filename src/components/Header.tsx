@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './Header.module.css';
-import { desktopNavItems, mobileNavItems, siteMeta } from '../data/siteData';
+import { desktopNavItems, mobileNavItems, siteInfo, siteMeta, socialLinks } from '../data/siteData';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,16 +72,29 @@ const Header = () => {
             <motion.nav
               id="mobile-menu"
               className={styles.mobilePanel}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 40 }}
-              transition={{ duration: 0.25 }}
+              initial={{ opacity: 0, y: -12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -12, scale: 0.98 }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               aria-label="Mobile navigation"
             >
               <div className={styles.mobilePanelHeader}>
-                <span className={styles.mobileEyebrow}>Navigation</span>
-                <span className={styles.mobileBrand}>{siteMeta.name}</span>
+                <div>
+                  <span className={styles.mobileEyebrow}>Menu</span>
+                  <span className={styles.mobileBrand}>{siteMeta.name}</span>
+                </div>
+                <button
+                  type="button"
+                  className={styles.closeButton}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label="メニューを閉じる"
+                >
+                  ×
+                </button>
               </div>
+
+              <p className={styles.mobileIntro}>{siteInfo.tagline}</p>
+
               <div className={styles.mobileNavLinks}>
                 {mobileNavItems.map((item) => (
                   <NavLink
@@ -93,6 +106,15 @@ const Header = () => {
                   >
                     {item.label}
                   </NavLink>
+                ))}
+              </div>
+
+              <div className={styles.mobileSocials} aria-label="Social links">
+                {socialLinks.map((link) => (
+                  <a key={link.label} href={link.href} className={styles.mobileSocialLink}>
+                    <span>{link.label}</span>
+                    <small>{link.description}</small>
+                  </a>
                 ))}
               </div>
             </motion.nav>
