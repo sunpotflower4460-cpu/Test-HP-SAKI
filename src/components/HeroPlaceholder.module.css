@@ -1,0 +1,115 @@
+.hero {
+  padding-top: 1rem;
+}
+
+.frame {
+  position: relative;
+  min-height: 560px;
+  border: 1px solid rgba(169, 139, 94, 0.22);
+  border-radius: 32px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(169, 139, 94, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(83, 103, 138, 0.24), transparent 32%),
+    linear-gradient(135deg, rgba(13, 21, 38, 0.98), rgba(23, 35, 60, 0.92));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
+}
+
+.backgroundGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.06) 45%, transparent 60%);
+  opacity: 0.35;
+}
+
+.controls {
+  position: absolute;
+  top: 1.4rem;
+  left: 1.4rem;
+  right: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(169, 139, 94, 0.28);
+  border-radius: 999px;
+  color: var(--color-text);
+  background: rgba(7, 12, 24, 0.42);
+}
+
+.dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(234, 238, 246, 0.26);
+}
+
+.dotActive {
+  width: 34px;
+  background: var(--color-accent);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  padding: 7.5rem 3rem 3rem;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.copy h1 {
+  font-size: clamp(2.6rem, 6vw, 4.7rem);
+  line-height: 1.14;
+}
+
+.subtitle {
+  margin-top: 1.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--color-text-soft);
+}
+
+.description {
+  max-width: 520px;
+  margin-top: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .frame {
+    min-height: 420px;
+    border-radius: 24px;
+  }
+
+  .controls {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .controls button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .copy {
+    padding: 6.25rem 1.4rem 2rem;
+  }
+}

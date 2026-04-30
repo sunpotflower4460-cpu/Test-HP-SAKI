@@ -1,0 +1,40 @@
+.list {
+  display: grid;
+  border-top: 1px solid rgba(169, 139, 94, 0.18);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 240px) 1fr;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(169, 139, 94, 0.14);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(169, 139, 94, 0.12);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+}
