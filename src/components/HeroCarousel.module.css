@@ -12,7 +12,8 @@
 .viewport {
   overflow: hidden;
   padding-inline: 0.25rem;
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
+  overscroll-behavior: contain;
   cursor: grab;
   user-select: none;
 }
@@ -24,6 +25,7 @@
 .track {
   display: flex;
   gap: 24px;
+  touch-action: pan-y pinch-zoom;
   transition: transform 0.92s cubic-bezier(0.18, 0.72, 0.18, 1);
   transform: translateX(var(--carousel-desktop-offset, 12%));
   will-change: transform;
