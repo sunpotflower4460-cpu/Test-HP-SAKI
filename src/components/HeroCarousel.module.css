@@ -1,7 +1,7 @@
 /* ─── Carousel wrapper ───────────────────────────────────────────── */
 .carousel {
   padding-top: clamp(0.75rem, 1.8vw, 1.5rem);
-  padding-bottom: 3rem;
+  padding-bottom: clamp(2.4rem, 4vw, 3.2rem);
   overflow: clip;
 }
 
@@ -12,20 +12,31 @@
 .viewport {
   overflow: hidden;
   padding-inline: 0.25rem;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+.viewport:active {
+  cursor: grabbing;
 }
 
 .track {
   display: flex;
   gap: 24px;
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.92s cubic-bezier(0.18, 0.72, 0.18, 1);
   transform: translateX(var(--carousel-desktop-offset, 12%));
   will-change: transform;
+}
+
+.trackDragging {
+  transition-duration: 0s;
 }
 
 .slide {
   flex: 0 0 76%;
   position: relative;
-  min-height: clamp(440px, 46vw, 540px);
+  min-height: clamp(430px, 43vw, 520px);
   border-radius: 30px;
   overflow: hidden;
   background:
@@ -36,7 +47,7 @@
   box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
   transform: scale(0.94);
   opacity: 0.42;
-  transition: transform 0.55s ease, opacity 0.55s ease, border-color 0.55s ease;
+  transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.72s ease, border-color 0.72s ease;
 }
 
 .slideActive {
@@ -51,6 +62,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .overlay {
