@@ -47,7 +47,7 @@ const Header = () => {
 
         <button
           type="button"
-          className={`${styles.menuButton} ${isMenuOpen ? styles['menu-button-open'] : ''}`}
+          className={`${styles.menuButton} ${isMenuOpen ? styles.menuOpen : ''}`}
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-label="メニューを開閉"
           aria-expanded={isMenuOpen}

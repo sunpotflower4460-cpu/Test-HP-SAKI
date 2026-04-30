@@ -7,9 +7,11 @@ interface NewsListProps {
 }
 
 const NewsList = ({ items }: NewsListProps) => {
+  const sortedItems = [...items].sort((a, b) => b.date.localeCompare(a.date));
+
   return (
     <div className={styles.list}>
-      {items.map((item, index) => (
+      {sortedItems.map((item, index) => (
         <motion.article
           key={item.id}
           className={styles.item}

@@ -99,9 +99,9 @@ export const works: WorkItem[] = [
 ];
 
 export const newsItems: NewsItem[] = [
-  { id: 'news-01', date: '2026/05/01', title: 'Liminarium Lab. サイト公開', isNew: true },
-  { id: 'news-02', date: '2026/04/12', title: 'Liminarium Lab. サイト制作決定' },
-  { id: 'news-03', date: '2026/03/28', title: 'アイドル×マダミス企画の世界観設計を開始' },
+  { id: 'news-20260501', date: '2026/05/01', title: 'Liminarium Lab. サイト公開', isNew: true },
+  { id: 'news-20260412', date: '2026/04/12', title: 'Liminarium Lab. サイト制作決定' },
+  { id: 'news-20260328', date: '2026/03/28', title: 'アイドル×マダミス企画の世界観設計を開始' },
 ];
 
 export const members: MemberItem[] = [

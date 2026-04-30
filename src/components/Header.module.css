@@ -95,15 +95,15 @@
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.menu-button-open span:nth-child(1) {
+.menuOpen span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
 
-.menu-button-open span:nth-child(2) {
+.menuOpen span:nth-child(2) {
   opacity: 0;
 }
 
-.menu-button-open span:nth-child(3) {
+.menuOpen span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
 
