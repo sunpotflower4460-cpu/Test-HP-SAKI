@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './MemberCard.module.css';
 import { MemberItem } from '../data/siteData';
@@ -9,6 +10,17 @@ interface MemberCardProps {
 
 const MemberCard = ({ member }: MemberCardProps) => {
   const initials = member.name.slice(0, 1);
+  const [imgSrc, setImgSrc] = useState(member.image);
+
+  useEffect(() => {
+    setImgSrc(member.image);
+  }, [member.image]);
+
+  const handleImgError = () => {
+    if (imgSrc !== member.fallback) {
+      setImgSrc(member.fallback);
+    }
+  };
 
   return (
     <motion.article
@@ -23,9 +35,16 @@ const MemberCard = ({ member }: MemberCardProps) => {
       <div
         className={styles.avatar}
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(8, 12, 21, 0.22), rgba(8, 12, 21, 0.74)), url(${member.image})`,
+          backgroundImage: `linear-gradient(180deg, rgba(8, 12, 21, 0.22), rgba(8, 12, 21, 0.74)), url(${imgSrc})`,
         }}
       >
+        <img
+          src={imgSrc}
+          alt=""
+          aria-hidden={true}
+          style={{ display: 'none' }}
+          onError={handleImgError}
+        />
         <span>{initials}</span>
       </div>
       <div className={styles.body}>

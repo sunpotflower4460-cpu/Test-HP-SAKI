@@ -1,0 +1,8 @@
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(201, 169, 106, 0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(70, 85, 120, 0.22), transparent 36%),
+    linear-gradient(135deg, rgba(10, 12, 22, 0.98), rgba(17, 22, 36, 0.96));
+}
