@@ -18,7 +18,7 @@
   display: flex;
   gap: 24px;
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  transform: translateX(calc(12% - var(--carousel-index, 0) * (76% + 24px)));
+  transform: translateX(var(--carousel-desktop-offset, 12%));
   will-change: transform;
 }
 
@@ -166,7 +166,7 @@
   }
 
   .track {
-    transform: translateX(calc(9% - var(--carousel-index, 0) * (82% + 24px)));
+    transform: translateX(var(--carousel-tablet-offset, 9%));
   }
 
   .copy {
@@ -182,7 +182,7 @@
 
   .track {
     gap: 0;
-    transform: translateX(calc(-1 * var(--carousel-index, 0) * 100%));
+    transform: translateX(var(--carousel-mobile-offset, 0%));
   }
 
   .slide {
