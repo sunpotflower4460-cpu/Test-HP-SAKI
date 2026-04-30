@@ -61,16 +61,16 @@
 }
 
 .navLink:hover,
-.navLink.isActive,
+.active,
 .mobileNavLink:hover,
-.mobileNavLink.isActive {
+.mobileNavLink.active {
   color: var(--color-text);
 }
 
 .navLink:hover::after,
-.navLink.isActive::after,
+.active::after,
 .mobileNavLink:hover::after,
-.mobileNavLink.isActive::after {
+.mobileNavLink.active::after {
   transform: scaleX(1);
 }
 

@@ -15,9 +15,9 @@ const HeroPlaceholder = () => {
         <div className={styles.controls}>
           <button type="button" aria-label="Previous slide placeholder">←</button>
           <div className={styles.dots}>
-            <span className={styles.dotActive} />
-            <span />
-            <span />
+            <span className={`${styles.dot} ${styles.dotActive}`} />
+            <span className={styles.dot} />
+            <span className={styles.dot} />
           </div>
           <button type="button" aria-label="Next slide placeholder">→</button>
         </div>

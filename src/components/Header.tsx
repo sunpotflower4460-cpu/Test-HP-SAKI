@@ -38,7 +38,7 @@ const Header = () => {
             <NavLink
               key={item.path}
               to={item.path}
-              className={({ isActive }) => `${styles.navLink} ${isActive ? styles.isActive : ''}`}
+              className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             >
               {item.label}
             </NavLink>
@@ -87,7 +87,7 @@ const Header = () => {
                   <NavLink
                     key={item.path}
                     to={item.path}
-                    className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.isActive : ''}`}
+                    className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.active : ''}`}
                   >
                     {item.label}
                   </NavLink>
