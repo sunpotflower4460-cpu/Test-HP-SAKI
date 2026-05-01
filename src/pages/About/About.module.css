@@ -76,12 +76,37 @@
 
 @media (max-width: 640px) {
   .page {
-    padding-top: 1.5rem;
+    padding-top: 1.35rem;
+  }
+
+  .hero {
+    gap: 0.8rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.9;
   }
 
   .block {
-    padding: 1.5rem;
+    margin-top: 1.25rem;
+    padding: 1.35rem;
     border-radius: 26px;
+    gap: 0.85rem;
+  }
+
+  .block h2 {
+    font-size: clamp(1.75rem, 9vw, 2.35rem);
+  }
+
+  .block p:last-child {
+    font-size: 0.94rem;
+    line-height: 1.9;
   }
 
   .memberGrid {
