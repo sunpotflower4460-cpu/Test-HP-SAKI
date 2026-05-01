@@ -30,6 +30,24 @@
 
 @media (max-width: 640px) {
   .page {
-    padding-top: 1.5rem;
+    padding-top: 1.35rem;
+  }
+
+  .header {
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .header h1 {
+    font-size: clamp(2.25rem, 11vw, 3.05rem);
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+
+  .listWrap {
+    padding-bottom: 0.5rem;
   }
 }
