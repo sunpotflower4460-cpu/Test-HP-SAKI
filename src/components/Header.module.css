@@ -86,13 +86,17 @@
   justify-content: center;
   flex-direction: column;
   gap: 0.32rem;
-  transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
+  transition: border-color var(--transition), background-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .menuButton:hover {
   border-color: rgba(201, 169, 106, 0.5);
   background: rgba(21, 27, 44, 0.96);
   transform: translateY(-1px);
+}
+
+.menuButton:active {
+  transform: scale(0.98);
 }
 
 .menuButton span {
@@ -268,7 +272,7 @@
   }
 
   .brandMain {
-    font-size: 1.28rem;
+    font-size: clamp(1.24rem, 7vw, 1.62rem);
   }
 
   .brandSub {
@@ -282,6 +286,7 @@
 
   .menuButton {
     display: inline-flex;
+    flex: 0 0 auto;
   }
 }
 
@@ -290,10 +295,35 @@
     gap: 1rem;
   }
 
+  .brandMain {
+    letter-spacing: 0.09em;
+  }
+
+  .menuButton {
+    width: 50px;
+    height: 50px;
+  }
+
   .mobilePanel {
     right: 16px;
     width: calc(100vw - 32px);
     padding: 1rem;
     border-radius: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brandMain {
+    font-size: 1.12rem;
+    letter-spacing: 0.07em;
+  }
+
+  .brandSub {
+    font-size: 0.68rem;
+  }
+
+  .menuButton {
+    width: 46px;
+    height: 46px;
   }
 }
