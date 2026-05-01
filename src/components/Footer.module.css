@@ -64,6 +64,10 @@
   box-shadow: var(--shadow-soft);
 }
 
+.socialLink:active {
+  transform: translateY(0) scale(0.99);
+}
+
 .socialLink span {
   color: var(--color-text);
   font-size: 0.95rem;
@@ -100,6 +104,13 @@
   text-align: center;
 }
 
+@media (min-width: 1200px) {
+  .inner {
+    padding-top: 3.35rem;
+    padding-bottom: 2rem;
+  }
+}
+
 @media (max-width: 900px) {
   .top {
     grid-template-columns: 1fr;
@@ -120,21 +131,54 @@
 }
 
 @media (max-width: 640px) {
+  .footer {
+    margin-top: clamp(3.5rem, 12vw, 4.8rem);
+  }
+
   .inner {
-    padding-top: 2.2rem;
+    padding-top: 2rem;
+    padding-bottom: 1.35rem;
+  }
+
+  .top {
+    gap: 1.45rem;
+  }
+
+  .brandMain {
+    font-size: 1.32rem;
+  }
+
+  .brandSub {
+    font-size: 0.84rem;
   }
 
   .socialBlock {
     flex-direction: column;
     width: 100%;
+    gap: 0.7rem;
   }
 
   .socialLink {
-    width: 100%;
+    width: min(100%, 320px);
+    min-height: 48px;
+    padding: 0.78rem 1rem;
   }
 
   .footerNav {
-    grid-template-columns: 1fr;
-    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 320px);
+    gap: 0.8rem 1rem;
+  }
+
+  .footerNavLink {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottom {
+    margin-top: 1.65rem;
+    font-size: 0.78rem;
   }
 }
