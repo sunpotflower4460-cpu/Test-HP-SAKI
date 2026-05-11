@@ -70,6 +70,20 @@
   min-width: 0;
 }
 
+@media (min-width: 1024px) {
+  .aboutPanel {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2.8rem;
+  }
+
+  .aboutPanel .previewAction {
+    margin-top: 0;
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+}
+
 @media (min-width: 1200px) {
   .sectionHeader h2 {
     max-width: 13em;

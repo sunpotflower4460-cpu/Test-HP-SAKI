@@ -181,9 +181,15 @@
   background: var(--color-accent);
 }
 
+@media (min-width: 1280px) {
+  .slide {
+    min-height: clamp(480px, 38vw, 600px);
+  }
+}
+
 @media (min-width: 1440px) {
   .slide {
-    min-height: clamp(500px, 36vw, 620px);
+    min-height: clamp(560px, 40vw, 720px);
   }
 }
 
