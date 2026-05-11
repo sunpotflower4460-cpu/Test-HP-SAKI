@@ -110,12 +110,25 @@ const Header = () => {
               </div>
 
               <div className={styles.mobileSocials} aria-label="Social links">
-                {socialLinks.map((link) => (
-                  <a key={link.label} href={link.href} className={styles.mobileSocialLink}>
-                    <span>{link.label}</span>
-                    <small>{link.description}</small>
-                  </a>
-                ))}
+                {socialLinks.map((link) => {
+                  const isPlaceholder = !link.href || link.href === '#';
+                  const content = (
+                    <>
+                      <span>{link.label}</span>
+                      <small>{link.description}</small>
+                    </>
+                  );
+
+                  return isPlaceholder ? (
+                    <span key={link.label} className={styles.mobileSocialLink} aria-disabled="true">
+                      {content}
+                    </span>
+                  ) : (
+                    <a key={link.label} href={link.href} className={styles.mobileSocialLink}>
+                      {content}
+                    </a>
+                  );
+                })}
               </div>
             </motion.nav>
           </>
