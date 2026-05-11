@@ -244,7 +244,7 @@ export const members: MemberItem[] = [
 export const newsItems: NewsItem[] = [
   {
     id: 'news-01',
-    date: '2026/05/dd',
+    date: '2026/05/11',
     label: 'NEW',
     title: 'Liminarium Lab. サイト公開',
     body: 'サイトを公開しました。',
