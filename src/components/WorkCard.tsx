@@ -11,6 +11,8 @@ interface WorkCardProps {
 
 const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
   const [imgSrc, setImgSrc] = useState(work.image);
+  const isPlaceholderLink = !work.link || work.link === '#';
+  const isUnavailable = work.disabled || isPlaceholderLink;
 
   useEffect(() => {
     setImgSrc(work.image);
@@ -54,8 +56,10 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
         <p className={styles.description}>{work.description}</p>
         <div className={styles.footer}>
           <span className={styles.status}>{work.status}</span>
-          {work.disabled ? (
-            <span className={`${styles.cta} ${styles.ctaDisabled}`}>{work.buttonLabel}</span>
+          {isUnavailable ? (
+            <span className={`${styles.cta} ${styles.ctaDisabled}`} aria-disabled="true">
+              {work.buttonLabel}
+            </span>
           ) : (
             <a href={work.link} className={styles.cta}>
               {work.buttonLabel}
