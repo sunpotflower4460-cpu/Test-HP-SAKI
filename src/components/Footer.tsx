@@ -13,12 +13,25 @@ const Footer = () => {
           </div>
 
           <div className={styles.socialBlock}>
-            {socialLinks.map((link) => (
-              <a key={link.label} href={link.href} className={styles.socialLink}>
-                <span>{link.label}</span>
-                <small>{link.description}</small>
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              const isPlaceholder = !link.href || link.href === '#';
+              const content = (
+                <>
+                  <span>{link.label}</span>
+                  <small>{link.description}</small>
+                </>
+              );
+
+              return isPlaceholder ? (
+                <span key={link.label} className={styles.socialLink} aria-disabled="true">
+                  {content}
+                </span>
+              ) : (
+                <a key={link.label} href={link.href} className={styles.socialLink}>
+                  {content}
+                </a>
+              );
+            })}
           </div>
 
           <nav className={styles.footerNav} aria-label="Footer navigation">
