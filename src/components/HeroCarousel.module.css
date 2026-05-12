@@ -13,12 +13,8 @@
   padding-inline: 0.25rem;
   touch-action: pan-y pinch-zoom;
   overscroll-behavior: auto;
-  cursor: grab;
+  cursor: default;
   user-select: none;
-}
-
-.viewport:active {
-  cursor: grabbing;
 }
 
 .track {
@@ -28,10 +24,6 @@
   transition: transform 0.92s cubic-bezier(0.18, 0.72, 0.18, 1);
   transform: translateX(var(--carousel-desktop-offset, 12%));
   will-change: transform;
-}
-
-.trackDragging {
-  transition-duration: 0s;
 }
 
 .slide {
@@ -166,18 +158,23 @@
   .carousel {
     padding-top: 0.35rem;
     padding-bottom: 2.1rem;
-    touch-action: auto;
+    touch-action: pan-y pinch-zoom;
     overflow: visible;
+  }
+
+  .viewportWrap {
+    pointer-events: none;
   }
 
   .viewport {
     width: 100%;
     padding-inline: 0;
     overflow: visible;
-    touch-action: auto;
+    touch-action: pan-y pinch-zoom;
     overscroll-behavior: auto;
     cursor: default;
     user-select: auto;
+    pointer-events: none;
   }
 
   .track {
@@ -186,7 +183,8 @@
     transform: none !important;
     transition: none;
     will-change: auto;
-    touch-action: auto;
+    touch-action: pan-y pinch-zoom;
+    pointer-events: none;
   }
 
   .slide {
@@ -196,10 +194,21 @@
     border-radius: 0;
     transform: none !important;
     opacity: 1 !important;
+    pointer-events: none;
   }
 
   .slideActive {
     display: block;
+  }
+
+  .media {
+    pointer-events: none;
+  }
+
+  .navBtn,
+  .dots,
+  .dot {
+    pointer-events: auto;
   }
 
   .navBtn {
