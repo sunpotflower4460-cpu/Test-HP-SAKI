@@ -10,19 +10,24 @@
 
 .label,
 .blockLabel {
-  color: var(--color-accent);
-  letter-spacing: 0.24em;
+  color: #c9a96a;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-family: var(--font-logo);
+  font-size: clamp(2.7rem, 5vw, 4.35rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #f2eee6;
 }
 
 .description {
   max-width: 42rem;
-  color: var(--color-text-muted);
+  color: #b8b3aa;
 }
 
 .block {
@@ -30,22 +35,22 @@
   gap: 1rem;
   margin-top: 1.8rem;
   padding: clamp(1.9rem, 4vw, 2.8rem);
-  border-radius: 32px;
+  border-radius: 24px;
   border: 1px solid rgba(201, 169, 106, 0.16);
-  background:
-    radial-gradient(circle at top right, rgba(201, 169, 106, 0.06), transparent 28%),
-    linear-gradient(180deg, rgba(17, 22, 36, 0.92), rgba(10, 12, 22, 0.96));
-  box-shadow: var(--shadow-soft);
+  background: #111425;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
 }
 
 .block p:last-child {
-  color: var(--color-text-muted);
+  color: #b8b3aa;
   white-space: pre-line;
-  max-width: 46rem;
+  max-width: 48rem;
+  line-height: 2.05;
 }
 
 .block h2 {
   font-size: clamp(2rem, 4vw, 3rem);
+  color: #f2eee6;
 }
 
 .membersSection {
@@ -60,6 +65,7 @@
 
 .membersHeader h2 {
   font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  color: #f2eee6;
 }
 
 .memberGrid {
@@ -96,7 +102,7 @@
   .block {
     margin-top: 1.25rem;
     padding: 1.35rem;
-    border-radius: 26px;
+    border-radius: 22px;
     gap: 0.85rem;
   }
 
@@ -106,7 +112,7 @@
 
   .block p:last-child {
     font-size: 0.94rem;
-    line-height: 1.9;
+    line-height: 1.95;
   }
 
   .memberGrid {
