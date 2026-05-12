@@ -43,20 +43,25 @@
 - canonical / OGP image / twitter image / og:url を追加
 - `robots.txt` と `sitemap.xml` を追加
 - SPA直リンク対策
-  - `vercel.json` rewrite確認済み
-  - `public/_redirects` 追加
+  - Vercel: `vercel.json` rewrite確認済み
+  - Cloudflare Workers assets deploy: `public/_redirects` は無限ループ判定になるため削除済み
 - NotFoundページ追加
 - 仮リンクを `#` から空文字へ整理
 - `docs/release-checklist.md` 追加
+- `check:release` を手動検証コマンドとして追加
 
 ## Build status
 
 main最新のVercel buildは成功しています。
 
+Cloudflare Workers deployでは、`public/_redirects` を置かない構成にしています。
+Cloudflare側でSPA直リンク挙動を追加調整する場合は、Cloudflare / Wrangler 側の設定で行ってください。
+
 ローカルまたはCloud Agentで最終確認する場合:
 
 ```bash
 npm run check:assets
+npm run check:release
 npm run build
 ```
 
