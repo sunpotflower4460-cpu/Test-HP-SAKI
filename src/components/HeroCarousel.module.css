@@ -1,4 +1,3 @@
-/* ─── Carousel wrapper ───────────────────────────────────────────── */
 .carousel {
   padding-top: clamp(0.75rem, 1.8vw, 1.5rem);
   padding-bottom: clamp(2.4rem, 4vw, 3.2rem);
@@ -13,7 +12,7 @@
   overflow: hidden;
   padding-inline: 0.25rem;
   touch-action: pan-y pinch-zoom;
-  overscroll-behavior: contain;
+  overscroll-behavior: auto;
   cursor: grab;
   user-select: none;
 }
@@ -67,50 +66,15 @@
   pointer-events: none;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(7, 9, 17, 0.92) 0%,
-    rgba(7, 9, 17, 0.58) 38%,
-    rgba(7, 9, 17, 0.2) 62%,
-    transparent 76%
-  );
-  z-index: 1;
-}
-
+.overlay,
 .copy {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  padding: clamp(2rem, 4vw, 3rem);
-  max-width: 72%;
+  display: none;
 }
 
-.copyEyebrow {
-  font-size: 0.74rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.9rem;
-}
-
-.copyTitle {
-  font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5vw, 4.2rem);
-  line-height: 1.12;
-  color: var(--color-text);
-  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
-}
-
+.copyEyebrow,
+.copyTitle,
 .copySubtitle {
-  margin-top: 0.9rem;
-  font-family: var(--font-heading);
-  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
-  color: var(--color-text-soft);
+  display: none;
 }
 
 .navBtn {
@@ -196,21 +160,26 @@
   .track {
     transform: translateX(var(--carousel-tablet-offset, 9%));
   }
-
-  .copy {
-    max-width: 82%;
-  }
 }
 
 @media (max-width: 640px) {
   .carousel {
     padding-top: 0.35rem;
     padding-bottom: 2.1rem;
+    touch-action: pan-y;
+  }
+
+  .viewport {
+    padding-inline: 0;
+    touch-action: pan-y;
+    overscroll-behavior: auto;
+    cursor: default;
   }
 
   .track {
     gap: 0;
     transform: translateX(var(--carousel-mobile-offset, 0%));
+    touch-action: pan-y;
   }
 
   .slide {
@@ -221,22 +190,21 @@
     opacity: 1 !important;
   }
 
-  .viewport {
-    padding-inline: 0;
-  }
-
   .navBtn {
-    width: 38px;
-    height: 38px;
-    font-size: 0.88rem;
+    width: 28px;
+    height: 28px;
+    font-size: 0.72rem;
+    background: rgba(9, 10, 20, 0.34);
+    border-color: rgba(201, 169, 106, 0.58);
+    backdrop-filter: blur(5px);
   }
 
   .navPrev {
-    left: 0.55rem;
+    left: 0.9rem;
   }
 
   .navNext {
-    right: 0.55rem;
+    right: 0.9rem;
   }
 
   .dots {
@@ -251,24 +219,5 @@
 
   .dotActive {
     width: 28px;
-  }
-
-  .copy {
-    max-width: 100%;
-    padding: 1.05rem 1.1rem 1.2rem;
-  }
-
-  .copyEyebrow {
-    margin-bottom: 0.38rem;
-    font-size: 0.68rem;
-  }
-
-  .copyTitle {
-    font-size: clamp(1.78rem, 8.8vw, 2.35rem);
-  }
-
-  .copySubtitle {
-    margin-top: 0.38rem;
-    font-size: 0.95rem;
   }
 }
