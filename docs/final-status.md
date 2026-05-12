@@ -50,6 +50,21 @@
 - `docs/release-checklist.md` 追加
 - `check:release` を手動検証コマンドとして追加
 
+### Final visual refinement after mobile check
+
+スマホ実機確認後、Figma ZIP基準にさらに近づけるため、以下を追加調整しました。
+
+- Hero画像内にすでに文字が焼き込まれているため、React側のHero重ね文字とoverlayを非表示化
+- スマホHero上で縦スクロールが引っかかりにくいようにtouch/overscroll周りを調整
+- スマホHero矢印が大きく出ないよう、`figma-precision.css` の上書きを調整
+- Home / About / Works / News の文言をFigma ZIP画像の内容へ再調整
+- `Noto Serif JP` を追加し、日本語大見出しを明朝寄りに安定化
+- 英字ロゴは `Cormorant Garamond` を維持
+- 背景色、Header/Footer色、金色アクセント、本文グレーをFigma ZIPの見え方へ寄せる
+- WorkCard / MemberCard / News / About / Home / Footer の色・フォントを調整
+- Worksページに `And More...` を追加
+- 作品画像上の余計なステータスバッジと暗いグラデーションを削除
+
 ## Build status
 
 main最新のVercel buildは成功しています。
@@ -79,6 +94,13 @@ npm run build
 
 - Desktop: `1280px`
 - Mobile: `390px`
+
+特にスマホでは以下を確認してください。
+
+- Hero画像内文字とReact文字が二重になっていない
+- Hero上から縦スクロールできる
+- Hero矢印が大きすぎない
+- Figma ZIPに近い色・フォント・文言になっている
 
 ## Known intentional placeholders
 
