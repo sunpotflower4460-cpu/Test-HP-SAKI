@@ -156,6 +156,7 @@
 
 @media (max-width: 640px) {
   .carousel {
+    min-height: 288px;
     padding-top: 0.35rem;
     padding-bottom: 2.1rem;
     touch-action: pan-y pinch-zoom;
@@ -163,11 +164,13 @@
   }
 
   .viewportWrap {
+    height: 194px;
     pointer-events: none;
   }
 
   .viewport {
     width: 100%;
+    height: 194px;
     padding-inline: 0;
     overflow: visible;
     touch-action: pan-y pinch-zoom;
@@ -180,6 +183,7 @@
   .track {
     display: block;
     width: 100%;
+    height: 194px;
     transform: none !important;
     transition: none;
     will-change: auto;
@@ -190,7 +194,8 @@
   .slide {
     display: none;
     width: 100%;
-    min-height: clamp(210px, 58vw, 258px);
+    height: 194px;
+    min-height: 194px;
     border-radius: 0;
     transform: none !important;
     opacity: 1 !important;

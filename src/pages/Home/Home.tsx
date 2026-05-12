@@ -1,17 +1,9 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import HeroCarousel from '../../components/HeroCarousel';
 import NewsList from '../../components/NewsList';
 import WorkCard from '../../components/WorkCard';
 import styles from './Home.module.css';
 import { aboutPreview, newsItems, siteInfo, works } from '../../data/siteData';
-
-const sectionMotion = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.45 },
-};
 
 const Home = () => {
   return (
@@ -19,7 +11,7 @@ const Home = () => {
       <div className="container">
         <HeroCarousel />
 
-        <motion.section className={styles.section} {...sectionMotion}>
+        <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionLabel}>About us</p>
             <h2>{siteInfo.description}</h2>
@@ -32,9 +24,9 @@ const Home = () => {
               </Link>
             </div>
           </div>
-        </motion.section>
+        </section>
 
-        <motion.section className={styles.section} {...sectionMotion}>
+        <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionLabel}>Works</p>
           </div>
@@ -48,9 +40,9 @@ const Home = () => {
               もっと見る
             </Link>
           </div>
-        </motion.section>
+        </section>
 
-        <motion.section className={styles.section} {...sectionMotion}>
+        <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionLabel}>News</p>
             <h2>お知らせ</h2>
@@ -61,7 +53,7 @@ const Home = () => {
               もっと見る
             </Link>
           </div>
-        </motion.section>
+        </section>
       </div>
     </div>
   );
