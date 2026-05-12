@@ -27,7 +27,7 @@ const requireIncludes = (label, content, needles) => {
 };
 
 const indexHtml = requireFile('index.html');
-const packageJson = requireFile('package.json');
+const packageJsonText = requireFile('package.json');
 const siteData = requireFile('src/data/siteData.ts');
 const appTsx = requireFile('src/App.tsx');
 const vercelJson = requireFile('vercel.json');
@@ -41,6 +41,32 @@ requireFile('docs/final-status.md');
 requireFile('src/pages/NotFound/NotFound.tsx');
 requireFile('src/pages/NotFound/NotFound.module.css');
 
+let packageJson = null;
+try {
+  packageJson = JSON.parse(packageJsonText);
+} catch (error) {
+  errors.push(`package.json is not valid JSON: ${error.message}`);
+}
+
+if (packageJson) {
+  const scripts = packageJson.scripts ?? {};
+
+  if (scripts['check:assets'] !== 'node scripts/check-assets.mjs') {
+    errors.push('package.json script check:assets is missing or unexpected.');
+  }
+
+  if (scripts['check:release'] !== 'node scripts/check-release.mjs') {
+    errors.push('package.json script check:release is missing or unexpected.');
+  }
+
+  const buildScript = scripts.build ?? '';
+  for (const requiredPart of ['npm run check:assets', 'npm run check:release', 'tsc', 'vite build']) {
+    if (!buildScript.includes(requiredPart)) {
+      errors.push(`package.json build script is missing: ${requiredPart}`);
+    }
+  }
+}
+
 requireIncludes('index.html', indexHtml, [
   '<html lang="ja">',
   '<meta name="description"',
@@ -48,12 +74,6 @@ requireIncludes('index.html', indexHtml, [
   '<meta property="og:url" content="https://test-hp-saki.vercel.app/"',
   '<meta property="og:image" content="https://test-hp-saki.vercel.app/media/hero/hero-01.jpg"',
   '<meta name="twitter:image" content="https://test-hp-saki.vercel.app/media/hero/hero-01.jpg"',
-]);
-
-requireIncludes('package.json', packageJson, [
-  '"build": "npm run check:assets && npm run check:release && tsc && vite build"',
-  '"check:assets": "node scripts/check-assets.mjs"',
-  '"check:release": "node scripts/check-release.mjs"',
 ]);
 
 requireIncludes('App.tsx', appTsx, [
