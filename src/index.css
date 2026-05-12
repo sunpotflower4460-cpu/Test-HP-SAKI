@@ -9,8 +9,9 @@
   --color-accent: #c9a96a;
   --color-accent-strong: #e0c28c;
   --color-border: rgba(201, 169, 106, 0.24);
-  --font-heading: 'Cormorant Garamond', 'Yu Mincho', serif;
-  --font-body: 'Inter', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  --font-logo: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-heading: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --font-body: 'Inter', 'Noto Sans JP', 'Hiragino Sans', sans-serif;
   --transition: 0.35s ease;
   --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.28);
   --section-space: clamp(3.5rem, 8vw, 7rem);
@@ -56,6 +57,7 @@ h6 {
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
 a {
