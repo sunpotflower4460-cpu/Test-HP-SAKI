@@ -29,6 +29,16 @@
   gap: 1.8rem;
 }
 
+.moreText {
+  margin-top: clamp(3rem, 7vw, 5.2rem);
+  text-align: center;
+  font-family: var(--font-logo);
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #f2eee6;
+}
+
 @media (max-width: 640px) {
   .page {
     padding-top: 1.35rem;
@@ -50,5 +60,10 @@
 
   .grid {
     gap: 1.35rem;
+  }
+
+  .moreText {
+    margin-top: 2.6rem;
+    font-size: clamp(2rem, 12vw, 3rem);
   }
 }
