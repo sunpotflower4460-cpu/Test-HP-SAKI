@@ -49,7 +49,7 @@ export const siteInfo = {
   kana: 'リミナリウムラボ',
   description: '物語体験を制作する小さなラボ。',
   tagline: '物語の果てに、何が残るか。',
-  copyright: '© 2026 Liminarium Lab. All rights reserved.',
+  copyright: '© 2026 Liminarium Lab.',
 };
 
 export const siteMeta = {
@@ -147,31 +147,24 @@ export const heroSlides: HeroSlide[] = [
 
 export const aboutPreview = {
   title: 'About us',
-  body: `世界の境界は曖昧で、物語はいつもその隙間から始まります。
-${siteInfo.name} は、マーダーミステリーや体験型作品を通じて、
-現実と虚構、推理と感情が交差する時間をつくる制作チームです。`,
+  body: `世界の境界は曖昧で、無数に存在しています。現実と虚構、私とあなた、真実と嘘——それらは溶け合い、シンクロし、パラレルに交差します。
+私たちは、マーダーミステリーがその境界線上に立つ体験と捉えます。
+プレイヤーは物語の中で「誰か」になり、曖昧な境界の中で真実を探します。
+私たちは、そんな神秘的な境界を描く物語を創ります。その体験が、あなた自身の直感や、命の輝きに気づくきっかけになれば嬉しいです。`,
   cta: 'もっと見る',
 };
 
 export const aboutPageSections = {
   philosophyTitle: `${siteInfo.name} 理念`,
-  philosophy: `世界の境界は曖昧で、物語はいつもその隙間から始まります。
-${siteInfo.name} は、マーダーミステリーや体験型作品を通じて、
-現実と虚構、推理と感情が交差する時間をつくる制作チームです。
-プレイヤーが物語の中で「誰か」になり、
-曖昧な世界の中で真実を探す。
-その体験が、参加した人自身の直感や記憶に小さな火を灯すような、
-そんな作品づくりを目指しています。`,
+  philosophy: aboutPreview.body,
   activitiesTitle: '活動内容',
-  activities: `2025年、代表が新たにサークルを立ち上げ、
-UZUでの公開を目指してマーダーミステリー作品を制作中。
-さらに、推し活と推理を掛け合わせたアイドル×マダミスプロジェクトも始動。
-マーダーミステリー作品の制作や楽曲制作など、
-物語と音楽が交差する企画を展開しています。`,
+  activities: `2025年、代表・葉宮が新たにサークルを立ち上げ、UZUでの公開を目指してマーダーミステリー作品を制作中です。
+
+さらに1月からは、「推し活」と「推理」を掛け合わせたアイドル×マダミスプロジェクトが始動。
+アイドルグループI’ll☆Sync（アイルシンク）のプロデュースを中心に、マーダーミステリー作品の制作や楽曲制作など、物語と音楽が交差する新しい企画を展開しています。`,
 };
 
-export const worksPageIntro =
-  '静かな緊張と余白のあるビジュアルを添えながら、公開準備中の作品や進行中の企画を一覧で見渡せる構成にしています。';
+export const worksPageIntro = '';
 
 export const works: WorkItem[] = [
   {
@@ -184,10 +177,10 @@ export const works: WorkItem[] = [
     fallback: '/media/placeholders/placeholder-work.svg',
     imagePosition: '50% 44%',
     description:
-      '推理×青春×アイドルをテーマにしたマーダーミステリー。デビューを控えた少女たちを襲う悲劇。彼女たちの運命の歯車が廻りだす…。',
+      '推理×推し活プロジェクト第一弾！\nデビューを控えたアイドルたちを襲う悲劇。\n彼女たちの運命の歯車が廻りだす…。',
     link: '',
     buttonLabel: '特設サイトへ',
-    accent: '#b79a69',
+    accent: '#c9a96a',
   },
   {
     id: 'work-02',
@@ -199,11 +192,11 @@ export const works: WorkItem[] = [
     fallback: '/media/placeholders/placeholder-work.svg',
     imagePosition: '50% 48%',
     description:
-      'とある屋敷にて。主人の遺体と謎の来訪者。それぞれの思惑が絡み合う。あなたはすべて解きほぐすことができるか。',
+      'とある屋敷にて。主人の遺体と謎の来訪者。\nそれぞれの思惑が絡み合う。\nあなたはすべて解きほぐすことができるか。',
     link: '',
-    buttonLabel: '制作中',
+    buttonLabel: '製作中',
     disabled: true,
-    accent: '#8f7651',
+    accent: '#756b48',
   },
 ];
 
@@ -211,70 +204,62 @@ export const members: MemberItem[] = [
   {
     id: 'member-01',
     name: '葉宮よしの',
-    role: '制作・GMほか',
-    favorite: '好きな系統：ガチ推理系・SF',
+    role: '制作・GM 他',
+    favorite: '好きな系統・ガチ推理系・SF',
     image: '/media/members/member-01.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#b79a69',
+    accent: '#c9a96a',
   },
   {
     id: 'member-02',
     name: '三河柚',
     role: '制作・イラスト',
-    favorite: '好きな系統：エモ系',
+    favorite: '好きな系統・王宮系',
     image: '/media/members/member-02.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#b08b73',
+    accent: '#c9a96a',
   },
   {
     id: 'member-03',
     name: 'もぶ',
     role: '音楽',
-    favorite: '好きな系統：推理系',
+    favorite: '好きな系統・推理系',
     image: '/media/members/member-03.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#8f7651',
+    accent: '#c9a96a',
   },
   {
     id: 'member-04',
     name: 'ヤッホー・ナーン',
     role: '制作補助',
-    favorite: '好きな系統：島・屋敷系',
+    favorite: '好きな系統・島・屋敷系',
     image: '/media/members/member-04.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#9d8b68',
+    accent: '#c9a96a',
   },
 ];
 
 export const newsItems: NewsItem[] = [
   {
     id: 'news-01',
-    date: '2026/05/11',
+    date: '2026/05/dd',
     label: 'NEW',
     title: 'Liminarium Lab. サイト公開',
-    body: 'サイトを公開しました。',
   },
   {
     id: 'news-02',
     date: '2026/04/12',
     title: 'Liminarium Lab. サイト制作決定',
-    body: 'ブランド全体の世界観と導線設計の整理を開始しました。',
-  },
-  {
-    id: 'news-03',
-    date: '2026/01/10',
-    title: 'アイドル×マダミスプロジェクト始動',
-    body: '推し活と推理が交差する新作プロジェクトの企画制作を進行しています。',
   },
 ];
 
 export const socialLinks: SocialLink[] = [
   { label: 'X', description: 'お問い合わせはDMまで', href: '' },
-  { label: 'YouTube', description: '動画や告知を準備中', href: '' },
+  { label: 'YouTube', description: 'Youtubeはこちら', href: '' },
 ];
 
 export const siteAssets = {
