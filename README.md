@@ -51,6 +51,7 @@ Test-HP-SAKI/
 │   └── figma-precision.css  # Figma寸法へ寄せる後段補正CSS
 └── docs/
     ├── figma-implementation-spec.md
+    ├── asset-manifest.md
     └── qa.md
 ```
 
@@ -61,7 +62,8 @@ Test-HP-SAKI/
 ### 素材パスの管理場所
 
 すべての素材パスは `src/data/siteData.ts` で一元管理しています。  
-差し替え時はこのファイルのパスを変更するだけで反映されます。
+Figma ZIP由来の素材対応表は `docs/asset-manifest.md` に固定しています。  
+差し替え時は、素材を所定の `public/media/**` に配置し、必要に応じて `siteData.ts` のパスを確認します。
 
 ### ヒーローカルーセル画像・動画
 
