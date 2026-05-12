@@ -37,7 +37,6 @@ const Home = () => {
         <motion.section className={styles.section} {...sectionMotion}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionLabel}>Works</p>
-            <h2>進行中の作品プレビュー</h2>
           </div>
           <div className={styles.previewGrid}>
             {works.slice(0, 2).map((work) => (

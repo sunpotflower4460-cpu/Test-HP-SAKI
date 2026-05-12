@@ -115,10 +115,21 @@ article[style*='--member-accent'] > div:first-child {
     min-height: 78px !important;
   }
 
+  section[aria-label='メインビジュアル カルーセル'] {
+    padding-top: 96px !important;
+    padding-bottom: 38px !important;
+  }
+
   section[aria-label='メインビジュアル カルーセル'] div[aria-hidden] {
     flex-basis: 390px !important;
     width: 390px !important;
     height: 194px !important;
+  }
+
+  section[aria-label='メインビジュアル カルーセル'] button[aria-label='前のスライド'],
+  section[aria-label='メインビジュアル カルーセル'] button[aria-label='次のスライド'] {
+    width: 28px !important;
+    height: 28px !important;
   }
 
   [class*='previewGrid'] {

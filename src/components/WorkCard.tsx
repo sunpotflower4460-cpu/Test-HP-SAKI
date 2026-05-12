@@ -11,8 +11,10 @@ interface WorkCardProps {
 
 const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
   const [imgSrc, setImgSrc] = useState(work.image);
+  const isPreview = layout === 'preview';
   const isPlaceholderLink = !work.link || work.link === '#';
-  const isUnavailable = work.disabled || isPlaceholderLink;
+  const isUnavailable = work.disabled || isPlaceholderLink || isPreview;
+  const ctaLabel = isPreview ? '制作中' : work.buttonLabel;
 
   useEffect(() => {
     setImgSrc(work.image);
@@ -26,7 +28,7 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
 
   return (
     <motion.article
-      className={`${styles.card} ${layout === 'preview' ? styles.preview : styles.full}`}
+      className={`${styles.card} ${isPreview ? styles.preview : styles.full}`}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25 }}
       style={{ '--work-accent': work.accent } as CSSProperties}
@@ -34,7 +36,7 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
       <div
         className={styles.image}
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(6, 11, 21, 0.12), rgba(6, 11, 21, 0.7)), url(${imgSrc})`,
+          backgroundImage: `url(${imgSrc})`,
           backgroundPosition: work.imagePosition ?? 'center',
         }}
       >
@@ -59,11 +61,11 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
           <span className={styles.status}>{work.status}</span>
           {isUnavailable ? (
             <span className={`${styles.cta} ${styles.ctaDisabled}`} aria-disabled="true">
-              {work.buttonLabel}
+              {ctaLabel}
             </span>
           ) : (
             <a href={work.link} className={styles.cta}>
-              {work.buttonLabel}
+              {ctaLabel}
             </a>
           )}
         </div>
