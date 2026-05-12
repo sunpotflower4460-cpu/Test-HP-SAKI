@@ -35,6 +35,7 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
         className={styles.image}
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(6, 11, 21, 0.12), rgba(6, 11, 21, 0.7)), url(${imgSrc})`,
+          backgroundPosition: work.imagePosition ?? 'center',
         }}
       >
         <img
