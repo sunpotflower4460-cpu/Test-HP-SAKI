@@ -185,7 +185,7 @@ export const works: WorkItem[] = [
     imagePosition: '50% 44%',
     description:
       '推理×青春×アイドルをテーマにしたマーダーミステリー。デビューを控えた少女たちを襲う悲劇。彼女たちの運命の歯車が廻りだす…。',
-    link: '#',
+    link: '',
     buttonLabel: '特設サイトへ',
     accent: '#b79a69',
   },
@@ -200,7 +200,7 @@ export const works: WorkItem[] = [
     imagePosition: '50% 48%',
     description:
       'とある屋敷にて。主人の遺体と謎の来訪者。それぞれの思惑が絡み合う。あなたはすべて解きほぐすことができるか。',
-    link: '#',
+    link: '',
     buttonLabel: '制作中',
     disabled: true,
     accent: '#8f7651',
@@ -273,8 +273,8 @@ export const newsItems: NewsItem[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: 'X', description: 'お問い合わせはDMまで', href: '#' },
-  { label: 'YouTube', description: '動画や告知を準備中', href: '#' },
+  { label: 'X', description: 'お問い合わせはDMまで', href: '' },
+  { label: 'YouTube', description: '動画や告知を準備中', href: '' },
 ];
 
 export const siteAssets = {
