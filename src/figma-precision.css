@@ -118,11 +118,12 @@ article[style*='--member-accent'] > div:first-child {
   section[aria-label='メインビジュアル カルーセル'] {
     padding-top: 96px !important;
     padding-bottom: 38px !important;
+    overflow: visible !important;
   }
 
   section[aria-label='メインビジュアル カルーセル'] div[aria-hidden] {
-    flex-basis: 390px !important;
-    width: 390px !important;
+    flex-basis: auto !important;
+    width: 100% !important;
     height: 194px !important;
   }
 
@@ -133,23 +134,25 @@ article[style*='--member-accent'] > div:first-child {
   }
 
   [class*='previewGrid'] {
-    display: flex !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    padding-inline: 40px !important;
-    overflow-x: auto !important;
-    gap: 16px !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: min(100%, 342px) !important;
+    max-width: calc(100vw - 48px) !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    overflow: visible !important;
+    gap: 24px !important;
   }
 
   [class*='previewGrid'] article[style*='--work-accent'] {
-    flex: 0 0 310px !important;
-    width: 310px !important;
+    width: 100% !important;
     min-height: auto !important;
   }
 
   [class*='previewGrid'] article[style*='--work-accent'] > div:first-child {
-    height: 174px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
   }
 
   [class*='Works_grid'] article[style*='--work-accent'] {
