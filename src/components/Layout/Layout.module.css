@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .skipLink {
@@ -25,4 +26,6 @@
 
 .main {
   flex: 1;
+  min-width: 0;
+  overflow: visible;
 }
