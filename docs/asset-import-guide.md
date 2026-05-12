@@ -8,7 +8,23 @@ Put optimized Figma ZIP assets into the exact paths used by the app.
 
 Use `docs/asset-manifest.md` as the source mapping.
 
-## 1. Prepare staging folder
+## 1. Optional: stage assets from extracted Figma folder
+
+When the Figma ZIP is already extracted, this command copies the required source files into `_asset-staging/public/media/**` using the final app filenames:
+
+```bash
+npm run stage:figma-assets -- path/to/extracted-figma-folder
+```
+
+A custom staging folder can also be passed:
+
+```bash
+node scripts/stage-figma-assets.mjs path/to/extracted-figma-folder path/to/staging
+```
+
+This staging step only renames and copies files. Optimize or convert formats before the final commit if needed.
+
+## 2. Prepare staging folder
 
 Create this folder locally or in a Cloud Agent workspace:
 
@@ -30,7 +46,7 @@ _asset-staging/
             └── logo.png
 ```
 
-## 2. Export / optimize assets
+## 3. Export / optimize assets
 
 Recommended source mapping:
 
@@ -45,7 +61,7 @@ Recommended source mapping:
 
 Do not use full-page screenshots as app assets.
 
-## 3. Import assets
+## 4. Import assets
 
 ```bash
 npm run import:assets
@@ -61,7 +77,7 @@ node scripts/import-assets.mjs path/to/staging
 
 The custom folder must still contain `public/media/**` inside it.
 
-## 4. Check assets
+## 5. Check assets
 
 ```bash
 npm run check:assets
@@ -69,7 +85,7 @@ npm run check:assets
 
 This verifies required files exist and are not empty.
 
-## 5. Build
+## 6. Build
 
 ```bash
 npm run build
