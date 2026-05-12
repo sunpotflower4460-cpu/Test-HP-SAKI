@@ -8,6 +8,7 @@
     "build": "npm run check:assets && tsc && vite build",
     "preview": "vite preview",
     "check:assets": "node scripts/check-assets.mjs",
+    "check:release": "node scripts/check-release.mjs",
     "import:assets": "node scripts/import-assets.mjs",
     "stage:figma-assets": "node scripts/stage-figma-assets.mjs"
   },
