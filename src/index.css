@@ -1,13 +1,13 @@
 :root {
-  --color-bg: #090a14;
-  --color-surface: #111624;
+  --color-bg: #0f0f1a;
+  --color-surface: #111425;
   --color-surface-alt: #151b2c;
   --color-surface-soft: #1a2133;
-  --color-text: #f3f0ea;
+  --color-text: #f2eee6;
   --color-text-soft: #d8d1c7;
   --color-text-muted: #b8b3aa;
   --color-accent: #c9a96a;
-  --color-accent-strong: #e0c28c;
+  --color-accent-strong: #d8bd82;
   --color-border: rgba(201, 169, 106, 0.24);
   --font-logo: 'Cormorant Garamond', 'Times New Roman', serif;
   --font-heading: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
@@ -32,9 +32,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background:
-    radial-gradient(circle at top, rgba(41, 54, 84, 0.22), transparent 30%),
-    linear-gradient(180deg, #070913 0%, #090b15 48%, #0b1020 100%);
+  background: #0f0f1a;
   color: var(--color-text);
   line-height: 1.9;
   letter-spacing: 0.03em;
@@ -85,7 +83,7 @@ button:disabled,
 }
 
 :focus-visible {
-  outline: 2px solid rgba(224, 194, 140, 0.9);
+  outline: 2px solid rgba(216, 189, 130, 0.9);
   outline-offset: 4px;
 }
 
@@ -134,7 +132,7 @@ img {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-accent-strong), var(--color-accent));
-  color: #0c0f17;
+  color: #0f0f1a;
   border-color: var(--color-accent);
 }
 
@@ -164,7 +162,7 @@ img {
   border-radius: 999px;
   border: 1px solid rgba(201, 169, 106, 0.2);
   color: var(--color-text-soft);
-  background: rgba(17, 22, 36, 0.78);
+  background: rgba(17, 20, 37, 0.78);
   transition:
     transform var(--transition),
     border-color var(--transition),
