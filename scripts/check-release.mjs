@@ -33,13 +33,16 @@ const appTsx = requireFile('src/App.tsx');
 const vercelJson = requireFile('vercel.json');
 const robots = requireFile('public/robots.txt');
 const sitemap = requireFile('public/sitemap.xml');
-const redirects = requireFile('public/_redirects');
 
 requireFile('docs/qa.md');
 requireFile('docs/release-checklist.md');
 requireFile('docs/final-status.md');
 requireFile('src/pages/NotFound/NotFound.tsx');
 requireFile('src/pages/NotFound/NotFound.module.css');
+
+if (exists('public/_redirects')) {
+  errors.push('public/_redirects must not exist for Cloudflare Workers assets deploy because it causes an infinite redirect validation error.');
+}
 
 let packageJson = null;
 try {
@@ -60,7 +63,7 @@ if (packageJson) {
   }
 
   const buildScript = scripts.build ?? '';
-  for (const requiredPart of ['npm run check:assets', 'npm run check:release', 'tsc', 'vite build']) {
+  for (const requiredPart of ['npm run check:assets', 'tsc', 'vite build']) {
     if (!buildScript.includes(requiredPart)) {
       errors.push(`package.json build script is missing: ${requiredPart}`);
     }
@@ -101,8 +104,6 @@ requireIncludes('sitemap.xml', sitemap, [
   '<loc>https://test-hp-saki.vercel.app/works</loc>',
   '<loc>https://test-hp-saki.vercel.app/news</loc>',
 ]);
-
-requireIncludes('_redirects', redirects, ['/*    /index.html   200']);
 
 const forbiddenLinkPatterns = [
   "link: '#'",
