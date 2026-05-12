@@ -1,0 +1,111 @@
+# Final Status
+
+このドキュメントは、Figma ZIP再現から公開前最終仕上げまでの現在地を記録するためのメモです。
+
+## Current status
+
+設計図ベースの実装作業は完了扱いです。
+
+対象サイト:
+
+- Liminarium Lab. 公式サイト
+- Public URL: `https://test-hp-saki.vercel.app/`
+
+## Completed phases
+
+### Phase 1-4
+
+- Vite + React + TypeScript構成
+- Home / About / Works / News の基本ページ
+- Figma基準のレイアウト補正
+- PC / Mobile基準寸法の整理
+- SEO/OGPの初期設定
+- 仮リンクのdisabled表示
+- アクセシビリティの基礎対応
+
+### Phase 5
+
+- Figma ZIP由来の実画像素材を `public/media/**` に投入
+- Hero / Works / Members / Logo の実画像化
+- `check:assets` で必須素材の存在確認
+
+### Phase 6
+
+- `npm run build` 前に `check:assets` を必須化
+- Heroを実在画像のみの `productionHeroSlides.ts` へ整理
+- Hero / Works / Member の表示位置調整をデータ側で可能化
+- スマホHeader / Footerの余白微調整
+- `docs/qa.md` を実画像QA用に拡張
+- READMEへ実画像運用・トリミング調整方法を反映
+
+### Phase 7
+
+- canonical / OGP image / twitter image / og:url を追加
+- `robots.txt` と `sitemap.xml` を追加
+- SPA直リンク対策
+  - `vercel.json` rewrite確認済み
+  - `public/_redirects` 追加
+- NotFoundページ追加
+- 仮リンクを `#` から空文字へ整理
+- `docs/release-checklist.md` 追加
+
+## Build status
+
+main最新のVercel buildは成功しています。
+
+ローカルまたはCloud Agentで最終確認する場合:
+
+```bash
+npm run check:assets
+npm run build
+```
+
+## Required final manual visual check
+
+以下は人間の目視で最終確認してください。
+
+- `/`
+- `/about`
+- `/works`
+- `/news`
+- `/unknown-path`
+
+主な確認幅:
+
+- Desktop: `1280px`
+- Mobile: `390px`
+
+## Known intentional placeholders
+
+現時点では以下は未接続で問題ありません。
+
+- Works特設サイトリンク
+- X
+- YouTube
+
+これらは空文字のまま保持され、UIではdisabled表示になります。
+
+実URLが決まったら `src/data/siteData.ts` を更新してください。
+
+- `works[].link`
+- `socialLinks[].href`
+
+## Domain note
+
+現時点のcanonical / OGP / sitemap / robotsは以下のURLを基準にしています。
+
+```txt
+https://test-hp-saki.vercel.app/
+```
+
+独自ドメインへ切り替える場合は、以下を置換してください。
+
+- `index.html`
+- `public/robots.txt`
+- `public/sitemap.xml`
+
+## Final decision
+
+コード・素材・ドキュメント・公開前導線の整備は完了です。
+
+人間の最終目視で大きな崩れがなければ、この設計図ベースの作業は完了として扱えます。
