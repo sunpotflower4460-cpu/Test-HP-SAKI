@@ -128,6 +128,9 @@ const HeroCarousel = () => {
           <div className={`${styles.track} ${isDragging ? styles.trackDragging : ''}`} style={trackStyle}>
             {slides.map((slide, i) => {
               const shouldUseVideo = slide.type === 'video' && !failedVideoIds.has(slide.id);
+              const mediaStyle = slide.objectPosition
+                ? ({ objectPosition: slide.objectPosition } satisfies CSSProperties)
+                : undefined;
 
               return (
                 <div
@@ -141,6 +144,7 @@ const HeroCarousel = () => {
                         videoRefs.current[i] = el;
                       }}
                       className={styles.media}
+                      style={mediaStyle}
                       autoPlay={i === current}
                       muted
                       playsInline
@@ -162,6 +166,7 @@ const HeroCarousel = () => {
                       fallback={slide.fallback}
                       alt={slide.alt ?? slide.title}
                       className={styles.media}
+                      style={mediaStyle}
                       loading={i === 0 ? 'eager' : 'lazy'}
                     />
                   )}

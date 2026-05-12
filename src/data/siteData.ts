@@ -86,6 +86,7 @@ export type HeroSlide = {
   subtitle?: string;
   description?: string;
   alt?: string;
+  objectPosition?: string;
 };
 
 export const heroSlides: HeroSlide[] = [

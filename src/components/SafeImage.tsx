@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { useState, useEffect } from 'react';
 import styles from './SafeImage.module.css';
 
@@ -6,10 +7,11 @@ interface SafeImageProps {
   fallback?: string;
   alt: string;
   className?: string;
+  style?: CSSProperties;
   loading?: 'eager' | 'lazy';
 }
 
-const SafeImage = ({ src, fallback, alt, className, loading = 'lazy' }: SafeImageProps) => {
+const SafeImage = ({ src, fallback, alt, className, style, loading = 'lazy' }: SafeImageProps) => {
   const [imgSrc, setImgSrc] = useState(src);
   const [usedFallback, setUsedFallback] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -33,6 +35,7 @@ const SafeImage = ({ src, fallback, alt, className, loading = 'lazy' }: SafeImag
     return (
       <div
         className={`${styles.placeholder} ${className ?? ''}`}
+        style={style}
         role="img"
         aria-label={alt}
       />
@@ -44,6 +47,7 @@ const SafeImage = ({ src, fallback, alt, className, loading = 'lazy' }: SafeImag
       src={imgSrc}
       alt={alt}
       className={className}
+      style={style}
       loading={loading}
       onError={handleError}
     />
