@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(9, 10, 20, 0.9);
+  background: rgba(17, 20, 37, 0.96);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(201, 169, 106, 0.16);
 }
@@ -23,13 +23,15 @@
 }
 
 .brandMain {
-  font-family: var(--font-heading);
+  font-family: var(--font-logo);
   font-size: clamp(1.45rem, 1.8vw, 1.8rem);
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #f2eee6;
 }
 
 .brandSub {
-  color: var(--color-text-soft);
+  color: #d8d1c7;
   font-size: 0.78rem;
   letter-spacing: 0.22em;
 }
@@ -164,9 +166,10 @@
 
 .mobileBrand {
   display: block;
-  font-family: var(--font-heading);
+  font-family: var(--font-logo);
   font-size: 1.5rem;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
 .closeButton {
