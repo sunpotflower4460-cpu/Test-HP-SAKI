@@ -51,8 +51,9 @@ requireIncludes('index.html', indexHtml, [
 ]);
 
 requireIncludes('package.json', packageJson, [
+  '"build": "npm run check:assets && npm run check:release && tsc && vite build"',
   '"check:assets": "node scripts/check-assets.mjs"',
-  '"build": "npm run check:assets && tsc && vite build"',
+  '"check:release": "node scripts/check-release.mjs"',
 ]);
 
 requireIncludes('App.tsx', appTsx, [
