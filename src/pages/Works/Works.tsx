@@ -17,7 +17,7 @@ const Works = () => {
       >
         <p className={styles.label}>Works</p>
         <h1>作品一覧</h1>
-        <p className={styles.description}>{worksPageIntro}</p>
+        {worksPageIntro && <p className={styles.description}>{worksPageIntro}</p>}
       </motion.section>
 
       <div className={styles.grid}>
@@ -33,6 +33,8 @@ const Works = () => {
           </motion.div>
         ))}
       </div>
+
+      <p className={styles.moreText}>And More...</p>
     </div>
   );
 };
