@@ -10,6 +10,7 @@ export const productionHeroSlides: HeroSlide[] = [
     subtitle: '何が残るか。',
     description: 'Liminarium Lab.',
     alt: 'Liminarium Lab. main visual',
+    objectPosition: '50% 50%',
   },
   {
     id: 'hero-work-01',
@@ -20,6 +21,7 @@ export const productionHeroSlides: HeroSlide[] = [
     subtitle: '未完の詩',
     description: 'Works',
     alt: '千草色に吹く 未完の詩 visual',
+    objectPosition: '50% 44%',
   },
   {
     id: 'hero-work-02',
@@ -30,5 +32,6 @@ export const productionHeroSlides: HeroSlide[] = [
     subtitle: '潰れた',
     description: 'Works',
     alt: 'あったかくて、甘くて、潰れた visual',
+    objectPosition: '50% 48%',
   },
 ];
