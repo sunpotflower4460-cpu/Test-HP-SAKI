@@ -1,0 +1,24 @@
+/* Shared disabled-link treatment for placeholder production links. */
+
+[aria-disabled='true'] {
+  cursor: default !important;
+}
+
+[aria-disabled='true']:hover,
+[aria-disabled='true']:active {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+[class*='socialLink'][aria-disabled='true'],
+[class*='mobileSocialLink'][aria-disabled='true'],
+[class*='ctaDisabled'][aria-disabled='true'] {
+  opacity: 0.72;
+  filter: saturate(0.72);
+}
+
+[class*='socialLink'][aria-disabled='true']:hover,
+[class*='mobileSocialLink'][aria-disabled='true']:hover {
+  background: rgba(21, 27, 44, 0.58) !important;
+  border-color: rgba(201, 169, 106, 0.18) !important;
+}
