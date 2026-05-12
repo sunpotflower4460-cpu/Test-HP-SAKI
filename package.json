@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "check:assets": "node scripts/check-assets.mjs",
-    "import:assets": "node scripts/import-assets.mjs"
+    "import:assets": "node scripts/import-assets.mjs",
+    "stage:figma-assets": "node scripts/stage-figma-assets.mjs"
   },
   "dependencies": {
     "react": "^18.2.0",
