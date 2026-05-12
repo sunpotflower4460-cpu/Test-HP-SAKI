@@ -1,6 +1,6 @@
 .list {
   display: grid;
-  border-top: 1px solid rgba(201, 169, 106, 0.2);
+  border-top: 1px solid rgba(201, 169, 106, 0.18);
 }
 
 .item {
@@ -8,7 +8,7 @@
   grid-template-columns: minmax(0, 250px) 1fr;
   gap: 1.2rem;
   padding: 1.35rem 0;
-  border-bottom: 1px solid rgba(201, 169, 106, 0.14);
+  border-bottom: 1px solid rgba(201, 169, 106, 0.12);
   transition:
     background-color var(--transition),
     border-color var(--transition),
@@ -17,8 +17,8 @@
 
 .item:hover {
   transform: translateY(-1px);
-  border-bottom-color: rgba(201, 169, 106, 0.28);
-  background: rgba(201, 169, 106, 0.03);
+  border-bottom-color: rgba(201, 169, 106, 0.26);
+  background: rgba(201, 169, 106, 0.025);
 }
 
 .meta {
@@ -26,7 +26,7 @@
   align-items: center;
   gap: 0.9rem;
   flex-wrap: wrap;
-  color: var(--color-text-soft);
+  color: #d8d1c7;
 }
 
 .badge {
@@ -34,14 +34,15 @@
   padding: 0.25rem 0.62rem;
   border-radius: 999px;
   background: rgba(201, 169, 106, 0.12);
-  color: var(--color-accent);
+  color: #c9a96a;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
 }
 
 .title {
-  color: var(--color-text);
+  color: #f2eee6;
   font-size: 1.08rem;
+  font-weight: 500;
 }
 
 .content {
@@ -50,7 +51,7 @@
 }
 
 .body {
-  color: var(--color-text-muted);
+  color: #b8b3aa;
   font-size: 0.95rem;
 }
 
