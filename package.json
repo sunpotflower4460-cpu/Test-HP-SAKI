@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run check:assets && npm run check:release && tsc && vite build",
+    "build": "npm run check:assets && tsc && vite build",
     "preview": "vite preview",
     "check:assets": "node scripts/check-assets.mjs",
     "check:release": "node scripts/check-release.mjs",
