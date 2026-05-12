@@ -36,6 +36,7 @@ const MemberCard = ({ member }: MemberCardProps) => {
         className={styles.avatar}
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(8, 12, 21, 0.22), rgba(8, 12, 21, 0.74)), url(${imgSrc})`,
+          backgroundPosition: member.imagePosition ?? 'center',
         }}
       >
         <img
