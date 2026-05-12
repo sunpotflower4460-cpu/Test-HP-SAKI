@@ -1,6 +1,6 @@
 import type { CSSProperties, PointerEvent } from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { heroSlides } from '../data/siteData';
+import { productionHeroSlides } from '../data/productionHeroSlides';
 import SafeImage from './SafeImage';
 import styles from './HeroCarousel.module.css';
 
@@ -17,7 +17,8 @@ const HeroCarousel = () => {
   const [failedVideoIds, setFailedVideoIds] = useState<Set<string>>(() => new Set());
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const dragStartX = useRef<number | null>(null);
-  const total = heroSlides.length;
+  const slides = productionHeroSlides;
+  const total = slides.length;
 
   const goTo = useCallback((index: number) => {
     setCurrent(index);
@@ -125,7 +126,7 @@ const HeroCarousel = () => {
           }}
         >
           <div className={`${styles.track} ${isDragging ? styles.trackDragging : ''}`} style={trackStyle}>
-            {heroSlides.map((slide, i) => {
+            {slides.map((slide, i) => {
               const shouldUseVideo = slide.type === 'video' && !failedVideoIds.has(slide.id);
 
               return (
@@ -197,7 +198,7 @@ const HeroCarousel = () => {
       </div>
 
       <div className={styles.dots} role="tablist" aria-label="スライド選択">
-        {heroSlides.map((slide, i) => (
+        {slides.map((slide, i) => (
           <button
             key={slide.id}
             role="tab"
