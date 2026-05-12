@@ -11,6 +11,7 @@ export interface WorkItem {
   status: string;
   image: string;
   fallback: string;
+  imagePosition?: string;
   description: string;
   link: string;
   buttonLabel: string;
@@ -33,6 +34,7 @@ export interface MemberItem {
   favorite: string;
   image: string;
   fallback: string;
+  imagePosition?: string;
   accent: string;
 }
 
@@ -180,6 +182,7 @@ export const works: WorkItem[] = [
     status: '制作中',
     image: '/media/works/work-01.jpg',
     fallback: '/media/placeholders/placeholder-work.svg',
+    imagePosition: '50% 44%',
     description:
       '推理×青春×アイドルをテーマにしたマーダーミステリー。デビューを控えた少女たちを襲う悲劇。彼女たちの運命の歯車が廻りだす…。',
     link: '#',
@@ -194,6 +197,7 @@ export const works: WorkItem[] = [
     status: '制作中',
     image: '/media/works/work-02.jpg',
     fallback: '/media/placeholders/placeholder-work.svg',
+    imagePosition: '50% 48%',
     description:
       'とある屋敷にて。主人の遺体と謎の来訪者。それぞれの思惑が絡み合う。あなたはすべて解きほぐすことができるか。',
     link: '#',
@@ -211,6 +215,7 @@ export const members: MemberItem[] = [
     favorite: '好きな系統：ガチ推理系・SF',
     image: '/media/members/member-01.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
+    imagePosition: '50% 45%',
     accent: '#b79a69',
   },
   {
@@ -220,6 +225,7 @@ export const members: MemberItem[] = [
     favorite: '好きな系統：エモ系',
     image: '/media/members/member-02.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
+    imagePosition: '50% 45%',
     accent: '#b08b73',
   },
   {
@@ -229,6 +235,7 @@ export const members: MemberItem[] = [
     favorite: '好きな系統：推理系',
     image: '/media/members/member-03.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
+    imagePosition: '50% 45%',
     accent: '#8f7651',
   },
   {
@@ -238,6 +245,7 @@ export const members: MemberItem[] = [
     favorite: '好きな系統：島・屋敷系',
     image: '/media/members/member-04.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
+    imagePosition: '50% 45%',
     accent: '#9d8b68',
   },
 ];
