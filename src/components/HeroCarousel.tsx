@@ -1,22 +1,18 @@
-import type { CSSProperties, PointerEvent } from 'react';
+import type { CSSProperties } from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { productionHeroSlides } from '../data/productionHeroSlides';
 import SafeImage from './SafeImage';
 import styles from './HeroCarousel.module.css';
 
 const AUTOPLAY_INTERVAL = 5000;
-const SWIPE_THRESHOLD = 42;
 
 type CarouselTrackStyle = CSSProperties & Record<`--${string}`, string>;
 
 const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [dragOffset, setDragOffset] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
   const [failedVideoIds, setFailedVideoIds] = useState<Set<string>>(() => new Set());
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const dragStartX = useRef<number | null>(null);
   const slides = productionHeroSlides;
   const total = slides.length;
 
@@ -41,45 +37,10 @@ const HeroCarousel = () => {
     });
   }, []);
 
-  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType === 'touch') return;
-    dragStartX.current = event.clientX;
-    setIsDragging(true);
-    setPaused(true);
-    event.currentTarget.setPointerCapture(event.pointerId);
-  };
-
-  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
-    if (dragStartX.current === null) return;
-    const nextOffset = event.clientX - dragStartX.current;
-    setDragOffset(Math.max(-90, Math.min(90, nextOffset)));
-  };
-
-  const finishDrag = (event: PointerEvent<HTMLDivElement>) => {
-    if (dragStartX.current === null) return;
-    const diff = event.clientX - dragStartX.current;
-    if (diff > SWIPE_THRESHOLD) {
-      goPrev();
-    } else if (diff < -SWIPE_THRESHOLD) {
-      goNext();
-    }
-    dragStartX.current = null;
-    setDragOffset(0);
-    setIsDragging(false);
-    setPaused(false);
-  };
-
-  const cancelDrag = () => {
-    dragStartX.current = null;
-    setDragOffset(0);
-    setIsDragging(false);
-    setPaused(false);
-  };
-
   const trackStyle: CarouselTrackStyle = {
-    '--carousel-desktop-offset': `calc(12% - ${current * 76}% - ${current * 24}px + ${dragOffset}px)`,
-    '--carousel-tablet-offset': `calc(9% - ${current * 82}% - ${current * 24}px + ${dragOffset}px)`,
-    '--carousel-mobile-offset': `calc(-${current * 100}% + ${dragOffset}px)`,
+    '--carousel-desktop-offset': `calc(12% - ${current * 76}% - ${current * 24}px)`,
+    '--carousel-tablet-offset': `calc(9% - ${current * 82}% - ${current * 24}px)`,
+    '--carousel-mobile-offset': '0px',
   };
 
   // Play/pause video when active slide changes
@@ -109,23 +70,12 @@ const HeroCarousel = () => {
     <section
       className={styles.carousel}
       onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => {
-        if (!isDragging) setPaused(false);
-      }}
+      onMouseLeave={() => setPaused(false)}
       aria-label="メインビジュアル カルーセル"
     >
       <div className={styles.viewportWrap}>
-        <div
-          className={styles.viewport}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={finishDrag}
-          onPointerCancel={cancelDrag}
-          onPointerLeave={() => {
-            if (isDragging) cancelDrag();
-          }}
-        >
-          <div className={`${styles.track} ${isDragging ? styles.trackDragging : ''}`} style={trackStyle}>
+        <div className={styles.viewport}>
+          <div className={styles.track} style={trackStyle}>
             {slides.map((slide, i) => {
               const shouldUseVideo = slide.type === 'video' && !failedVideoIds.has(slide.id);
               const mediaStyle = slide.objectPosition
