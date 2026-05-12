@@ -10,9 +10,12 @@ Vite + React + TypeScript + CSS Modules で構築されています。
 ```bash
 npm install
 npm run dev      # 開発サーバー起動（http://localhost:5173）
-npm run build    # プロダクションビルド（dist/ へ出力）
+npm run build    # 素材チェック後、プロダクションビルド（dist/ へ出力）
 npm run preview  # ビルド結果のプレビュー
 ```
+
+`npm run build` は `npm run check:assets` を先に実行します。  
+必須の実画像素材が抜けている場合、ビルド前に検知できます。
 
 ---
 
@@ -45,10 +48,11 @@ Test-HP-SAKI/
 │       └── placeholders/    # フォールバック用プレースホルダー
 ├── src/
 │   ├── components/
-│   ├── data/siteData.ts     # 全素材パスとコンテンツの一元管理
+│   ├── data/siteData.ts             # 全素材パスとコンテンツの一元管理
+│   ├── data/productionHeroSlides.ts # 本番表示用Heroスライド
 │   ├── pages/
 │   ├── index.css
-│   └── figma-precision.css  # Figma寸法へ寄せる後段補正CSS
+│   └── figma-precision.css          # Figma寸法へ寄せる後段補正CSS
 └── docs/
     ├── figma-implementation-spec.md
     ├── asset-manifest.md
@@ -67,13 +71,21 @@ Figma ZIP由来の素材対応表は `docs/asset-manifest.md` に固定してい
 
 ### ヒーローカルーセル画像・動画
 
-1. `public/media/hero/` に新しいファイルを配置する
-   - 画像: `hero-01.jpg`〜`hero-05.jpg`
-   - 推奨比率: `3120 / 1548` に近い横長
-   - 動画: `hero-03.mp4`
-   - 動画ポスター: `hero-03-poster.jpg`
+本番表示では、存在する実画像だけを `src/data/productionHeroSlides.ts` にまとめています。
 
-2. `src/data/siteData.ts` の `heroSlides` 配列を確認・更新します。
+現時点の本番Heroは以下の3枚です。
+
+- `public/media/hero/hero-01.jpg`
+- `public/media/works/work-01.jpg`
+- `public/media/works/work-02.jpg`
+
+将来、Hero専用画像や動画を追加する場合は、ファイルを `public/media/hero/` に配置したうえで、`productionHeroSlides.ts` に追加してください。
+
+推奨:
+
+- 画像: `3120 / 1548` に近い横長
+- Works系画像を使う場合: 16:9
+- 動画: `muted`, `playsInline`, `loop`, `preload="metadata"`, `poster` を使用
 
 ### 作品（Works）画像
 
@@ -83,6 +95,8 @@ Figma ZIP由来の素材対応表は `docs/asset-manifest.md` に固定してい
 
 2. `src/data/siteData.ts` の `works` 配列の `image` フィールドを確認します。
 
+3. トリミング位置を変えたい場合は、同じ項目の `imagePosition` を調整します。
+
 ### メンバーアバター画像
 
 1. `public/media/members/` に `member-01.jpg`〜`member-04.jpg` を配置する
@@ -90,6 +104,26 @@ Figma ZIP由来の素材対応表は `docs/asset-manifest.md` に固定してい
    - Figma ZIP素材基準: `450 × 450`
 
 2. `src/data/siteData.ts` の `members` 配列の `image` フィールドを確認します。
+
+3. 円形内の見え方を変えたい場合は、同じ項目の `imagePosition` を調整します。
+
+---
+
+## 🎚 画像トリミング調整
+
+実画像は表示枠に合わせてトリミングされます。  
+見せたい中心がズレる場合は、以下の値を調整してください。
+
+- Hero: `src/data/productionHeroSlides.ts` の `objectPosition`
+- Works: `src/data/siteData.ts` の `works[].imagePosition`
+- Members: `src/data/siteData.ts` の `members[].imagePosition`
+
+例:
+
+```ts
+objectPosition: '50% 44%'
+imagePosition: '50% 45%'
+```
 
 ---
 
@@ -104,22 +138,15 @@ Figma ZIP由来の素材対応表は `docs/asset-manifest.md` に固定してい
 
 ---
 
-## 🎬 動画について
-
-動画スライドはスマホでも安全に動作するよう、以下を使います。
-
-- `muted`
-- `playsInline`
-- `loop`
-- `preload="metadata"`
-- `poster`
-
----
-
 ## ✅ QA
 
 視覚確認は `docs/qa.md` を見てください。  
 主な確認対象は `/`, `/about`, `/works`, `/news` です。
+
+Phase 6の主要確認幅:
+
+- PC: `1280px`
+- Mobile: `390px`
 
 ---
 
