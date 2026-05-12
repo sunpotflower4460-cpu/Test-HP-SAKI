@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './index.css'
 import './figma-precision.css'
 import './figma-component-ratios.css'
+import './disabled-links.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
