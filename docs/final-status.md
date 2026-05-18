@@ -58,12 +58,13 @@
 - スマホHero上で縦スクロールが引っかかりにくいようにtouch/overscroll周りを調整
 - スマホHero矢印が大きく出ないよう、`figma-precision.css` の上書きを調整
 - Home / About / Works / News の文言をFigma ZIP画像の内容へ再調整
-- `Noto Serif JP` を追加し、日本語大見出しを明朝寄りに安定化
+- 日本語タイポグラフィは `Noto Sans JP` を基準に維持
 - 英字ロゴは `Cormorant Garamond` を維持
 - 背景色、Header/Footer色、金色アクセント、本文グレーをFigma ZIPの見え方へ寄せる
 - WorkCard / MemberCard / News / About / Home / Footer の色・フォントを調整
 - Worksページに `And More...` を追加
 - 作品画像上の余計なステータスバッジと暗いグラデーションを削除
+- `#9747FF` はFigma管理色として扱い、実装には使用しない
 
 ## Build status
 
@@ -99,6 +100,7 @@ npm run build
 
 - Hero画像内文字とReact文字が二重になっていない
 - Hero上から縦スクロールできる
+- Works上からも縦スクロールを阻害しない
 - Hero矢印が大きすぎない
 - Figma ZIPに近い色・フォント・文言になっている
 
