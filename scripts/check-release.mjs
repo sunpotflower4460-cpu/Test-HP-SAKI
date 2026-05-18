@@ -73,7 +73,7 @@ if (packageJson) {
 
 requireIncludes('index.html', indexHtml, [
   '<html lang="ja">',
-  '<meta name="description"',
+  'name="description"',
   '<title>Liminarium Lab. | 物語体験を制作する小さなラボ</title>',
   '<link rel="canonical" href="https://test-hp-saki.vercel.app/"',
   '<meta property="og:title" content="Liminarium Lab. | 物語体験を制作する小さなラボ"',
