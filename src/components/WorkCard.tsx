@@ -35,6 +35,8 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
     >
       <div
         className={styles.image}
+        role="img"
+        aria-label={`${work.title} のビジュアル`}
         style={{
           backgroundImage: `url(${imgSrc})`,
           backgroundPosition: work.imagePosition ?? 'center',
