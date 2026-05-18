@@ -17,7 +17,7 @@
 
 .sectionLabel {
   color: var(--color-gold-2);
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.28em;
   font-size: 0.8rem;
   font-weight: 500;
@@ -25,7 +25,7 @@
 
 .sectionHeader h2 {
   max-width: 12em;
-  font-size: clamp(2.45rem, 4.6vw, 3.95rem);
+  font-size: clamp(2.1rem, 3.6vw, 2.75rem);
   line-height: 1.18;
   color: var(--color-heading);
   text-wrap: balance;
@@ -64,8 +64,9 @@
 
 .previewGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(2, minmax(0, 512px));
+  justify-content: center;
+  gap: 4rem;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -74,10 +75,6 @@
 @media (min-width: 1200px) {
   .sectionHeader h2 {
     max-width: 13em;
-  }
-
-  .previewGrid {
-    gap: 2.15rem;
   }
 }
 
@@ -108,7 +105,7 @@
 
   .sectionHeader h2 {
     max-width: 100%;
-    font-size: clamp(2.05rem, 9.4vw, 2.72rem);
+    font-size: clamp(1.85rem, 8vw, 2.36rem);
     line-height: 1.18;
     overflow-wrap: anywhere;
   }

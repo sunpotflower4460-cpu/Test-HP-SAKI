@@ -3,7 +3,7 @@ import HeroCarousel from '../../components/HeroCarousel';
 import NewsList from '../../components/NewsList';
 import WorkCard from '../../components/WorkCard';
 import styles from './Home.module.css';
-import { aboutPreview, newsItems, siteInfo, works } from '../../data/siteData';
+import { aboutPreview, newsItems, works } from '../../data/siteData';
 
 const Home = () => {
   return (
@@ -14,7 +14,6 @@ const Home = () => {
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionLabel}>About us</p>
-            <h2>{siteInfo.description}</h2>
           </div>
           <div className={styles.aboutPanel}>
             <p>{aboutPreview.body}</p>
@@ -45,7 +44,6 @@ const Home = () => {
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <p className={styles.sectionLabel}>News</p>
-            <h2>お知らせ</h2>
           </div>
           <NewsList items={newsItems} limit={2} />
           <div className={styles.previewAction}>

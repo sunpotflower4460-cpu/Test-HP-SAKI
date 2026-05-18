@@ -1,6 +1,6 @@
 .footer {
   margin-top: clamp(4.5rem, 8vw, 7rem);
-  border-top: 1px solid rgba(201, 169, 106, 0.18);
+  border-top: 1px solid rgba(198, 168, 106, 0.18);
   background: var(--color-header-footer);
 }
 
@@ -17,21 +17,13 @@
 }
 
 .brandBlock {
-  display: grid;
-  gap: 0.45rem;
+  display: flex;
+  align-items: center;
 }
 
-.brandMain {
-  font-family: var(--font-logo);
-  font-size: 1.36rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--color-heading);
-}
-
-.brandSub {
-  color: var(--color-subtext);
-  font-size: 0.92rem;
+.brandLogo {
+  width: clamp(172px, 20vw, 232px);
+  height: auto;
 }
 
 .socialBlock {
@@ -46,38 +38,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 52px;
-  padding: 0.9rem 1.2rem;
-  border: 1px solid rgba(201, 169, 106, 0.26);
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(198, 168, 106, 0.18);
   border-radius: 999px;
-  background: rgba(15, 15, 26, 0.74);
-  transition:
-    transform var(--transition),
-    border-color var(--transition),
-    background-color var(--transition),
-    box-shadow var(--transition);
+  background: rgba(15, 15, 26, 0.54);
+  transition: border-color var(--transition), background-color var(--transition);
 }
 
 .socialLink:hover {
-  transform: translateY(-2px);
-  border-color: rgba(201, 169, 106, 0.48);
-  background: rgba(201, 169, 106, 0.1);
-  box-shadow: var(--shadow-soft);
-}
-
-.socialLink:active {
-  transform: translateY(0) scale(0.99);
+  border-color: rgba(198, 168, 106, 0.3);
+  background: rgba(198, 168, 106, 0.08);
 }
 
 .socialLink span {
   color: var(--color-heading);
   font-size: 0.95rem;
-}
-
-.socialLink small {
-  color: var(--color-subtext);
-  font-size: 0.74rem;
 }
 
 .footerNav {
@@ -100,7 +76,7 @@
 .bottom {
   margin-top: 2.3rem;
   padding-top: 1.15rem;
-  border-top: 1px solid rgba(201, 169, 106, 0.14);
+  border-top: 1px solid rgba(198, 168, 106, 0.14);
   color: var(--color-note);
   font-size: 0.9rem;
   text-align: center;
@@ -147,27 +123,16 @@
   }
 
   .brandBlock {
-    gap: 0.3rem;
-  }
-
-  .brandMain {
-    font-size: 1.26rem;
-  }
-
-  .brandSub {
-    font-size: 0.8rem;
+    justify-content: center;
   }
 
   .socialBlock {
-    flex-direction: column;
-    width: 100%;
     gap: 0.62rem;
   }
 
   .socialLink {
-    width: min(100%, 320px);
-    min-height: 44px;
-    padding: 0.68rem 0.95rem;
+    min-width: 88px;
+    padding: 0.58rem 0.92rem;
   }
 
   .footerNav {

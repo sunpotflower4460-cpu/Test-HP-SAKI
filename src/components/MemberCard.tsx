@@ -1,6 +1,4 @@
-import type { CSSProperties } from 'react';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import styles from './MemberCard.module.css';
 import { MemberItem } from '../data/siteData';
 
@@ -23,11 +21,7 @@ const MemberCard = ({ member }: MemberCardProps) => {
   };
 
   return (
-    <motion.article
-      className={styles.card}
-      whileHover={{ y: -4 }}
-      style={{ '--member-accent': member.accent } as CSSProperties}
-    >
+    <article className={styles.card}>
       <div
         className={styles.avatar}
         role="img"
@@ -51,7 +45,7 @@ const MemberCard = ({ member }: MemberCardProps) => {
         <p className={styles.role}>{member.role}</p>
         <p className={styles.favorite}>{member.favorite}</p>
       </div>
-    </motion.article>
+    </article>
   );
 };
 
