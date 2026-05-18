@@ -194,7 +194,7 @@ export const works: WorkItem[] = [
     description:
       'とある屋敷にて。主人の遺体と謎の来訪者。\nそれぞれの思惑が絡み合う。\nあなたはすべて解きほぐすことができるか。',
     link: '',
-    buttonLabel: '製作中',
+    buttonLabel: '制作中',
     disabled: true,
     accent: '#756b48',
   },
