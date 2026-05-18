@@ -160,7 +160,7 @@ export const aboutPageSections = {
   activitiesTitle: '活動内容',
   activities: `2025年、代表・葉宮が新たにサークルを立ち上げ、UZUでの公開を目指してマーダーミステリー作品を制作中です。
 
-さらに1月からは、「推し活」と「推理」を掛け合わせたアイドル×マダミスプロジェクトが始動。
+さらに1月からは、「推し活」と「推理」を掛け合わせたアイドル×マダミスプロジェクト が始動。
 アイドルグループI’ll☆Sync（アイルシンク）のプロデュースを中心に、マーダーミステリー作品の制作や楽曲制作など、物語と音楽が交差する新しい企画を展開しています。`,
 };
 
@@ -204,8 +204,8 @@ export const members: MemberItem[] = [
   {
     id: 'member-01',
     name: '葉宮よしの',
-    role: '制作・GM 他',
-    favorite: '好きな系統・ガチ推理系・SF',
+    role: '制作・GM他',
+    favorite: '好きな系統：ガチ推理系・SF',
     image: '/media/members/member-01.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
@@ -215,7 +215,7 @@ export const members: MemberItem[] = [
     id: 'member-02',
     name: '三河柚',
     role: '制作・イラスト',
-    favorite: '好きな系統・王宮系',
+    favorite: '好きな系統：エモ系',
     image: '/media/members/member-02.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
@@ -225,7 +225,7 @@ export const members: MemberItem[] = [
     id: 'member-03',
     name: 'もぶ',
     role: '音楽',
-    favorite: '好きな系統・推理系',
+    favorite: '好きな系統：推理系',
     image: '/media/members/member-03.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
@@ -235,7 +235,7 @@ export const members: MemberItem[] = [
     id: 'member-04',
     name: 'ヤッホー・ナーン',
     role: '制作補助',
-    favorite: '好きな系統・島・屋敷系',
+    favorite: '好きな系統：島・屋敷系',
     image: '/media/members/member-04.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
