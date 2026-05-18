@@ -76,7 +76,7 @@
 .content h3 {
   font-family: var(--font-body);
   font-size: clamp(1.42rem, 2vw, 2.05rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0;
   color: var(--color-heading);
   overflow-wrap: anywhere;

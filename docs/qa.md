@@ -73,7 +73,7 @@ At desktop `1280px`:
 - Hero sits under the header with a Figma-like gap.
 - Hero carousel uses only real assets and does not fall back to placeholder slides.
 - Hero visual ratio feels close to the Figma reference.
-- Hero overlay keeps text readable without making the image look muddy.
+- Hero keeps image-embedded copy only and does not re-add a React text overlay.
 - Works preview cards appear as two strong cards with 16:9 images.
 - News preview is readable and not visually heavier than Works.
 
@@ -81,9 +81,9 @@ At mobile `390px`:
 
 - Header height is close to `78px`.
 - Hero does not overflow horizontally.
-- Hero text is readable over the image.
+- Hero allows immediate vertical scrolling from first load.
 - Hero arrows and dots do not cover important image content too aggressively.
-- Works preview maintains the intended carousel / card feel.
+- Works preview stacks cleanly from the first card without stealing vertical scroll.
 - Mobile gutters feel close to `24px`.
 
 ## Works page checks
@@ -141,4 +141,5 @@ Phase 6 can be considered complete when:
 - No required image falls back to placeholder.
 - Hero, Works, and Member image crops are acceptable.
 - No obvious horizontal overflow appears on mobile.
+- Hero and Works preserve one-finger vertical scroll on mobile.
 - Header and Footer spacing feel close enough to the Figma reference.
