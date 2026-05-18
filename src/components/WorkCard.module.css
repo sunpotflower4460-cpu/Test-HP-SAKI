@@ -8,7 +8,7 @@
   padding: 1.35rem;
   border-radius: 24px;
   border: 1px solid rgba(201, 169, 106, 0.22);
-  background: #111425;
+  background: var(--color-card);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
   overflow: hidden;
   transition:
@@ -31,7 +31,7 @@
 }
 
 .full {
-  grid-template-columns: minmax(300px, 40%) minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 46%) minmax(0, 1fr);
   align-items: stretch;
 }
 
@@ -42,8 +42,8 @@
   box-sizing: border-box;
   min-height: 240px;
   height: 100%;
-  border-radius: 0;
-  border: none;
+  border-radius: 18px;
+  border: 1px solid rgba(201, 169, 106, 0.16);
   background-size: cover;
   background-position: center;
   display: block;
@@ -67,7 +67,7 @@
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  color: #c9a96a;
+  color: var(--color-gold-2);
   letter-spacing: 0.08em;
   font-size: 0.84rem;
   text-transform: none;
@@ -77,13 +77,13 @@
   font-family: var(--font-body);
   font-size: clamp(1.42rem, 2vw, 2.05rem);
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #f2eee6;
+  letter-spacing: 0;
+  color: var(--color-heading);
   overflow-wrap: anywhere;
 }
 
 .description {
-  color: #b8b3aa;
+  color: var(--color-body);
   max-width: 40rem;
   overflow-wrap: anywhere;
   white-space: pre-line;
@@ -110,11 +110,11 @@
 
 .status {
   background: rgba(201, 169, 106, 0.1);
-  color: #c9a96a;
+  color: var(--color-gold-2);
 }
 
 .cta {
-  background: linear-gradient(135deg, #d8bd82, #c9a96a);
+  background: linear-gradient(135deg, var(--color-gold-3), var(--color-gold-2));
   color: #0f0f1a;
   transition: transform var(--transition), border-color var(--transition), filter var(--transition);
 }
@@ -131,7 +131,7 @@
 
 .ctaDisabled {
   background: rgba(201, 169, 106, 0.1);
-  color: #b8b3aa;
+  color: var(--color-subtext);
   border-color: rgba(201, 169, 106, 0.16);
   cursor: default;
 }
@@ -169,10 +169,8 @@
   }
 
   .preview .image {
-    width: calc(100% - 44px);
-    max-width: calc(100% - 44px);
-    margin-inline: auto;
-    align-self: center;
+    width: 100%;
+    max-width: 100%;
   }
 
   .image {

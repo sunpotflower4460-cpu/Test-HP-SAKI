@@ -4,13 +4,6 @@ import MemberCard from '../../components/MemberCard';
 import styles from './About.module.css';
 import { aboutPageSections, members, siteInfo } from '../../data/siteData';
 
-const sectionMotion = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.4 },
-};
-
 const About = () => {
   return (
     <div className={`container ${styles.page}`}>
@@ -18,8 +11,8 @@ const About = () => {
 
       <motion.section
         className={styles.hero}
-        initial={sectionMotion.initial}
-        animate={sectionMotion.whileInView}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
       >
         <p className={styles.label}>About us</p>
@@ -27,19 +20,19 @@ const About = () => {
         <p className={styles.description}>{siteInfo.description}</p>
       </motion.section>
 
-      <motion.section className={styles.block} {...sectionMotion}>
+      <section className={styles.block}>
         <p className={styles.blockLabel}>理念</p>
         <h2>{aboutPageSections.philosophyTitle}</h2>
         <p>{aboutPageSections.philosophy}</p>
-      </motion.section>
+      </section>
 
-      <motion.section className={styles.block} {...sectionMotion}>
+      <section className={styles.block}>
         <p className={styles.blockLabel}>活動内容</p>
         <h2>{aboutPageSections.activitiesTitle}</h2>
         <p>{aboutPageSections.activities}</p>
-      </motion.section>
+      </section>
 
-      <motion.section className={styles.membersSection} {...sectionMotion}>
+      <section className={styles.membersSection}>
         <div className={styles.membersHeader}>
           <p className={styles.blockLabel}>メンバー</p>
           <h2>制作を支える4人</h2>
@@ -49,7 +42,7 @@ const About = () => {
             <MemberCard key={member.id} member={member} />
           ))}
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 };

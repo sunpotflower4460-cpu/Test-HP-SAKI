@@ -180,7 +180,7 @@ export const works: WorkItem[] = [
       '推理×推し活プロジェクト第一弾！\nデビューを控えたアイドルたちを襲う悲劇。\n彼女たちの運命の歯車が廻りだす…。',
     link: '',
     buttonLabel: '特設サイトへ',
-    accent: '#c9a96a',
+    accent: '#C6A86A',
   },
   {
     id: 'work-02',
@@ -196,7 +196,7 @@ export const works: WorkItem[] = [
     link: '',
     buttonLabel: '制作中',
     disabled: true,
-    accent: '#756b48',
+    accent: '#AE9054',
   },
 ];
 
@@ -209,7 +209,7 @@ export const members: MemberItem[] = [
     image: '/media/members/member-01.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#c9a96a',
+    accent: '#C6A86A',
   },
   {
     id: 'member-02',
@@ -219,7 +219,7 @@ export const members: MemberItem[] = [
     image: '/media/members/member-02.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#c9a96a',
+    accent: '#C6A86A',
   },
   {
     id: 'member-03',
@@ -229,7 +229,7 @@ export const members: MemberItem[] = [
     image: '/media/members/member-03.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#c9a96a',
+    accent: '#C6A86A',
   },
   {
     id: 'member-04',
@@ -239,7 +239,7 @@ export const members: MemberItem[] = [
     image: '/media/members/member-04.jpg',
     fallback: '/media/placeholders/placeholder-member.svg',
     imagePosition: '50% 45%',
-    accent: '#c9a96a',
+    accent: '#C6A86A',
   },
 ];
 

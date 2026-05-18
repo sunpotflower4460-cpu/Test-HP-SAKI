@@ -1,7 +1,7 @@
 .footer {
   margin-top: clamp(4.5rem, 8vw, 7rem);
   border-top: 1px solid rgba(201, 169, 106, 0.18);
-  background: #111425;
+  background: var(--color-header-footer);
 }
 
 .inner {
@@ -23,14 +23,14 @@
 
 .brandMain {
   font-family: var(--font-logo);
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: #f2eee6;
+  font-size: 1.36rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-heading);
 }
 
 .brandSub {
-  color: #d8d1c7;
+  color: var(--color-subtext);
   font-size: 0.92rem;
 }
 
@@ -71,12 +71,12 @@
 }
 
 .socialLink span {
-  color: #f2eee6;
+  color: var(--color-heading);
   font-size: 0.95rem;
 }
 
 .socialLink small {
-  color: #b8b3aa;
+  color: var(--color-subtext);
   font-size: 0.74rem;
 }
 
@@ -88,12 +88,12 @@
 }
 
 .footerNavLink {
-  color: #d8d1c7;
+  color: var(--color-subtext);
   transition: color var(--transition), transform var(--transition);
 }
 
 .footerNavLink:hover {
-  color: #f2eee6;
+  color: var(--color-heading);
   transform: translateX(2px);
 }
 
@@ -101,7 +101,7 @@
   margin-top: 2.3rem;
   padding-top: 1.15rem;
   border-top: 1px solid rgba(201, 169, 106, 0.14);
-  color: #b8b3aa;
+  color: var(--color-note);
   font-size: 0.9rem;
   text-align: center;
 }

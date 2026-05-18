@@ -13,9 +13,11 @@ const Header = () => {
   }, [location.pathname]);
 
   useEffect(() => {
+    document.documentElement.style.overflowY = isMenuOpen ? 'hidden' : '';
     document.body.style.overflow = isMenuOpen ? 'hidden' : '';
 
     return () => {
+      document.documentElement.style.overflowY = '';
       document.body.style.overflow = '';
     };
   }, [isMenuOpen]);

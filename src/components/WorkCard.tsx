@@ -14,7 +14,7 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
   const isPreview = layout === 'preview';
   const isPlaceholderLink = !work.link || work.link === '#';
   const isUnavailable = work.disabled || isPlaceholderLink || isPreview;
-  const ctaLabel = isPreview ? '制作中' : work.buttonLabel;
+  const ctaLabel = work.buttonLabel;
 
   useEffect(() => {
     setImgSrc(work.image);

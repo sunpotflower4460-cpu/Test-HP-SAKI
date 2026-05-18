@@ -17,10 +17,9 @@ const NewsList = ({ items, limit }: NewsListProps) => {
         <motion.article
           key={item.id}
           className={styles.item}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35, delay: index * 0.05 }}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.28, delay: index * 0.04 }}
         >
           <div className={styles.meta}>
             <time>{item.date}</time>

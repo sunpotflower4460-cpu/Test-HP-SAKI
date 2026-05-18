@@ -2,13 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(17, 20, 37, 0.96);
+  background: rgba(22, 33, 62, 0.96);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(201, 169, 106, 0.16);
 }
 
 .inner {
-  min-height: 96px;
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,16 +24,16 @@
 
 .brandMain {
   font-family: var(--font-logo);
-  font-size: clamp(1.45rem, 1.8vw, 1.8rem);
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: #f2eee6;
+  font-size: clamp(1.25rem, 1.6vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-heading);
 }
 
 .brandSub {
-  color: #d8d1c7;
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  color: var(--color-subtext);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
 }
 
 .desktopNav {
@@ -131,14 +131,14 @@
 
 .mobilePanel {
   position: fixed;
-  top: calc(78px + 0.7rem);
+  top: calc(74px + 0.55rem);
   right: 24px;
   width: min(88vw, 380px);
   max-height: calc(100dvh - 102px);
   padding: 1.15rem;
   background:
     radial-gradient(circle at top right, rgba(201, 169, 106, 0.12), transparent 34%),
-    linear-gradient(180deg, rgba(12, 15, 28, 0.98), rgba(17, 22, 36, 0.98));
+    linear-gradient(180deg, rgba(22, 33, 62, 0.98), rgba(17, 20, 37, 0.98));
   border: 1px solid rgba(201, 169, 106, 0.24);
   border-radius: 28px;
   box-shadow: -14px 24px 54px rgba(0, 0, 0, 0.42);
@@ -167,9 +167,9 @@
 .mobileBrand {
   display: block;
   font-family: var(--font-logo);
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .closeButton {
@@ -271,16 +271,16 @@
 
 @media (max-width: 768px) {
   .inner {
-    min-height: 78px;
+    min-height: 74px;
   }
 
   .brandMain {
-    font-size: clamp(1.18rem, 6.4vw, 1.52rem);
+    font-size: clamp(1.06rem, 5.8vw, 1.34rem);
   }
 
   .brandSub {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
   }
 
   .desktopNav {
