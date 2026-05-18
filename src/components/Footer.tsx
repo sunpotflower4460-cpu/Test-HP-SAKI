@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
-import { mobileNavItems, siteMeta, socialLinks } from '../data/siteData';
+import { mobileNavItems, siteAssets, siteMeta, socialLinks } from '../data/siteData';
 
 const Footer = () => {
   return (
@@ -8,27 +8,20 @@ const Footer = () => {
       <div className={`container ${styles.inner}`}>
         <div className={styles.top}>
           <div className={styles.brandBlock}>
-            <p className={styles.brandMain}>{siteMeta.name}</p>
-            <p className={styles.brandSub}>{siteMeta.nameJa}</p>
+            <img src={siteAssets.logo} alt={siteMeta.name} className={styles.brandLogo} />
           </div>
 
           <div className={styles.socialBlock}>
             {socialLinks.map((link) => {
               const isPlaceholder = !link.href || link.href === '#';
-              const content = (
-                <>
-                  <span>{link.label}</span>
-                  <small>{link.description}</small>
-                </>
-              );
 
               return isPlaceholder ? (
                 <span key={link.label} className={styles.socialLink} aria-disabled="true">
-                  {content}
+                  <span>{link.label}</span>
                 </span>
               ) : (
                 <a key={link.label} href={link.href} className={styles.socialLink}>
-                  {content}
+                  <span>{link.label}</span>
                 </a>
               );
             })}

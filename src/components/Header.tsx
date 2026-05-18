@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './Header.module.css';
-import { desktopNavItems, mobileNavItems, siteInfo, siteMeta, socialLinks } from '../data/siteData';
+import { desktopNavItems, mobileNavItems, siteMeta } from '../data/siteData';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,12 +23,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <motion.header
-      className={styles.header}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45 }}
-    >
+    <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.brand} aria-label={siteMeta.name}>
           <span className={styles.brandMain}>{siteMeta.name}</span>
@@ -81,10 +76,6 @@ const Header = () => {
               aria-label="Mobile navigation"
             >
               <div className={styles.mobilePanelHeader}>
-                <div>
-                  <span className={styles.mobileEyebrow}>Menu</span>
-                  <span className={styles.mobileBrand}>{siteMeta.name}</span>
-                </div>
                 <button
                   type="button"
                   className={styles.closeButton}
@@ -94,8 +85,6 @@ const Header = () => {
                   ×
                 </button>
               </div>
-
-              <p className={styles.mobileIntro}>{siteInfo.tagline}</p>
 
               <div className={styles.mobileNavLinks}>
                 {mobileNavItems.map((item) => (
@@ -110,33 +99,11 @@ const Header = () => {
                   </NavLink>
                 ))}
               </div>
-
-              <div className={styles.mobileSocials} aria-label="Social links">
-                {socialLinks.map((link) => {
-                  const isPlaceholder = !link.href || link.href === '#';
-                  const content = (
-                    <>
-                      <span>{link.label}</span>
-                      <small>{link.description}</small>
-                    </>
-                  );
-
-                  return isPlaceholder ? (
-                    <span key={link.label} className={styles.mobileSocialLink} aria-disabled="true">
-                      {content}
-                    </span>
-                  ) : (
-                    <a key={link.label} href={link.href} className={styles.mobileSocialLink}>
-                      {content}
-                    </a>
-                  );
-                })}
-              </div>
             </motion.nav>
           </>
         ) : null}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 };
 

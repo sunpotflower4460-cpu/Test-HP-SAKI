@@ -49,58 +49,6 @@ section[aria-label='メインビジュアル カルーセル'] button[aria-label
   height: 64px !important;
 }
 
-[class*='previewGrid'] {
-  grid-template-columns: repeat(2, 512px) !important;
-  justify-content: center !important;
-  gap: 64px !important;
-}
-
-article[style*='--work-accent'] > div:first-child {
-  aspect-ratio: 16 / 9 !important;
-}
-
-[class*='previewGrid'] article[style*='--work-accent'] {
-  width: 512px !important;
-  min-height: 583px !important;
-}
-
-[class*='previewGrid'] article[style*='--work-accent'] > div:first-child {
-  width: 100% !important;
-  height: 288px !important;
-  min-height: 0 !important;
-}
-
-[class*='Works_grid'] {
-  gap: 40px !important;
-}
-
-[class*='Works_grid'] article[style*='--work-accent'] {
-  height: 320px !important;
-  grid-template-columns: 570px 1fr !important;
-}
-
-[class*='Works_grid'] article[style*='--work-accent'] > div:first-child {
-  width: 570px !important;
-  height: 320px !important;
-  min-height: 0 !important;
-}
-
-[class*='memberGrid'] {
-  grid-template-columns: repeat(4, 257px) !important;
-  gap: 24px !important;
-  justify-content: center !important;
-}
-
-article[style*='--member-accent'] {
-  width: 257px !important;
-  min-height: 296px !important;
-}
-
-article[style*='--member-accent'] > div:first-child {
-  width: 150px !important;
-  height: 150px !important;
-}
-
 @media (max-width: 640px) {
   .container {
     width: calc(100% - 48px) !important;
@@ -133,57 +81,4 @@ article[style*='--member-accent'] > div:first-child {
     height: 28px !important;
   }
 
-  [class*='previewGrid'] {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: min(100%, 342px) !important;
-    max-width: calc(100vw - 48px) !important;
-    margin-inline: auto !important;
-    padding-inline: 0 !important;
-    overflow: visible !important;
-    gap: 24px !important;
-  }
-
-  [class*='previewGrid'] article[style*='--work-accent'] {
-    width: 100% !important;
-    min-height: auto !important;
-  }
-
-  [class*='previewGrid'] article[style*='--work-accent'] > div:first-child {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9 !important;
-  }
-
-  [class*='Works_grid'] article[style*='--work-accent'] {
-    width: 100% !important;
-    max-width: 342px !important;
-    height: auto !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  [class*='Works_grid'] article[style*='--work-accent'] > div:first-child {
-    width: 100% !important;
-    max-width: 342px !important;
-    height: 192px !important;
-  }
-
-  [class*='memberGrid'] {
-    grid-template-columns: 1fr !important;
-  }
-
-  article[style*='--member-accent'] {
-    width: 100% !important;
-    max-width: 342px !important;
-    min-height: 136px !important;
-    display: grid !important;
-    grid-template-columns: 88px 1fr !important;
-    align-items: center !important;
-    text-align: left !important;
-  }
-
-  article[style*='--member-accent'] > div:first-child {
-    width: 88px !important;
-    height: 88px !important;
-  }
 }

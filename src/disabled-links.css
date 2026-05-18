@@ -20,5 +20,5 @@
 [class*='socialLink'][aria-disabled='true']:hover,
 [class*='mobileSocialLink'][aria-disabled='true']:hover {
   background: rgba(21, 27, 44, 0.58) !important;
-  border-color: rgba(201, 169, 106, 0.18) !important;
+  border-color: rgba(198, 168, 106, 0.18) !important;
 }

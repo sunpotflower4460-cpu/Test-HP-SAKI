@@ -1,6 +1,4 @@
-import type { CSSProperties } from 'react';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import styles from './WorkCard.module.css';
 import { WorkItem } from '../data/siteData';
 
@@ -27,12 +25,7 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
   };
 
   return (
-    <motion.article
-      className={`${styles.card} ${isPreview ? styles.preview : styles.full}`}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.25 }}
-      style={{ '--work-accent': work.accent } as CSSProperties}
-    >
+    <article className={`${styles.card} ${isPreview ? styles.preview : styles.full}`}>
       <div
         className={styles.image}
         role="img"
@@ -49,7 +42,6 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
           style={{ display: 'none' }}
           onError={handleImgError}
         />
-        <span>{work.status}</span>
       </div>
       <div className={styles.content}>
         <p className={styles.specs}>
@@ -60,7 +52,6 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
         <h3>{work.title}</h3>
         <p className={styles.description}>{work.description}</p>
         <div className={styles.footer}>
-          <span className={styles.status}>{work.status}</span>
           {isUnavailable ? (
             <span className={`${styles.cta} ${styles.ctaDisabled}`} aria-disabled="true">
               {ctaLabel}
@@ -72,7 +63,7 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
           )}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 };
 
