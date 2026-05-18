@@ -25,10 +25,6 @@ const MemberCard = ({ member }: MemberCardProps) => {
   return (
     <motion.article
       className={styles.card}
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.35 }}
       whileHover={{ y: -4 }}
       style={{ '--member-accent': member.accent } as CSSProperties}
     >

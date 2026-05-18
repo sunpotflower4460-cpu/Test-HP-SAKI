@@ -10,7 +10,7 @@
 
 .label,
 .blockLabel {
-  color: #c9a96a;
+  color: var(--color-gold-2);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -18,16 +18,16 @@
 }
 
 .hero h1 {
-  font-family: var(--font-logo);
+  font-family: var(--font-body);
   font-size: clamp(2.7rem, 5vw, 4.35rem);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: #f2eee6;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-heading);
 }
 
 .description {
   max-width: 42rem;
-  color: #b8b3aa;
+  color: var(--color-body);
 }
 
 .block {
@@ -37,12 +37,12 @@
   padding: clamp(1.9rem, 4vw, 2.8rem);
   border-radius: 24px;
   border: 1px solid rgba(201, 169, 106, 0.16);
-  background: #111425;
+  background: var(--color-card);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
 }
 
 .block p:last-child {
-  color: #b8b3aa;
+  color: var(--color-body);
   white-space: pre-line;
   max-width: 48rem;
   line-height: 2.05;
@@ -50,7 +50,7 @@
 
 .block h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  color: #f2eee6;
+  color: var(--color-heading);
 }
 
 .membersSection {
@@ -65,7 +65,7 @@
 
 .membersHeader h2 {
   font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  color: #f2eee6;
+  color: var(--color-heading);
 }
 
 .memberGrid {

@@ -26,7 +26,7 @@
   align-items: center;
   gap: 0.9rem;
   flex-wrap: wrap;
-  color: #d8d1c7;
+  color: var(--color-note);
 }
 
 .badge {
@@ -34,13 +34,13 @@
   padding: 0.25rem 0.62rem;
   border-radius: 999px;
   background: rgba(201, 169, 106, 0.12);
-  color: #c9a96a;
+  color: var(--color-gold-2);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
 }
 
 .title {
-  color: #f2eee6;
+  color: var(--color-heading);
   font-size: 1.08rem;
   font-weight: 500;
 }
@@ -51,7 +51,7 @@
 }
 
 .body {
-  color: #b8b3aa;
+  color: var(--color-body);
   font-size: 0.95rem;
 }
 

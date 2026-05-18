@@ -7,7 +7,7 @@
   padding: 1.8rem 1.3rem 1.55rem;
   border-radius: 24px;
   border: 1px solid rgba(201, 169, 106, 0.22);
-  background: #111425;
+  background: var(--color-card);
   text-align: center;
   transition:
     transform var(--transition),
@@ -68,16 +68,16 @@
   font-family: var(--font-body);
   font-size: 1.22rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  color: #f2eee6;
+  letter-spacing: 0;
+  color: var(--color-heading);
 }
 
 .role {
-  color: #c9a96a;
+  color: var(--color-gold-2);
 }
 
 .favorite {
-  color: #b8b3aa;
+  color: var(--color-subtext);
 }
 
 @media (max-width: 640px) {

@@ -21,16 +21,10 @@ const Works = () => {
       </motion.section>
 
       <div className={styles.grid}>
-        {works.map((work, index) => (
-          <motion.div
-            key={work.id}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.35, delay: index * 0.05 }}
-          >
+        {works.map((work) => (
+          <div key={work.id}>
             <WorkCard work={work} />
-          </motion.div>
+          </div>
         ))}
       </div>
 

@@ -16,7 +16,7 @@
 }
 
 .sectionLabel {
-  color: #c9a96a;
+  color: var(--color-gold-2);
   text-transform: uppercase;
   letter-spacing: 0.28em;
   font-size: 0.8rem;
@@ -27,7 +27,7 @@
   max-width: 12em;
   font-size: clamp(2.45rem, 4.6vw, 3.95rem);
   line-height: 1.18;
-  color: #f2eee6;
+  color: var(--color-heading);
   text-wrap: balance;
 }
 
@@ -50,7 +50,7 @@
 
 .aboutPanel p {
   white-space: pre-line;
-  color: #b8b3aa;
+  color: var(--color-body);
   max-width: 42rem;
   font-size: 1rem;
   line-height: 2.05;

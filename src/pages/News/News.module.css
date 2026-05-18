@@ -21,7 +21,7 @@
 
 .description {
   max-width: 40rem;
-  color: var(--color-text-muted);
+  color: var(--color-body);
 }
 
 .listWrap {
