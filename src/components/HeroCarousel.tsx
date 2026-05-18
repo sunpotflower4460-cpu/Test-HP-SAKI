@@ -121,15 +121,6 @@ const HeroCarousel = () => {
                     />
                   )}
                   <div className={styles.overlay} />
-                  <div className={styles.copy}>
-                    {slide.description && (
-                      <p className={styles.copyEyebrow}>{slide.description}</p>
-                    )}
-                    <h2 className={styles.copyTitle}>{slide.title}</h2>
-                    {slide.subtitle && (
-                      <p className={styles.copySubtitle}>{slide.subtitle}</p>
-                    )}
-                  </div>
                 </div>
               );
             })}

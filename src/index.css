@@ -1,17 +1,34 @@
 :root {
-  --color-bg: #0f0f1a;
-  --color-surface: #111425;
-  --color-surface-alt: #151b2c;
-  --color-surface-soft: #1a2133;
-  --color-text: #f2eee6;
-  --color-text-soft: #d8d1c7;
-  --color-text-muted: #b8b3aa;
-  --color-accent: #c9a96a;
-  --color-accent-strong: #d8bd82;
-  --color-border: rgba(201, 169, 106, 0.24);
+  --color-main-bg: #0f0f1a;
+  --color-header-footer: #16213e;
+  --color-surface-1: #111425;
+  --color-surface-2: #131728;
+  --color-card: #171d31;
+  --color-blue-1: #2a3a5c;
+  --color-blue-2: #304878;
+  --color-blue-3: #6c7ea8;
+  --color-blue-4: #8fa6d8;
+  --color-gold-1: #ae9054;
+  --color-gold-2: #c6a86a;
+  --color-gold-3: #d7bc86;
+  --color-heading: #f4f1e8;
+  --color-body: #d7dcea;
+  --color-subtext: #a7b0c4;
+  --color-note: #7f879b;
+  --color-white: #ffffff;
+  --color-bg: var(--color-main-bg);
+  --color-surface: var(--color-surface-1);
+  --color-surface-alt: var(--color-surface-2);
+  --color-surface-soft: var(--color-card);
+  --color-text: var(--color-heading);
+  --color-text-soft: var(--color-body);
+  --color-text-muted: var(--color-subtext);
+  --color-accent: var(--color-gold-2);
+  --color-accent-strong: var(--color-gold-3);
+  --color-border: rgba(198, 168, 106, 0.24);
   --font-logo: 'Cormorant Garamond', 'Times New Roman', serif;
-  --font-heading: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
-  --font-body: 'Inter', 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+  --font-heading: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+  --font-body: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
   --transition: 0.35s ease;
   --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.28);
   --section-space: clamp(3.5rem, 8vw, 7rem);
@@ -35,7 +52,7 @@ body {
   background: #0f0f1a;
   color: var(--color-text);
   line-height: 1.9;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -53,7 +70,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
