@@ -30,6 +30,8 @@ const MemberCard = ({ member }: MemberCardProps) => {
     >
       <div
         className={styles.avatar}
+        role="img"
+        aria-label={`${member.name} のプロフィール画像`}
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(8, 12, 21, 0.22), rgba(8, 12, 21, 0.74)), url(${imgSrc})`,
           backgroundPosition: member.imagePosition ?? 'center',

@@ -36,6 +36,7 @@ const sitemap = requireFile('public/sitemap.xml');
 
 requireFile('docs/qa.md');
 requireFile('docs/release-checklist.md');
+requireFile('docs/release-operation.md');
 requireFile('docs/final-status.md');
 requireFile('src/pages/NotFound/NotFound.tsx');
 requireFile('src/pages/NotFound/NotFound.module.css');
@@ -73,9 +74,12 @@ if (packageJson) {
 requireIncludes('index.html', indexHtml, [
   '<html lang="ja">',
   '<meta name="description"',
+  '<title>Liminarium Lab. | 物語体験を制作する小さなラボ</title>',
   '<link rel="canonical" href="https://test-hp-saki.vercel.app/"',
+  '<meta property="og:title" content="Liminarium Lab. | 物語体験を制作する小さなラボ"',
   '<meta property="og:url" content="https://test-hp-saki.vercel.app/"',
   '<meta property="og:image" content="https://test-hp-saki.vercel.app/media/hero/hero-01.jpg"',
+  '<meta name="twitter:title" content="Liminarium Lab. | 物語体験を制作する小さなラボ"',
   '<meta name="twitter:image" content="https://test-hp-saki.vercel.app/media/hero/hero-01.jpg"',
 ]);
 
