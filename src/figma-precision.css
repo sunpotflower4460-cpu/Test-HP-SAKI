@@ -13,14 +13,6 @@
   min-height: 56px !important;
 }
 
-header {
-  background: rgba(22, 33, 62, 0.96) !important;
-}
-
-header .container {
-  min-height: 88px !important;
-}
-
 section[aria-label='メインビジュアル カルーセル'] {
   width: 100vw !important;
   margin-left: calc(50% - 50vw) !important;
