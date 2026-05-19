@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
-import { desktopNavItems, mobileNavItems, siteMeta } from '../data/siteData';
+import { desktopNavItems, mobileNavItems, siteAssets, siteMeta } from '../data/siteData';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,8 +25,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.brand} aria-label={siteMeta.name}>
-          <span className={styles.brandMain}>{siteMeta.name}</span>
-          <span className={styles.brandSub}>{siteMeta.nameJa}</span>
+          <img src={siteAssets.logo} alt={siteMeta.name} className={styles.brandLogo} />
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Primary navigation">
