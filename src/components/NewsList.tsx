@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import styles from './NewsList.module.css';
 import { NewsItem } from '../data/siteData';
 
@@ -13,14 +12,8 @@ const NewsList = ({ items, limit }: NewsListProps) => {
 
   return (
     <div className={styles.list}>
-      {visibleItems.map((item, index) => (
-        <motion.article
-          key={item.id}
-          className={styles.item}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.28, delay: index * 0.04 }}
-        >
+      {visibleItems.map((item) => (
+        <article key={item.id} className={styles.item}>
           <div className={styles.meta}>
             <time>{item.date}</time>
             {item.label ? <span className={styles.badge}>{item.label}</span> : null}
@@ -29,7 +22,7 @@ const NewsList = ({ items, limit }: NewsListProps) => {
             <p className={styles.title}>{item.title}</p>
             {item.body ? <p className={styles.body}>{item.body}</p> : null}
           </div>
-        </motion.article>
+        </article>
       ))}
     </div>
   );
