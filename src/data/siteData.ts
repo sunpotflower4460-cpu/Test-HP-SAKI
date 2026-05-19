@@ -116,7 +116,8 @@ export const works: WorkItem[] = [
     description:
       '推理×推し活プロジェクト第一弾！\nデビューを控えたアイドルたちを襲う悲劇。\n彼女たちの運命の歯車が廻りだす…。',
     link: '',
-    buttonLabel: '特設サイトへ',
+    buttonLabel: '製作中',
+    disabled: true,
     accent: '#C6A86A',
   },
   {
@@ -183,7 +184,7 @@ export const members: MemberItem[] = [
 export const newsItems: NewsItem[] = [
   {
     id: 'news-01',
-    date: '2026/05/dd',
+    date: '2026/05/21',
     label: 'NEW',
     title: 'Liminarium Lab. サイト公開',
   },
