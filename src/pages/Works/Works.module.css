@@ -8,11 +8,9 @@
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.label {
-  color: var(--color-accent);
-  letter-spacing: 0.24em;
-  text-transform: none;
-  font-size: 0.8rem;
+.pageTitle {
+  color: var(--color-heading);
+  line-height: 1.12;
 }
 
 .grid {

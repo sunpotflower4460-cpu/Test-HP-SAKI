@@ -78,6 +78,14 @@ h6 {
   letter-spacing: 0;
 }
 
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -163,6 +171,21 @@ img {
   background: rgba(198, 168, 106, 0.16);
 }
 
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  color: var(--color-subtext);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: color var(--transition);
+}
+
+.backLink:hover {
+  color: var(--color-heading);
+}
+
 @media (max-width: 640px) {
   html {
     scroll-padding-top: 92px;
@@ -179,6 +202,19 @@ img {
   .btn {
     min-height: 48px;
     padding-inline: 1.2rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 48px);
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 7vw, 32px);
+  }
+
+  .backLink {
+    margin-bottom: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 

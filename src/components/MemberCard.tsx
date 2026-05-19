@@ -7,7 +7,6 @@ interface MemberCardProps {
 }
 
 const MemberCard = ({ member }: MemberCardProps) => {
-  const initials = member.name.slice(0, 1);
   const [imgSrc, setImgSrc] = useState(member.image);
 
   useEffect(() => {
@@ -38,7 +37,6 @@ const MemberCard = ({ member }: MemberCardProps) => {
           style={{ display: 'none' }}
           onError={handleImgError}
         />
-        <span>{initials}</span>
       </div>
       <div className={styles.body}>
         <h3>{member.name}</h3>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import WorkCard from '../../components/WorkCard';
 import styles from './Works.module.css';
 import { works } from '../../data/siteData';
@@ -6,7 +7,10 @@ const Works = () => {
   return (
     <div className={`container ${styles.page}`}>
       <section className={styles.header}>
-        <p className={styles.label}>Works</p>
+        <Link to="/" className="backLink">
+          ◀ 戻る
+        </Link>
+        <h1 className={styles.pageTitle}>Works</h1>
       </section>
 
       <div className={styles.grid}>

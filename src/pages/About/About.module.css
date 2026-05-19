@@ -8,13 +8,18 @@
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-.label,
-.blockLabel {
-  color: var(--color-gold-2);
-  letter-spacing: 0.28em;
-  text-transform: none;
-  font-size: 0.8rem;
+.pageTitle,
+.sectionTitle {
+  color: var(--color-heading);
   font-weight: 500;
+}
+
+.pageTitle {
+  line-height: 1.12;
+}
+
+.sectionTitle {
+  line-height: 1.2;
 }
 
 .block {
@@ -67,6 +72,7 @@
     gap: 0.8rem;
     margin-bottom: 2.2rem;
   }
+
   .block {
     margin-top: 1.25rem;
     padding: 1.35rem;
