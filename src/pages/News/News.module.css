@@ -11,7 +11,7 @@
 .label {
   color: var(--color-accent);
   letter-spacing: 0.24em;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 0.8rem;
 }
 

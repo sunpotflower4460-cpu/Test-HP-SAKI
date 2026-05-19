@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
 import styles from './Header.module.css';
 import { desktopNavItems, mobileNavItems, siteMeta } from '../data/siteData';
 
@@ -56,53 +55,37 @@ const Header = () => {
         </button>
       </div>
 
-      <AnimatePresence>
-        {isMenuOpen ? (
-          <>
-            <motion.div
-              className={styles.overlay}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsMenuOpen(false)}
-            />
-            <motion.nav
-              id="mobile-menu"
-              className={styles.mobilePanel}
-              initial={{ opacity: 0, y: -12, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -12, scale: 0.98 }}
-              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              aria-label="Mobile navigation"
-            >
-              <div className={styles.mobilePanelHeader}>
-                <button
-                  type="button"
-                  className={styles.closeButton}
-                  onClick={() => setIsMenuOpen(false)}
-                  aria-label="メニューを閉じる"
-                >
-                  ×
-                </button>
-              </div>
+      {isMenuOpen ? (
+        <>
+          <div className={styles.overlay} onClick={() => setIsMenuOpen(false)} />
+          <nav id="mobile-menu" className={styles.mobilePanel} aria-label="Mobile navigation">
+            <div className={styles.mobilePanelHeader}>
+              <button
+                type="button"
+                className={styles.closeButton}
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="メニューを閉じる"
+              >
+                ×
+              </button>
+            </div>
 
-              <div className={styles.mobileNavLinks}>
-                {mobileNavItems.map((item) => (
-                  <NavLink
-                    key={item.path}
-                    to={item.path}
-                    className={({ isActive }) =>
-                      `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                ))}
-              </div>
-            </motion.nav>
-          </>
-        ) : null}
-      </AnimatePresence>
+            <div className={styles.mobileNavLinks}>
+              {mobileNavItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </nav>
+        </>
+      ) : null}
     </header>
   );
 };
