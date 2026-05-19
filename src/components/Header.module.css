@@ -42,37 +42,15 @@
 
 .navLink,
 .mobileNavLink {
-  position: relative;
   color: var(--color-text-soft);
   transition: color var(--transition);
-}
-
-.navLink::after,
-.mobileNavLink::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -0.4rem;
-  width: 100%;
-  height: 1px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition);
 }
 
 .navLink:hover,
 .navLinkActive,
 .mobileNavLink:hover,
 .mobileNavLinkActive {
-  color: var(--color-text);
-}
-
-.navLink:hover::after,
-.navLinkActive::after,
-.mobileNavLink:hover::after,
-.mobileNavLinkActive::after {
-  transform: scaleX(1);
+  color: var(--color-heading);
 }
 
 .menuButton {
@@ -177,11 +155,6 @@
     color var(--transition),
     border-color var(--transition),
     background-color var(--transition);
-}
-
-.mobileNavLink::after {
-  bottom: 0.25rem;
-  width: 100%;
 }
 
 .mobileNavLink:hover,

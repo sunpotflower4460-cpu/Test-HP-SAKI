@@ -10,8 +10,9 @@ interface WorkCardProps {
 const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
   const [imgSrc, setImgSrc] = useState(work.image);
   const isPreview = layout === 'preview';
-  const isPlaceholderLink = !work.link || work.link === '#';
-  const isUnavailable = work.disabled || isPlaceholderLink || isPreview;
+  const isDisabled = work.disabled === true;
+  const hasRealLink = Boolean(work.link) && work.link !== '#';
+  const shouldRenderAsLink = hasRealLink && !isPreview && !isDisabled;
   const ctaLabel = work.buttonLabel;
 
   useEffect(() => {
@@ -52,14 +53,18 @@ const WorkCard = ({ work, layout = 'full' }: WorkCardProps) => {
         <h3>{work.title}</h3>
         <p className={styles.description}>{work.description}</p>
         <div className={styles.footer}>
-          {isUnavailable ? (
+          {shouldRenderAsLink ? (
+            <a href={work.link} className={styles.cta}>
+              {ctaLabel}
+            </a>
+          ) : isDisabled ? (
             <span className={`${styles.cta} ${styles.ctaDisabled}`} aria-disabled="true">
               {ctaLabel}
             </span>
           ) : (
-            <a href={work.link} className={styles.cta}>
+            <span className={`${styles.cta} ${styles.ctaStatic}`}>
               {ctaLabel}
-            </a>
+            </span>
           )}
         </div>
       </div>

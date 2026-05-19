@@ -8,6 +8,7 @@ export interface WorkItem {
   title: string;
   players: string;
   duration: string;
+  // NOTE: Keep as metadata only unless the production Figma explicitly reintroduces a status badge.
   status: string;
   image: string;
   fallback: string;
@@ -40,6 +41,7 @@ export interface MemberItem {
 
 export interface SocialLink {
   label: string;
+  // NOTE: Retained as metadata only; Footer should keep rendering the label alone unless Figma changes.
   description: string;
   href: string;
 }
@@ -70,80 +72,15 @@ export const mobileNavItems: NavItem[] = [
   ...desktopNavItems,
 ];
 
-export const heroPlaceholder = {
-  eyebrow: 'Murder Mystery Production Brand',
-  title: siteMeta.tagline,
-  subtitle: siteMeta.name,
-  description:
-    '静かな緊張と余白の中に、物語体験のための大型ビジュアルを置く予定地。次のPhaseで動画・画像混在カルーセルへ拡張できる構成です。',
-};
-
 export type HeroSlide = {
   id: string;
   type: 'image' | 'video';
   src: string;
   poster?: string;
   fallback: string;
-  title: string;
-  subtitle?: string;
-  description?: string;
-  alt?: string;
+  alt: string;
   objectPosition?: string;
 };
-
-export const heroSlides: HeroSlide[] = [
-  {
-    id: 'hero-01',
-    type: 'image',
-    src: '/media/hero/hero-01.jpg',
-    fallback: '/media/placeholders/placeholder-hero.svg',
-    title: '物語の果てに、',
-    subtitle: '何が残るか。',
-    description: siteMeta.name,
-    alt: 'Liminarium Lab. main visual',
-  },
-  {
-    id: 'hero-02',
-    type: 'image',
-    src: '/media/hero/hero-02.jpg',
-    fallback: '/media/placeholders/placeholder-hero.svg',
-    title: '境界の向こうで',
-    subtitle: '真実が揺れる。',
-    description: 'Works',
-    alt: 'Works visual',
-  },
-  {
-    id: 'hero-03',
-    type: 'video',
-    src: '/media/hero/hero-03.mp4',
-    poster: '/media/hero/hero-03-poster.jpg',
-    fallback: '/media/placeholders/placeholder-hero.svg',
-    title: '動き出す物語',
-    subtitle: '体感せよ。',
-    description: 'Movie',
-    alt: '動画スライド',
-  },
-  {
-    id: 'hero-04',
-    type: 'image',
-    src: '/media/hero/hero-04.jpg',
-    fallback: '/media/placeholders/placeholder-hero.svg',
-    title: '静かな緊張と',
-    subtitle: '余白の中に。',
-    description: '千草色に吹く 未完の詩',
-    alt: 'Work 01 visual',
-  },
-  {
-    id: 'hero-05',
-    type: 'image',
-    src: '/media/hero/hero-05.jpg',
-    fallback: '/media/placeholders/placeholder-hero.svg',
-    title: 'やさしさの輪郭が',
-    subtitle: '壊れるとき。',
-    description: 'あったかくて、甘くて、潰れた',
-    alt: 'Work 02 visual',
-  },
-];
 
 export const aboutPreview = {
   title: 'About us',

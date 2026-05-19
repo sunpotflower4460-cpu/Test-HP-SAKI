@@ -120,6 +120,10 @@
   cursor: default;
 }
 
+.ctaStatic {
+  cursor: default;
+}
+
 @media (max-width: 768px) {
   .full {
     grid-template-columns: 1fr;

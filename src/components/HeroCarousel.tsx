@@ -101,8 +101,8 @@ const HeroCarousel = () => {
                       loop
                       preload="metadata"
                       poster={slide.poster ?? slide.fallback}
-                      aria-label={slide.alt ?? slide.title}
-                      onError={() => markVideoFailed(slide.id)}
+                       aria-label={slide.alt}
+                       onError={() => markVideoFailed(slide.id)}
                     >
                       <source
                         src={slide.src}
@@ -114,7 +114,7 @@ const HeroCarousel = () => {
                     <SafeImage
                       src={slide.type === 'video' ? slide.poster ?? slide.fallback : slide.src}
                       fallback={slide.fallback}
-                      alt={slide.alt ?? slide.title}
+                       alt={slide.alt}
                       className={styles.media}
                       style={mediaStyle}
                       loading={i === 0 ? 'eager' : 'lazy'}
