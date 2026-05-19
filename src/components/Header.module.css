@@ -15,23 +15,15 @@
 
 .brand {
   display: inline-flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  align-items: center;
   min-width: 0;
+  flex: 0 1 auto;
 }
 
-.brandMain {
-  font-family: var(--font-logo);
-  font-size: clamp(1.25rem, 1.6vw, 1.6rem);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--color-heading);
-}
-
-.brandSub {
-  color: var(--color-subtext);
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
+.brandLogo {
+  display: block;
+  width: clamp(150px, 16vw, 220px);
+  height: auto;
 }
 
 .desktopNav {
@@ -168,13 +160,8 @@
     min-height: 74px;
   }
 
-  .brandMain {
-    font-size: clamp(1.06rem, 5.8vw, 1.34rem);
-  }
-
-  .brandSub {
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
+  .brandLogo {
+    width: clamp(128px, 44vw, 178px);
   }
 
   .desktopNav {
@@ -194,8 +181,8 @@
     gap: 1rem;
   }
 
-  .brandMain {
-    letter-spacing: 0.09em;
+  .brandLogo {
+    width: clamp(118px, 42vw, 160px);
   }
 
   .menuButton {
@@ -212,13 +199,8 @@
 }
 
 @media (max-width: 360px) {
-  .brandMain {
-    font-size: 1.08rem;
-    letter-spacing: 0.07em;
-  }
-
-  .brandSub {
-    font-size: 0.66rem;
+  .brandLogo {
+    width: 116px;
   }
 
   .menuButton {
