@@ -1,3 +1,5 @@
+import { withBase } from '../utils/paths';
+
 export interface NavItem {
   path: string;
   label: string;
@@ -110,8 +112,8 @@ export const works: WorkItem[] = [
     players: '6人',
     duration: '180分',
     status: '制作中',
-    image: '/media/works/work-01.jpg',
-    fallback: '/media/placeholders/placeholder-work.svg',
+    image: withBase('/media/works/work-01.jpg'),
+    fallback: withBase('/media/placeholders/placeholder-work.svg'),
     imagePosition: '50% 44%',
     description:
       '推理×推し活プロジェクト第一弾！\nデビューを控えたアイドルたちを襲う悲劇。\n彼女たちの運命の歯車が廻りだす…。',
@@ -126,8 +128,8 @@ export const works: WorkItem[] = [
     players: '6人',
     duration: '180分',
     status: '制作中',
-    image: '/media/works/work-02.jpg',
-    fallback: '/media/placeholders/placeholder-work.svg',
+    image: withBase('/media/works/work-02.jpg'),
+    fallback: withBase('/media/placeholders/placeholder-work.svg'),
     imagePosition: '50% 48%',
     description:
       'とある屋敷にて。主人の遺体と謎の来訪者。\nそれぞれの思惑が絡み合う。\nあなたはすべて解きほぐすことができるか。',
@@ -144,8 +146,8 @@ export const members: MemberItem[] = [
     name: '葉宮よしの',
     role: '制作・GM他',
     favorite: '好きな系統：ガチ推理系・SF',
-    image: '/media/members/member-01.jpg',
-    fallback: '/media/placeholders/placeholder-member.svg',
+    image: withBase('/media/members/member-01.jpg'),
+    fallback: withBase('/media/placeholders/placeholder-member.svg'),
     imagePosition: '50% 45%',
     accent: '#C6A86A',
   },
@@ -154,8 +156,8 @@ export const members: MemberItem[] = [
     name: '三河柚',
     role: '制作・イラスト',
     favorite: '好きな系統：エモ系',
-    image: '/media/members/member-02.jpg',
-    fallback: '/media/placeholders/placeholder-member.svg',
+    image: withBase('/media/members/member-02.jpg'),
+    fallback: withBase('/media/placeholders/placeholder-member.svg'),
     imagePosition: '50% 45%',
     accent: '#C6A86A',
   },
@@ -164,8 +166,8 @@ export const members: MemberItem[] = [
     name: 'もぶ',
     role: '音楽',
     favorite: '好きな系統：推理系',
-    image: '/media/members/member-03.jpg',
-    fallback: '/media/placeholders/placeholder-member.svg',
+    image: withBase('/media/members/member-03.jpg'),
+    fallback: withBase('/media/placeholders/placeholder-member.svg'),
     imagePosition: '50% 45%',
     accent: '#C6A86A',
   },
@@ -174,8 +176,8 @@ export const members: MemberItem[] = [
     name: 'ヤッホー・ナーン',
     role: '制作補助',
     favorite: '好きな系統：島・屋敷系',
-    image: '/media/members/member-04.jpg',
-    fallback: '/media/placeholders/placeholder-member.svg',
+    image: withBase('/media/members/member-04.jpg'),
+    fallback: withBase('/media/placeholders/placeholder-member.svg'),
     imagePosition: '50% 45%',
     accent: '#C6A86A',
   },
@@ -201,7 +203,7 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const siteAssets = {
-  logo: '/media/logo/logo.png',
-  logoMark: '/media/logo/logo-mark.png',
-  logoFallback: '/media/placeholders/placeholder-hero.svg',
+  logo: withBase('/media/logo/logo.png'),
+  logoMark: withBase('/media/logo/logo-mark.png'),
+  logoFallback: withBase('/media/placeholders/placeholder-hero.svg'),
 };
