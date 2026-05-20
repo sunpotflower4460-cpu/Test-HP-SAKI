@@ -1,11 +1,11 @@
 {
-  "name": "test-hp-saki",
+  "name": "liminarium-lab",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run check:assets && tsc && vite build",
+    "build": "npm run check:assets && tsc && vite build && node scripts/postbuild-pages.mjs",
     "preview": "vite preview",
     "check:assets": "node scripts/check-assets.mjs",
     "check:release": "node scripts/check-release.mjs",
