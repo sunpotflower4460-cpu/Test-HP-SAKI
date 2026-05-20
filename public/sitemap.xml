@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://test-hp-saki.vercel.app/</loc>
+    <loc>https://sunpotflower4460-cpu.github.io/liminarium-lab/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://test-hp-saki.vercel.app/about</loc>
+    <loc>https://sunpotflower4460-cpu.github.io/liminarium-lab/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://test-hp-saki.vercel.app/works</loc>
+    <loc>https://sunpotflower4460-cpu.github.io/liminarium-lab/works</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://test-hp-saki.vercel.app/news</loc>
+    <loc>https://sunpotflower4460-cpu.github.io/liminarium-lab/news</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
