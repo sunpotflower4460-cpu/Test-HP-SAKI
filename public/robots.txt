@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://test-hp-saki.vercel.app/sitemap.xml
+Sitemap: https://sunpotflower4460-cpu.github.io/liminarium-lab/sitemap.xml
